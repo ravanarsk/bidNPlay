@@ -1,0 +1,6 @@
+framework module Pods_bidNPlay {
+  umbrella header "Pods-bidNPlay-umbrella.h"
+
+  export *
+  module * { export * }
+}

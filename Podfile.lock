@@ -1,0 +1,24 @@
+PODS:
+  - AEOTPTextField (1.2.6)
+  - IQKeyboardManagerSwift (6.5.16)
+  - ProgressHUD (14.1.0)
+
+DEPENDENCIES:
+  - AEOTPTextField
+  - IQKeyboardManagerSwift
+  - ProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - AEOTPTextField
+    - IQKeyboardManagerSwift
+    - ProgressHUD
+
+SPEC CHECKSUMS:
+  AEOTPTextField: a275823fde05601c5da7f8fb66aaecb41289b370
+  IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
+  ProgressHUD: c4a55f108815c46a6bf082407d2f806840b7a869
+
+PODFILE CHECKSUM: 865eb8f91dec0065e5ab6aa93bb13e2f7036389c
+
+COCOAPODS: 1.14.0

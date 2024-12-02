@@ -13,9 +13,13 @@
 		F4AE35362CFD9A3200766A02 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F4AE35352CFD9A3200766A02 /* Base */; };
 		F4AE35382CFD9A3200766A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AE35372CFD9A3200766A02 /* Assets.xcassets */; };
 		F4AE353B2CFD9A3200766A02 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F4AE353A2CFD9A3200766A02 /* Base */; };
+		FD76DDB4238C61EDFAC4D410 /* Pods_bidNPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bidNPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC337FC5C0BA44A4A3A806A3 /* Pods-bidNPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.debug.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.debug.xcconfig"; sourceTree = "<group>"; };
+		AE7D68D4C9662C5086586924 /* Pods-bidNPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.release.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.release.xcconfig"; sourceTree = "<group>"; };
 		F4AE352B2CFD9A3100766A02 /* bidNPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bidNPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AE352E2CFD9A3200766A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4AE35302CFD9A3200766A02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD76DDB4238C61EDFAC4D410 /* Pods_bidNPlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		535BD0E2EEC54AF59B0D0416 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D72FF43ED42E441D61B40741 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC337FC5C0BA44A4A3A806A3 /* Pods-bidNPlay.debug.xcconfig */,
+				AE7D68D4C9662C5086586924 /* Pods-bidNPlay.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F4AE35222CFD9A3100766A02 = {
 			isa = PBXGroup;
 			children = (
 				F4AE352D2CFD9A3200766A02 /* bidNPlay */,
 				F4AE352C2CFD9A3100766A02 /* Products */,
+				D72FF43ED42E441D61B40741 /* Pods */,
+				535BD0E2EEC54AF59B0D0416 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4AE353F2CFD9A3200766A02 /* Build configuration list for PBXNativeTarget "bidNPlay" */;
 			buildPhases = (
+				827B5AEB8BB9E54F06872E44 /* [CP] Check Pods Manifest.lock */,
 				F4AE35272CFD9A3100766A02 /* Sources */,
 				F4AE35282CFD9A3100766A02 /* Frameworks */,
 				F4AE35292CFD9A3100766A02 /* Resources */,
+				F570715D4FD5C1D5DFF684FB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		827B5AEB8BB9E54F06872E44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bidNPlay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F570715D4FD5C1D5DFF684FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bidNPlay/Pods-bidNPlay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bidNPlay/Pods-bidNPlay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bidNPlay/Pods-bidNPlay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4AE35272CFD9A3100766A02 /* Sources */ = {
@@ -287,6 +355,7 @@
 		};
 		F4AE35402CFD9A3200766A02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC337FC5C0BA44A4A3A806A3 /* Pods-bidNPlay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,11 +364,12 @@
 				DEVELOPMENT_TEAM = M6D7YVZC25;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bidNPlay/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,14 +377,19 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sqt.bidNPlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		F4AE35412CFD9A3200766A02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE7D68D4C9662C5086586924 /* Pods-bidNPlay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,11 +398,12 @@
 				DEVELOPMENT_TEAM = M6D7YVZC25;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bidNPlay/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +411,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sqt.bidNPlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
