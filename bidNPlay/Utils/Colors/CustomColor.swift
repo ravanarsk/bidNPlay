@@ -13,6 +13,6 @@ enum CustomColor{
     static let bg2 = UIColor(named: "bgColor2") ?? UIColor.black
     static let button = UIColor(named: "buttonColor") ?? UIColor.blue
     static let text = UIColor(named: "textColor") ?? UIColor.white
-    static let text2 = UIColor(named: "textColor") ?? UIColor.lightGray
+    static let text2 = UIColor(named: "textColor2") ?? UIColor.lightGray
     
 }

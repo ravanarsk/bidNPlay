@@ -18,17 +18,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
 //        if DefaultWrapper().getStringFrom(Key: Keys.tokenID) == ""{
-//            let rootViewController = LoginVC.loadFromNib()
-//            let navigationController = UINavigationController(
-//                rootViewController: rootViewController
-//            )
-//            window.rootViewController = navigationController
+            let rootViewController = LoginVC.loadFromNib()
+            let navigationController = UINavigationController(
+                rootViewController: rootViewController
+            )
+            window.rootViewController = navigationController
 //        }else{
 //            let rootViewController = DashboardVC.loadFromNib()
 //            window.rootViewController = rootViewController
 //        }
 //        
-//        window.makeKeyAndVisible()
+        window.makeKeyAndVisible()
         self.window = window
         
     }

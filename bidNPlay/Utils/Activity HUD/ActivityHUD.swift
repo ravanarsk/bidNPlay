@@ -15,7 +15,7 @@ class ActivityHUD : NSObject {
         
         ProgressHUD.animationType = .circleDotSpinFade
         ProgressHUD.colorAnimation = .darkGray
-        ProgressHUD.colorBackground = CustomColor.blackBg
+        ProgressHUD.colorBackground = .black
         ProgressHUD.animate(interaction: false)
         //ProgressHUD.show(nil, interaction: false)
         

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F47F64CE2CFEF079002F8930 /* ButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F64CD2CFEF079002F8930 /* ButtonExt.swift */; };
+		F47F64D02CFEF2C4002F8930 /* TextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F64CF2CFEF2C4002F8930 /* TextFieldExt.swift */; };
 		F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE352E2CFD9A3200766A02 /* AppDelegate.swift */; };
 		F4AE35312CFD9A3200766A02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE35302CFD9A3200766A02 /* SceneDelegate.swift */; };
 		F4AE35382CFD9A3200766A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AE35372CFD9A3200766A02 /* Assets.xcassets */; };
@@ -22,6 +24,10 @@
 		F4AE355B2CFDA6E800766A02 /* ActivityHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE35592CFDA6E800766A02 /* ActivityHUD.swift */; };
 		F4AE355F2CFDA72300766A02 /* CommonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE355C2CFDA72300766A02 /* CommonConstants.swift */; };
 		F4AE35602CFDA72300766A02 /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE355D2CFDA72300766A02 /* ViewConstants.swift */; };
+		F4AE35632CFDA7A700766A02 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE35612CFDA7A700766A02 /* LoginVC.swift */; };
+		F4AE35642CFDA7A700766A02 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4AE35622CFDA7A700766A02 /* LoginVC.xib */; };
+		F4AE35672CFDA83600766A02 /* NibExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE35662CFDA83600766A02 /* NibExt.swift */; };
+		F4AE35692CFDAA5D00766A02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AE35682CFDAA5D00766A02 /* Main.storyboard */; };
 		FD76DDB4238C61EDFAC4D410 /* Pods_bidNPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +35,8 @@
 		A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bidNPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC337FC5C0BA44A4A3A806A3 /* Pods-bidNPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.debug.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7D68D4C9662C5086586924 /* Pods-bidNPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.release.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.release.xcconfig"; sourceTree = "<group>"; };
+		F47F64CD2CFEF079002F8930 /* ButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExt.swift; sourceTree = "<group>"; };
+		F47F64CF2CFEF2C4002F8930 /* TextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExt.swift; sourceTree = "<group>"; };
 		F4AE352B2CFD9A3100766A02 /* bidNPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bidNPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AE352E2CFD9A3200766A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4AE35302CFD9A3200766A02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +54,10 @@
 		F4AE35592CFDA6E800766A02 /* ActivityHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityHUD.swift; sourceTree = "<group>"; };
 		F4AE355C2CFDA72300766A02 /* CommonConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonConstants.swift; sourceTree = "<group>"; };
 		F4AE355D2CFDA72300766A02 /* ViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
+		F4AE35612CFDA7A700766A02 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		F4AE35622CFDA7A700766A02 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		F4AE35662CFDA83600766A02 /* NibExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibExt.swift; sourceTree = "<group>"; };
+		F4AE35682CFDAA5D00766A02 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +116,7 @@
 				F4AE352E2CFD9A3200766A02 /* AppDelegate.swift */,
 				F4AE35302CFD9A3200766A02 /* SceneDelegate.swift */,
 				F4AE353C2CFD9A3200766A02 /* Info.plist */,
+				F4AE35682CFDAA5D00766A02 /* Main.storyboard */,
 			);
 			path = bidNPlay;
 			sourceTree = "<group>";
@@ -121,6 +134,7 @@
 		F4AE35432CFDA32800766A02 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F4AE35652CFDA81E00766A02 /* Extensions */,
 				F4AE355E2CFDA72300766A02 /* Constants */,
 				F4AE355A2CFDA6E800766A02 /* Activity HUD */,
 				F4AE35562CFDA66500766A02 /* BaseVC */,
@@ -161,6 +175,8 @@
 		F4AE35552CFDA62F00766A02 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F4AE35612CFDA7A700766A02 /* LoginVC.swift */,
+				F4AE35622CFDA7A700766A02 /* LoginVC.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -188,6 +204,16 @@
 				F4AE355D2CFDA72300766A02 /* ViewConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		F4AE35652CFDA81E00766A02 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F4AE35662CFDA83600766A02 /* NibExt.swift */,
+				F47F64CD2CFEF079002F8930 /* ButtonExt.swift */,
+				F47F64CF2CFEF2C4002F8930 /* TextFieldExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +282,8 @@
 				F4AE353B2CFD9A3200766A02 /* Base in Resources */,
 				F4AE354C2CFDA34900766A02 /* Poppins-Medium.ttf in Resources */,
 				F4AE354E2CFDA34900766A02 /* Poppins-SemiBold.ttf in Resources */,
+				F4AE35692CFDAA5D00766A02 /* Main.storyboard in Resources */,
+				F4AE35642CFDA7A700766A02 /* LoginVC.xib in Resources */,
 				F4AE354A2CFDA34900766A02 /* Poppins-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,14 +337,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47F64CE2CFEF079002F8930 /* ButtonExt.swift in Sources */,
 				F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */,
 				F4AE35502CFDA37F00766A02 /* FontExtension.swift in Sources */,
 				F4AE355F2CFDA72300766A02 /* CommonConstants.swift in Sources */,
 				F4AE355B2CFDA6E800766A02 /* ActivityHUD.swift in Sources */,
 				F4AE35532CFDA47100766A02 /* CustomColor.swift in Sources */,
+				F4AE35632CFDA7A700766A02 /* LoginVC.swift in Sources */,
 				F4AE35312CFD9A3200766A02 /* SceneDelegate.swift in Sources */,
 				F4AE35602CFDA72300766A02 /* ViewConstants.swift in Sources */,
 				F4AE35582CFDA67400766A02 /* BaseVC.swift in Sources */,
+				F4AE35672CFDA83600766A02 /* NibExt.swift in Sources */,
+				F47F64D02CFEF2C4002F8930 /* TextFieldExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +403,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -434,7 +466,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
