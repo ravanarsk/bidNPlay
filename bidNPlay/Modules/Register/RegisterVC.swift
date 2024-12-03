@@ -9,6 +9,7 @@ import UIKit
 
 class RegisterVC: BaseVC {
 
+    @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var countryButton: UIButton!
     @IBOutlet weak var holderView: UIView!
     @IBOutlet weak var emailTF: UITextField!
@@ -41,6 +42,7 @@ extension RegisterVC{
             self, action: #selector(countrySelection), for: .touchUpInside
         )
         
+        self.nameTF.aboveOverlayTheme(placeHolder: "Name")
         self.emailTF.aboveOverlayTheme(placeHolder: "Email ID")
         self.passwordTF.aboveOverlayTheme(placeHolder: "Password")
         self.countryCodeTF.aboveOverlayTheme(placeHolder: "Select a country code")
