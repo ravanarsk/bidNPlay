@@ -32,6 +32,8 @@ extension RegisterVC{
     fileprivate func configureView(){
         
         self.setBackButton()
+        self.holderView.backgroundColor = CustomColor.bg2
+        self.holderView.layer.cornerRadius = 10
         
         self.countryPickerView.delegate = self
         self.countryPickerView.searchBarBackgroundColor = .white
@@ -45,6 +47,7 @@ extension RegisterVC{
         self.phoneNumberTF.aboveOverlayTheme(placeHolder: "Phone Number")
         self.registerButton.setDefaultTheme(name: "Register")
         
+        self.passwordTF.keyboardType = .numberPad
     }
     
 }

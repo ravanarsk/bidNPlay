@@ -15,6 +15,9 @@
 		F47F64DC2CFF0E62002F8930 /* ADCountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F64D72CFF0E62002F8930 /* ADCountryPicker.swift */; };
 		F47F64DD2CFF0E62002F8930 /* assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F47F64D82CFF0E62002F8930 /* assets.bundle */; };
 		F47F64DE2CFF0E62002F8930 /* CallingCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = F47F64D92CFF0E62002F8930 /* CallingCodes.plist */; };
+		F47F64E22CFF2B04002F8930 /* OTPVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47F64E12CFF2B04002F8930 /* OTPVC.xib */; };
+		F47F64E32CFF2B04002F8930 /* OTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F64E02CFF2B04002F8930 /* OTPVC.swift */; };
+		F47F64E52CFF3209002F8930 /* LabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F64E42CFF3209002F8930 /* LabelExt.swift */; };
 		F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE352E2CFD9A3200766A02 /* AppDelegate.swift */; };
 		F4AE35312CFD9A3200766A02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE35302CFD9A3200766A02 /* SceneDelegate.swift */; };
 		F4AE35382CFD9A3200766A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AE35372CFD9A3200766A02 /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 		F47F64D72CFF0E62002F8930 /* ADCountryPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADCountryPicker.swift; sourceTree = "<group>"; };
 		F47F64D82CFF0E62002F8930 /* assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = assets.bundle; sourceTree = "<group>"; };
 		F47F64D92CFF0E62002F8930 /* CallingCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CallingCodes.plist; sourceTree = "<group>"; };
+		F47F64E02CFF2B04002F8930 /* OTPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVC.swift; sourceTree = "<group>"; };
+		F47F64E12CFF2B04002F8930 /* OTPVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTPVC.xib; sourceTree = "<group>"; };
+		F47F64E42CFF3209002F8930 /* LabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExt.swift; sourceTree = "<group>"; };
 		F4AE352B2CFD9A3100766A02 /* bidNPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bidNPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AE352E2CFD9A3200766A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4AE35302CFD9A3200766A02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +125,15 @@
 				F47F64D92CFF0E62002F8930 /* CallingCodes.plist */,
 			);
 			path = ADCountryPicker;
+			sourceTree = "<group>";
+		};
+		F47F64DF2CFF2ABE002F8930 /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				F47F64E02CFF2B04002F8930 /* OTPVC.swift */,
+				F47F64E12CFF2B04002F8930 /* OTPVC.xib */,
+			);
+			path = OTP;
 			sourceTree = "<group>";
 		};
 		F4AE35222CFD9A3100766A02 = {
@@ -200,6 +215,7 @@
 		F4AE35542CFDA62800766A02 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F47F64DF2CFF2ABE002F8930 /* OTP */,
 				F47F64D12CFEF801002F8930 /* Register */,
 				F4AE35552CFDA62F00766A02 /* Login */,
 			);
@@ -246,6 +262,7 @@
 				F4AE35662CFDA83600766A02 /* NibExt.swift */,
 				F47F64CD2CFEF079002F8930 /* ButtonExt.swift */,
 				F47F64CF2CFEF2C4002F8930 /* TextFieldExt.swift */,
+				F47F64E42CFF3209002F8930 /* LabelExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -320,6 +337,7 @@
 				F4AE35642CFDA7A700766A02 /* LoginVC.xib in Resources */,
 				F47F64DE2CFF0E62002F8930 /* CallingCodes.plist in Resources */,
 				F47F64DD2CFF0E62002F8930 /* assets.bundle in Resources */,
+				F47F64E22CFF2B04002F8930 /* OTPVC.xib in Resources */,
 				F4AE354A2CFDA34900766A02 /* Poppins-Bold.ttf in Resources */,
 				F47F64D42CFEF976002F8930 /* RegisterVC.xib in Resources */,
 			);
@@ -376,12 +394,14 @@
 			files = (
 				F47F64CE2CFEF079002F8930 /* ButtonExt.swift in Sources */,
 				F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */,
+				F47F64E32CFF2B04002F8930 /* OTPVC.swift in Sources */,
 				F4AE35502CFDA37F00766A02 /* FontExtension.swift in Sources */,
 				F4AE355F2CFDA72300766A02 /* CommonConstants.swift in Sources */,
 				F4AE355B2CFDA6E800766A02 /* ActivityHUD.swift in Sources */,
 				F4AE35532CFDA47100766A02 /* CustomColor.swift in Sources */,
 				F4AE35632CFDA7A700766A02 /* LoginVC.swift in Sources */,
 				F4AE35312CFD9A3200766A02 /* SceneDelegate.swift in Sources */,
+				F47F64E52CFF3209002F8930 /* LabelExt.swift in Sources */,
 				F4AE35602CFDA72300766A02 /* ViewConstants.swift in Sources */,
 				F47F64DC2CFF0E62002F8930 /* ADCountryPicker.swift in Sources */,
 				F47F64DB2CFF0E62002F8930 /* ADCountry.swift in Sources */,

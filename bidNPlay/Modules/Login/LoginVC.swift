@@ -54,6 +54,9 @@ extension LoginVC{
     
     @objc fileprivate func loginAction(){
         
+        let vc = OTPVC.loadFromNib()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @objc fileprivate func registerAction(){
