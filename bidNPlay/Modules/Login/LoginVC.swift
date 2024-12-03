@@ -58,6 +58,9 @@ extension LoginVC{
     
     @objc fileprivate func registerAction(){
         
+        let vc = RegisterVC.loadFromNib()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @objc fileprivate func forgotPasswordAction(){

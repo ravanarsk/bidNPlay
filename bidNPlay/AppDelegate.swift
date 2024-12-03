@@ -42,6 +42,7 @@ extension AppDelegate{
         
         IQKeyboardManager.shared.enable = true
         UINavigationBar.appearance().barTintColor = CustomColor.bg
+        UINavigationBar.appearance().tintColor = CustomColor.bg
         
     }
     
