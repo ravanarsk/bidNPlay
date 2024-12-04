@@ -45,6 +45,9 @@
 		F4AE35642CFDA7A700766A02 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4AE35622CFDA7A700766A02 /* LoginVC.xib */; };
 		F4AE35672CFDA83600766A02 /* NibExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE35662CFDA83600766A02 /* NibExt.swift */; };
 		F4AE35692CFDAA5D00766A02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AE35682CFDAA5D00766A02 /* Main.storyboard */; };
+		F4EC46F02D00653B00EFC57F /* TournamentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC46EE2D00653B00EFC57F /* TournamentCell.swift */; };
+		F4EC46F12D00653B00EFC57F /* TournamentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4EC46EF2D00653B00EFC57F /* TournamentCell.xib */; };
+		F4EC46F32D007DC300EFC57F /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC46F22D007DC300EFC57F /* TableViewExt.swift */; };
 		FD76DDB4238C61EDFAC4D410 /* Pods_bidNPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +95,9 @@
 		F4AE35622CFDA7A700766A02 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		F4AE35662CFDA83600766A02 /* NibExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibExt.swift; sourceTree = "<group>"; };
 		F4AE35682CFDAA5D00766A02 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F4EC46EE2D00653B00EFC57F /* TournamentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentCell.swift; sourceTree = "<group>"; };
+		F4EC46EF2D00653B00EFC57F /* TournamentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TournamentCell.xib; sourceTree = "<group>"; };
+		F4EC46F22D007DC300EFC57F /* TableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,7 @@
 		F43A8B9C2D0054B40098F83B /* Tournaments */ = {
 			isa = PBXGroup;
 			children = (
+				F4EC46ED2D00651400EFC57F /* Cells */,
 				F43A8B9D2D0054D00098F83B /* TournamentsVC.swift */,
 				F43A8B9E2D0054D00098F83B /* TournamentsVC.xib */,
 			);
@@ -319,8 +326,18 @@
 				F47F64CD2CFEF079002F8930 /* ButtonExt.swift */,
 				F47F64CF2CFEF2C4002F8930 /* TextFieldExt.swift */,
 				F47F64E42CFF3209002F8930 /* LabelExt.swift */,
+				F4EC46F22D007DC300EFC57F /* TableViewExt.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F4EC46ED2D00651400EFC57F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F4EC46EE2D00653B00EFC57F /* TournamentCell.swift */,
+				F4EC46EF2D00653B00EFC57F /* TournamentCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +410,7 @@
 				F43A8BAA2D0055CD0098F83B /* SettingsVC.xib in Resources */,
 				F4AE35692CFDAA5D00766A02 /* Main.storyboard in Resources */,
 				F4AE35642CFDA7A700766A02 /* LoginVC.xib in Resources */,
+				F4EC46F12D00653B00EFC57F /* TournamentCell.xib in Resources */,
 				F43A8B9B2D003CB40098F83B /* DashboardTab.xib in Resources */,
 				F43A8BA02D0054D00098F83B /* TournamentsVC.xib in Resources */,
 				F47F64DE2CFF0E62002F8930 /* CallingCodes.plist in Resources */,
@@ -456,7 +474,9 @@
 				F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */,
 				F47F64E32CFF2B04002F8930 /* OTPVC.swift in Sources */,
 				F4AE35502CFDA37F00766A02 /* FontExtension.swift in Sources */,
+				F4EC46F02D00653B00EFC57F /* TournamentCell.swift in Sources */,
 				F4AE355F2CFDA72300766A02 /* CommonConstants.swift in Sources */,
+				F4EC46F32D007DC300EFC57F /* TableViewExt.swift in Sources */,
 				F4AE355B2CFDA6E800766A02 /* ActivityHUD.swift in Sources */,
 				F4AE35532CFDA47100766A02 /* CustomColor.swift in Sources */,
 				F4AE35632CFDA7A700766A02 /* LoginVC.swift in Sources */,
