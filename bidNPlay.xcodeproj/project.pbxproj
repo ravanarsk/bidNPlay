@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F43A8B9A2D003CB40098F83B /* DashboardTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A8B982D003CB40098F83B /* DashboardTab.swift */; };
+		F43A8B9B2D003CB40098F83B /* DashboardTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43A8B992D003CB40098F83B /* DashboardTab.xib */; };
+		F43A8B9F2D0054D00098F83B /* TournamentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A8B9D2D0054D00098F83B /* TournamentsVC.swift */; };
+		F43A8BA02D0054D00098F83B /* TournamentsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43A8B9E2D0054D00098F83B /* TournamentsVC.xib */; };
+		F43A8BA42D00550A0098F83B /* RankingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A8BA22D00550A0098F83B /* RankingVC.swift */; };
+		F43A8BA52D00550A0098F83B /* RankingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43A8BA32D00550A0098F83B /* RankingVC.xib */; };
+		F43A8BA92D0055CD0098F83B /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A8BA72D0055CD0098F83B /* SettingsVC.swift */; };
+		F43A8BAA2D0055CD0098F83B /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43A8BA82D0055CD0098F83B /* SettingsVC.xib */; };
 		F47F64CE2CFEF079002F8930 /* ButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F64CD2CFEF079002F8930 /* ButtonExt.swift */; };
 		F47F64D02CFEF2C4002F8930 /* TextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F64CF2CFEF2C4002F8930 /* TextFieldExt.swift */; };
 		F47F64D42CFEF976002F8930 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47F64D32CFEF976002F8930 /* RegisterVC.xib */; };
@@ -44,6 +52,14 @@
 		A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bidNPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC337FC5C0BA44A4A3A806A3 /* Pods-bidNPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.debug.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7D68D4C9662C5086586924 /* Pods-bidNPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.release.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.release.xcconfig"; sourceTree = "<group>"; };
+		F43A8B982D003CB40098F83B /* DashboardTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTab.swift; sourceTree = "<group>"; };
+		F43A8B992D003CB40098F83B /* DashboardTab.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardTab.xib; sourceTree = "<group>"; };
+		F43A8B9D2D0054D00098F83B /* TournamentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsVC.swift; sourceTree = "<group>"; };
+		F43A8B9E2D0054D00098F83B /* TournamentsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TournamentsVC.xib; sourceTree = "<group>"; };
+		F43A8BA22D00550A0098F83B /* RankingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingVC.swift; sourceTree = "<group>"; };
+		F43A8BA32D00550A0098F83B /* RankingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingVC.xib; sourceTree = "<group>"; };
+		F43A8BA72D0055CD0098F83B /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		F43A8BA82D0055CD0098F83B /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
 		F47F64CD2CFEF079002F8930 /* ButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExt.swift; sourceTree = "<group>"; };
 		F47F64CF2CFEF2C4002F8930 /* TextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExt.swift; sourceTree = "<group>"; };
 		F47F64D22CFEF976002F8930 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -105,6 +121,42 @@
 				AE7D68D4C9662C5086586924 /* Pods-bidNPlay.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F43A8B972D003C030098F83B /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				F43A8B982D003CB40098F83B /* DashboardTab.swift */,
+				F43A8B992D003CB40098F83B /* DashboardTab.xib */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		F43A8B9C2D0054B40098F83B /* Tournaments */ = {
+			isa = PBXGroup;
+			children = (
+				F43A8B9D2D0054D00098F83B /* TournamentsVC.swift */,
+				F43A8B9E2D0054D00098F83B /* TournamentsVC.xib */,
+			);
+			path = Tournaments;
+			sourceTree = "<group>";
+		};
+		F43A8BA12D0054DE0098F83B /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				F43A8BA22D00550A0098F83B /* RankingVC.swift */,
+				F43A8BA32D00550A0098F83B /* RankingVC.xib */,
+			);
+			path = Ranking;
+			sourceTree = "<group>";
+		};
+		F43A8BA62D0055270098F83B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F43A8BA72D0055CD0098F83B /* SettingsVC.swift */,
+				F43A8BA82D0055CD0098F83B /* SettingsVC.xib */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		F47F64D12CFEF801002F8930 /* Register */ = {
@@ -215,6 +267,10 @@
 		F4AE35542CFDA62800766A02 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F43A8BA62D0055270098F83B /* Settings */,
+				F43A8BA12D0054DE0098F83B /* Ranking */,
+				F43A8B9C2D0054B40098F83B /* Tournaments */,
+				F43A8B972D003C030098F83B /* Dashboard */,
 				F47F64DF2CFF2ABE002F8930 /* OTP */,
 				F47F64D12CFEF801002F8930 /* Register */,
 				F4AE35552CFDA62F00766A02 /* Login */,
@@ -328,13 +384,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4AE35382CFD9A3200766A02 /* Assets.xcassets in Resources */,
+				F43A8BA52D00550A0098F83B /* RankingVC.xib in Resources */,
 				F4AE354B2CFDA34900766A02 /* Poppins-Light.ttf in Resources */,
 				F4AE354D2CFDA34900766A02 /* Poppins-Regular.ttf in Resources */,
 				F4AE353B2CFD9A3200766A02 /* Base in Resources */,
 				F4AE354C2CFDA34900766A02 /* Poppins-Medium.ttf in Resources */,
 				F4AE354E2CFDA34900766A02 /* Poppins-SemiBold.ttf in Resources */,
+				F43A8BAA2D0055CD0098F83B /* SettingsVC.xib in Resources */,
 				F4AE35692CFDAA5D00766A02 /* Main.storyboard in Resources */,
 				F4AE35642CFDA7A700766A02 /* LoginVC.xib in Resources */,
+				F43A8B9B2D003CB40098F83B /* DashboardTab.xib in Resources */,
+				F43A8BA02D0054D00098F83B /* TournamentsVC.xib in Resources */,
 				F47F64DE2CFF0E62002F8930 /* CallingCodes.plist in Resources */,
 				F47F64DD2CFF0E62002F8930 /* assets.bundle in Resources */,
 				F47F64E22CFF2B04002F8930 /* OTPVC.xib in Resources */,
@@ -400,15 +460,19 @@
 				F4AE355B2CFDA6E800766A02 /* ActivityHUD.swift in Sources */,
 				F4AE35532CFDA47100766A02 /* CustomColor.swift in Sources */,
 				F4AE35632CFDA7A700766A02 /* LoginVC.swift in Sources */,
+				F43A8B9A2D003CB40098F83B /* DashboardTab.swift in Sources */,
 				F4AE35312CFD9A3200766A02 /* SceneDelegate.swift in Sources */,
 				F47F64E52CFF3209002F8930 /* LabelExt.swift in Sources */,
 				F4AE35602CFDA72300766A02 /* ViewConstants.swift in Sources */,
 				F47F64DC2CFF0E62002F8930 /* ADCountryPicker.swift in Sources */,
+				F43A8BA42D00550A0098F83B /* RankingVC.swift in Sources */,
 				F47F64DB2CFF0E62002F8930 /* ADCountry.swift in Sources */,
+				F43A8B9F2D0054D00098F83B /* TournamentsVC.swift in Sources */,
 				F4AE35582CFDA67400766A02 /* BaseVC.swift in Sources */,
 				F4AE35672CFDA83600766A02 /* NibExt.swift in Sources */,
 				F47F64D02CFEF2C4002F8930 /* TextFieldExt.swift in Sources */,
 				F47F64D52CFEF976002F8930 /* RegisterVC.swift in Sources */,
+				F43A8BA92D0055CD0098F83B /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

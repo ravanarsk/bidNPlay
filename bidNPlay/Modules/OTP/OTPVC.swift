@@ -41,6 +41,25 @@ extension OTPVC{
         self.verifyButton.setDefaultTheme(name: "Verify")
         self.resendButton.setSecondaryTheme(name: "Resend OTP")
         
+        self.verifyButton.addTarget(
+            self, action: #selector(verifyAction), for: .touchUpInside
+        )
+        
+    }
+    
+}
+
+//MARK: Button Actions
+extension OTPVC{
+    
+    @objc fileprivate func verifyAction(){
+        
+        let view = DashboardTab.loadFromNib()
+        if let window = UIApplication.shared.windows.first{
+            window.rootViewController = view
+            window.makeKeyAndVisible()
+        }
+        
     }
     
 }
