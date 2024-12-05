@@ -42,6 +42,7 @@ extension TournamentsVC{
     
     fileprivate func setUpVC(){
         
+        self.tabBarController?.tabBar.isHidden = false
         self.navigationItem.title = "Tournaments"
         
         
@@ -66,6 +67,14 @@ extension TournamentsVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = TournamentDetailVC.loadFromNib()
+        vc.viewTitle = "Test"
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }
