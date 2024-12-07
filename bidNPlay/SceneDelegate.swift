@@ -17,17 +17,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-//        if DefaultWrapper().getStringFrom(Key: Keys.tokenID) == ""{
+        if DefaultWrapper().getStringFrom(Key: Keys.tokenID) == ""{
             let rootViewController = LoginVC.loadFromNib()
             let navigationController = UINavigationController(
                 rootViewController: rootViewController
             )
             window.rootViewController = navigationController
-//        }else{
-//            let rootViewController = DashboardVC.loadFromNib()
-//            window.rootViewController = rootViewController
-//        }
-//        
+        }else{
+            let rootViewController = DashboardTab.loadFromNib()
+            window.rootViewController = rootViewController
+        }
         window.makeKeyAndVisible()
         self.window = window
         

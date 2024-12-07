@@ -130,7 +130,7 @@ extension BaseVC{
 //MARK: Logout Alert with action
 extension BaseVC{
     
-//    internal func gotoLoginVC(){
+   internal func gotoLoginVC(){
 //        
 //        let rootViewController = LoginVC.loadFromNib()
 //        if let window = UIApplication.shared.windows.first{
@@ -141,7 +141,67 @@ extension BaseVC{
 //            DefaultWrapper().removeAll()
 //            window.makeKeyAndVisible()
 //        }
-//        
-//    }
+//
+   }
+    
+}
+
+//MARK: Error Delegates
+extension BaseVC : ErrorDelegate{
+    
+    func showAlertWith(error: Error){
+        
+        ActivityHUD().dismissProgressHUD()
+        var msg = ""
+        if let errorCode = (error as NSError).code as? Int {
+            msg = error.localizedDescription + " (\(errorCode))"
+        }else{
+            msg = error.localizedDescription
+        }
+        let alertVC = UIAlertController(
+            title: CommonConstants.errorTitle,
+            message: msg,
+            preferredStyle: .alert
+        )
+        let doneAction = UIAlertAction(
+            title: CommonConstants.done, style: .default
+        )
+        alertVC.addAction(doneAction)
+        if Thread.isMainThread {
+            self.present(alertVC, animated: true)
+        }else{
+            DispatchQueue.main.sync {
+                self.present(alertVC, animated: true)
+            }
+        }
+        
+    }
+    
+    func popAlertWith(msg: String){
+        
+        ActivityHUD().dismissProgressHUD()
+        let alertVC = UIAlertController(
+            title: CommonConstants.errorTitle,
+            message: msg,
+            preferredStyle: .alert
+        )
+        let doneAction = UIAlertAction(
+            title: CommonConstants.done, style: .default
+        ) { action in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alertVC.addAction(doneAction)
+        self.present(alertVC, animated: true)
+        
+    }
+    
+    func invalidToken() {
+        
+        ActivityHUD().dismissProgressHUD()
+        DispatchQueue.main.sync {
+            self.gotoLoginVC()
+        }
+        
+    }
     
 }

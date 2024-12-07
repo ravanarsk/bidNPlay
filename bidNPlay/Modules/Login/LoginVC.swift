@@ -20,6 +20,8 @@ class LoginVC: BaseVC {
     @IBOutlet weak var titleCard: UILabel!
     @IBOutlet weak var logoImage: UIImageView!
     
+    fileprivate var loginVM = LoginVM()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
@@ -54,8 +56,11 @@ extension LoginVC{
     
     @objc fileprivate func loginAction(){
         
-        let vc = OTPVC.loadFromNib()
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.loginVM.delegate = self
+        self.loginVM.preludeCheckToLoginAPI(
+            email: self.emailTF.text ?? "",
+            password: self.passwordTF.text ?? ""
+        )
         
     }
     
@@ -67,6 +72,23 @@ extension LoginVC{
     }
     
     @objc fileprivate func forgotPasswordAction(){
+        
+    }
+    
+}
+
+//MARK: View Model Delegates
+extension LoginVC : LoginDelegate{
+    
+    func loginSuccess() {
+        
+        DispatchQueue.main.sync {
+            
+            ActivityHUD().dismissProgressHUD()
+            let vc = DashboardTab.loadFromNib()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
         
     }
     

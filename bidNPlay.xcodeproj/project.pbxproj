@@ -49,6 +49,17 @@
 		F4AE35642CFDA7A700766A02 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4AE35622CFDA7A700766A02 /* LoginVC.xib */; };
 		F4AE35672CFDA83600766A02 /* NibExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE35662CFDA83600766A02 /* NibExt.swift */; };
 		F4AE35692CFDAA5D00766A02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AE35682CFDAA5D00766A02 /* Main.storyboard */; };
+		F4E926632D04341500D98217 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E926622D04341500D98217 /* LoginVM.swift */; };
+		F4E9266B2D0435C700D98217 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E926642D0435C700D98217 /* NetworkManager.swift */; };
+		F4E9266C2D0435C700D98217 /* NetworkUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E926652D0435C700D98217 /* NetworkUrls.swift */; };
+		F4E9266D2D0435C700D98217 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E926672D0435C700D98217 /* DefaultKeys.swift */; };
+		F4E9266E2D0435C700D98217 /* DefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E926682D0435C700D98217 /* DefaultWrapper.swift */; };
+		F4E926722D043AD400D98217 /* ValidationMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E926702D043AD400D98217 /* ValidationMethods.swift */; };
+		F4E926742D043CD300D98217 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E926732D043CD300D98217 /* LoginModel.swift */; };
+		F4E926762D04455800D98217 /* CommonDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E926752D04455800D98217 /* CommonDelegates.swift */; };
+		F4E926792D046D7B00D98217 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E926782D046D7B00D98217 /* NetworkError.swift */; };
+		F4E9267B2D046DAB00D98217 /* ErrorStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E9267A2D046DAB00D98217 /* ErrorStrings.swift */; };
+		F4E9267D2D046DDA00D98217 /* CommonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E9267C2D046DDA00D98217 /* CommonModels.swift */; };
 		F4EC46F02D00653B00EFC57F /* TournamentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC46EE2D00653B00EFC57F /* TournamentCell.swift */; };
 		F4EC46F12D00653B00EFC57F /* TournamentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4EC46EF2D00653B00EFC57F /* TournamentCell.xib */; };
 		F4EC46F32D007DC300EFC57F /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC46F22D007DC300EFC57F /* TableViewExt.swift */; };
@@ -103,6 +114,17 @@
 		F4AE35622CFDA7A700766A02 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		F4AE35662CFDA83600766A02 /* NibExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibExt.swift; sourceTree = "<group>"; };
 		F4AE35682CFDAA5D00766A02 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F4E926622D04341500D98217 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		F4E926642D0435C700D98217 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F4E926652D0435C700D98217 /* NetworkUrls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUrls.swift; sourceTree = "<group>"; };
+		F4E926672D0435C700D98217 /* DefaultKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		F4E926682D0435C700D98217 /* DefaultWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultWrapper.swift; sourceTree = "<group>"; };
+		F4E926702D043AD400D98217 /* ValidationMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationMethods.swift; sourceTree = "<group>"; };
+		F4E926732D043CD300D98217 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		F4E926752D04455800D98217 /* CommonDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDelegates.swift; sourceTree = "<group>"; };
+		F4E926782D046D7B00D98217 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F4E9267A2D046DAB00D98217 /* ErrorStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorStrings.swift; sourceTree = "<group>"; };
+		F4E9267C2D046DDA00D98217 /* CommonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModels.swift; sourceTree = "<group>"; };
 		F4EC46EE2D00653B00EFC57F /* TournamentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentCell.swift; sourceTree = "<group>"; };
 		F4EC46EF2D00653B00EFC57F /* TournamentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TournamentCell.xib; sourceTree = "<group>"; };
 		F4EC46F22D007DC300EFC57F /* TableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExt.swift; sourceTree = "<group>"; };
@@ -268,8 +290,10 @@
 		F4AE352D2CFD9A3200766A02 /* bidNPlay */ = {
 			isa = PBXGroup;
 			children = (
+				F4E9266F2D04374600D98217 /* Configs */,
 				F4AE35542CFDA62800766A02 /* Modules */,
 				F4AE35432CFDA32800766A02 /* Utils */,
+				F4E9266A2D0435C700D98217 /* Services */,
 				F4AE35422CFDA30B00766A02 /* Resources */,
 				F4AE352E2CFD9A3200766A02 /* AppDelegate.swift */,
 				F4AE35302CFD9A3200766A02 /* SceneDelegate.swift */,
@@ -292,6 +316,8 @@
 		F4AE35432CFDA32800766A02 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F4E926772D046D7200D98217 /* Error */,
+				F4E926712D043AD400D98217 /* Validation */,
 				F47F64DA2CFF0E62002F8930 /* ADCountryPicker */,
 				F4AE35652CFDA81E00766A02 /* Extensions */,
 				F4AE355E2CFDA72300766A02 /* Constants */,
@@ -343,6 +369,8 @@
 			children = (
 				F4AE35612CFDA7A700766A02 /* LoginVC.swift */,
 				F4AE35622CFDA7A700766A02 /* LoginVC.xib */,
+				F4E926622D04341500D98217 /* LoginVM.swift */,
+				F4E926732D043CD300D98217 /* LoginModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -351,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				F4AE35572CFDA67400766A02 /* BaseVC.swift */,
+				F4E926752D04455800D98217 /* CommonDelegates.swift */,
+				F4E9267C2D046DDA00D98217 /* CommonModels.swift */,
 			);
 			path = BaseVC;
 			sourceTree = "<group>";
@@ -382,6 +412,57 @@
 				F4EC46F22D007DC300EFC57F /* TableViewExt.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F4E926662D0435C700D98217 /* API Service */ = {
+			isa = PBXGroup;
+			children = (
+				F4E926642D0435C700D98217 /* NetworkManager.swift */,
+				F4E926652D0435C700D98217 /* NetworkUrls.swift */,
+			);
+			path = "API Service";
+			sourceTree = "<group>";
+		};
+		F4E926692D0435C700D98217 /* UserDefault Service */ = {
+			isa = PBXGroup;
+			children = (
+				F4E926672D0435C700D98217 /* DefaultKeys.swift */,
+				F4E926682D0435C700D98217 /* DefaultWrapper.swift */,
+			);
+			path = "UserDefault Service";
+			sourceTree = "<group>";
+		};
+		F4E9266A2D0435C700D98217 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F4E926662D0435C700D98217 /* API Service */,
+				F4E926692D0435C700D98217 /* UserDefault Service */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F4E9266F2D04374600D98217 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		F4E926712D043AD400D98217 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				F4E926702D043AD400D98217 /* ValidationMethods.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		F4E926772D046D7200D98217 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				F4E926782D046D7B00D98217 /* NetworkError.swift */,
+				F4E9267A2D046DAB00D98217 /* ErrorStrings.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		F4EC46ED2D00651400EFC57F /* Cells */ = {
@@ -524,6 +605,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E926722D043AD400D98217 /* ValidationMethods.swift in Sources */,
+				F4E9266B2D0435C700D98217 /* NetworkManager.swift in Sources */,
+				F4E9266D2D0435C700D98217 /* DefaultKeys.swift in Sources */,
+				F4E926762D04455800D98217 /* CommonDelegates.swift in Sources */,
 				F47F64CE2CFEF079002F8930 /* ButtonExt.swift in Sources */,
 				F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */,
 				F47F64E32CFF2B04002F8930 /* OTPVC.swift in Sources */,
@@ -531,20 +616,27 @@
 				F4EC46F02D00653B00EFC57F /* TournamentCell.swift in Sources */,
 				F4AE355F2CFDA72300766A02 /* CommonConstants.swift in Sources */,
 				F4EC46F32D007DC300EFC57F /* TableViewExt.swift in Sources */,
+				F4E9267B2D046DAB00D98217 /* ErrorStrings.swift in Sources */,
 				F4AE355B2CFDA6E800766A02 /* ActivityHUD.swift in Sources */,
 				F4AE35532CFDA47100766A02 /* CustomColor.swift in Sources */,
 				F4AE35632CFDA7A700766A02 /* LoginVC.swift in Sources */,
 				F43A8B9A2D003CB40098F83B /* DashboardTab.swift in Sources */,
+				F4E9266C2D0435C700D98217 /* NetworkUrls.swift in Sources */,
 				F4AE35312CFD9A3200766A02 /* SceneDelegate.swift in Sources */,
+				F4E926792D046D7B00D98217 /* NetworkError.swift in Sources */,
 				F47F64E52CFF3209002F8930 /* LabelExt.swift in Sources */,
 				F4AE35602CFDA72300766A02 /* ViewConstants.swift in Sources */,
+				F4E926632D04341500D98217 /* LoginVM.swift in Sources */,
+				F4E9267D2D046DDA00D98217 /* CommonModels.swift in Sources */,
 				F47F64DC2CFF0E62002F8930 /* ADCountryPicker.swift in Sources */,
 				F43A8BA42D00550A0098F83B /* RankingVC.swift in Sources */,
+				F4E926742D043CD300D98217 /* LoginModel.swift in Sources */,
 				F47F64DB2CFF0E62002F8930 /* ADCountry.swift in Sources */,
 				F43A8B9F2D0054D00098F83B /* TournamentsVC.swift in Sources */,
 				F43066542D01C62E003D0EC6 /* DataCell.swift in Sources */,
 				F4AE35582CFDA67400766A02 /* BaseVC.swift in Sources */,
 				F4AE35672CFDA83600766A02 /* NibExt.swift in Sources */,
+				F4E9266E2D0435C700D98217 /* DefaultWrapper.swift in Sources */,
 				F430664F2D01C42B003D0EC6 /* TournamentDetailVC.swift in Sources */,
 				F47F64D02CFEF2C4002F8930 /* TextFieldExt.swift in Sources */,
 				F47F64D52CFEF976002F8930 /* RegisterVC.swift in Sources */,
