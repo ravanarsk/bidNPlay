@@ -2,7 +2,7 @@
 //  ActivityHUD.swift
 //  Ikin Fleet
 //
-//  Created by SQT MAC PRO on 14/06/23.
+//  Created by Ashin Asok on 14/06/23.
 //
 
 import UIKit

@@ -1,8 +1,7 @@
 //
 //  DefaultWrapper.swift
-//  SmartLock-SQT
 //
-//  Created by SQT MAC PRO on 06/09/22.
+//  Created by Ashin Asok on 06/09/22.
 //
 
 import UIKit

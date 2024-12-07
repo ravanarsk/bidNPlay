@@ -2,7 +2,7 @@
 //  DataCell.swift
 //  bidNPlay
 //
-//  Created by SectorQube Tech Mini on 05/12/24.
+//  Created by Ashin Asok on 05/12/24.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  bidNPlay
 //
-//  Created by SectorQube Tech Mini on 02/12/24.
+//  Created by Ashin Asok on 02/12/24.
 //
 
 import UIKit
@@ -17,6 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
+        debugPrint(DefaultWrapper().getStringFrom(Key: Keys.tokenID))
+        debugPrint(DefaultWrapper().getIntFrom(Key: Keys.userID))
         if DefaultWrapper().getStringFrom(Key: Keys.tokenID) == ""{
             let rootViewController = LoginVC.loadFromNib()
             let navigationController = UINavigationController(

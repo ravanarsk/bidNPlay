@@ -2,7 +2,7 @@
 //  CustomColor.swift
 //  Ikin Business
 //
-//  Created by SQT MAC PRO on 28/04/23.
+//  Created by Ashin Asok on 28/04/23.
 //
 
 import UIKit

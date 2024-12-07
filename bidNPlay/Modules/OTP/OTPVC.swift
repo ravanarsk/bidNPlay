@@ -2,7 +2,7 @@
 //  OTPVC.swift
 //  bidNPlay
 //
-//  Created by SectorQube Tech Mini on 03/12/24.
+//  Created by Ashin Asok on 03/12/24.
 //
 
 import UIKit

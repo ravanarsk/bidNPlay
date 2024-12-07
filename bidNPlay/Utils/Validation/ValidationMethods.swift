@@ -2,7 +2,7 @@
 //  ValidationMethods.swift
 //  OpenLock
 //
-//  Created by SQT MAC PRO on 18/07/22.
+//  Created by Ashin Asok on 18/07/22.
 //
 
 import UIKit

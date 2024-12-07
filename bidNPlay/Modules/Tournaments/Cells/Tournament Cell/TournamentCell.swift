@@ -2,7 +2,7 @@
 //  TournamentCell.swift
 //  bidNPlay
 //
-//  Created by SectorQube Tech Mini on 04/12/24.
+//  Created by Ashin Asok on 04/12/24.
 //
 
 import UIKit

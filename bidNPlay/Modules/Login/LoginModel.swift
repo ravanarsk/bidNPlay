@@ -2,7 +2,7 @@
 //  LoginModel.swift
 //  bidNPlay
 //
-//  Created by SectorQube Tech Mini on 07/12/24.
+//  Created by Ashin Asok on 07/12/24.
 //
 
 import Foundation
