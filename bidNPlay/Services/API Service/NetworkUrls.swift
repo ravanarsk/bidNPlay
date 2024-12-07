@@ -12,6 +12,7 @@ struct APIURLs{
     static let baseUrl = "https://dev.sectorqube.com/bidnplay/public"
     static let api = "/api"
     static let login = "/user_login"
-    static let otp = "/truck_owner_verify_otp"
+    static let otp = "/verify_otp"
+    static let tournamentList = "/tournament_list"
     
 }
