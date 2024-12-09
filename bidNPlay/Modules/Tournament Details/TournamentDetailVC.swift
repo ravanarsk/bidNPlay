@@ -10,7 +10,8 @@ import UIKit
 class TournamentDetailVC: BaseVC {
 
     @IBOutlet weak var listTableView: UITableView!
-    internal var viewTitle : String = ""
+    internal var tournamentID : Int?
+    fileprivate var detailVM = TournamentDetailVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +34,6 @@ extension TournamentDetailVC{
         self.listTableView.registerCells(names: ["DataCell"])
         self.listTableView.separatorStyle = .none
         self.listTableView.tableFooterView = UIView()
-        self.listTableView.dataSource = self
-        self.listTableView.delegate = self
         self.listTableView.showsVerticalScrollIndicator = false
         self.listTableView.showsHorizontalScrollIndicator = false
         
@@ -43,7 +42,42 @@ extension TournamentDetailVC{
     fileprivate func setUpView(){
         
         self.tabBarController?.tabBar.isHidden = true
-        self.navigationItem.title = self.viewTitle
+        self.navigationItem.title = "Details"
+        self.listTableView.dataSource = nil
+        self.listTableView.delegate = nil
+        self.callDetailAPI()
+        
+    }
+    
+}
+
+//MARK: API Call
+extension TournamentDetailVC{
+    
+    fileprivate func callDetailAPI(){
+        
+        self.detailVM.delegate = self
+        if let id = self.tournamentID{
+            self.detailVM.callTournamentDetailAPI(tournamentID: id)
+        }
+        
+    }
+    
+}
+
+//MARK: View Model Delegates
+extension TournamentDetailVC: TournamentDetailDelegate{
+    
+    func showTournamentDetails() {
+        
+        DispatchQueue.main.async {
+            ActivityHUD().dismissProgressHUD()
+            if self.listTableView.delegate == nil || self.listTableView.dataSource == nil{
+                self.listTableView.dataSource = self
+                self.listTableView.delegate = self
+            }
+            self.listTableView.reloadData()
+        }
         
     }
     
@@ -59,6 +93,8 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataCell
+        let model = self.detailVM.getSelectedModelWith()
+        cell.setUpCell(model: model, index: indexPath.row)
         return cell
         
     }
