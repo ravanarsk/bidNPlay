@@ -69,6 +69,8 @@
 		F4EC46F32D007DC300EFC57F /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC46F22D007DC300EFC57F /* TableViewExt.swift */; };
 		F4FAD9C22D06DF7900B48452 /* TournamentDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAD9C12D06DF7900B48452 /* TournamentDetailVM.swift */; };
 		F4FAD9C42D06E5B400B48452 /* TournamentDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAD9C32D06E5B400B48452 /* TournamentDetailModel.swift */; };
+		F4FAD9C82D0713EC00B48452 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FAD9C72D0713EC00B48452 /* HeaderCell.xib */; };
+		F4FAD9C92D0713EC00B48452 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAD9C62D0713EC00B48452 /* HeaderCell.swift */; };
 		FD76DDB4238C61EDFAC4D410 /* Pods_bidNPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +142,8 @@
 		F4EC46F22D007DC300EFC57F /* TableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExt.swift; sourceTree = "<group>"; };
 		F4FAD9C12D06DF7900B48452 /* TournamentDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetailVM.swift; sourceTree = "<group>"; };
 		F4FAD9C32D06E5B400B48452 /* TournamentDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetailModel.swift; sourceTree = "<group>"; };
+		F4FAD9C62D0713EC00B48452 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		F4FAD9C72D0713EC00B48452 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +190,7 @@
 		F43066502D01C60E003D0EC6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F43066572D01C719003D0EC6 /* Player Cell */,
+				F4FAD9C52D0713CD00B48452 /* Header Cell */,
 				F43066562D01C706003D0EC6 /* Data Cell */,
 			);
 			path = Cells;
@@ -208,13 +212,6 @@
 				F43066522D01C62E003D0EC6 /* DataCell.xib */,
 			);
 			path = "Data Cell";
-			sourceTree = "<group>";
-		};
-		F43066572D01C719003D0EC6 /* Player Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Player Cell";
 			sourceTree = "<group>";
 		};
 		F43A8B972D003C030098F83B /* Dashboard */ = {
@@ -507,6 +504,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		F4FAD9C52D0713CD00B48452 /* Header Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F4FAD9C62D0713EC00B48452 /* HeaderCell.swift */,
+				F4FAD9C72D0713EC00B48452 /* HeaderCell.xib */,
+			);
+			path = "Header Cell";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -577,6 +583,7 @@
 				F4E926892D047D6300D98217 /* EmptyListCell.xib in Resources */,
 				F4AE354C2CFDA34900766A02 /* Poppins-Medium.ttf in Resources */,
 				F4AE354E2CFDA34900766A02 /* Poppins-SemiBold.ttf in Resources */,
+				F4FAD9C82D0713EC00B48452 /* HeaderCell.xib in Resources */,
 				F43A8BAA2D0055CD0098F83B /* SettingsVC.xib in Resources */,
 				F4AE35692CFDAA5D00766A02 /* Main.storyboard in Resources */,
 				F4AE35642CFDA7A700766A02 /* LoginVC.xib in Resources */,
@@ -674,6 +681,7 @@
 				F43066542D01C62E003D0EC6 /* DataCell.swift in Sources */,
 				F4AE35582CFDA67400766A02 /* BaseVC.swift in Sources */,
 				F4AE35672CFDA83600766A02 /* NibExt.swift in Sources */,
+				F4FAD9C92D0713EC00B48452 /* HeaderCell.swift in Sources */,
 				F4E9266E2D0435C700D98217 /* DefaultWrapper.swift in Sources */,
 				F430664F2D01C42B003D0EC6 /* TournamentDetailVC.swift in Sources */,
 				F47F64D02CFEF2C4002F8930 /* TextFieldExt.swift in Sources */,

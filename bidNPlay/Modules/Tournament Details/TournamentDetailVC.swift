@@ -31,7 +31,10 @@ extension TournamentDetailVC{
     fileprivate func configureView(){
         
         self.setBackButton()
-        self.listTableView.registerCells(names: ["DataCell"])
+        self.listTableView.registerCells(
+            names: ["DataCell","HeaderCell"]
+        )
+        self.listTableView.backgroundColor = CustomColor.bg
         self.listTableView.separatorStyle = .none
         self.listTableView.tableFooterView = UIView()
         self.listTableView.showsVerticalScrollIndicator = false
@@ -92,6 +95,12 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        if indexPath.row == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! HeaderCell
+            let model = self.detailVM.getSelectedModelWith()
+            cell.setUpCell(model: model)
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataCell
         let model = self.detailVM.getSelectedModelWith()
         cell.setUpCell(model: model, index: indexPath.row)
@@ -101,6 +110,9 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
+        if indexPath.row == 0{
+            return 170
+        }
         return UITableView.automaticDimension
         
     }

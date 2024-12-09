@@ -19,6 +19,7 @@ struct TournamentDetailModel: Decodable{
     var message : String?
     var admin_country_code : String?
     var admin_phone : String?
+    var already_joined : Int?
     var tournament_details : TournamentDetails
     
 }
