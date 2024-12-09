@@ -27,4 +27,17 @@ extension UIButton{
         
     }
     
+    func setWhatsappTheme(fontSize: CGFloat = 14){
+        
+        self.setTitle("  Contact admin via WhatsApp", for: .normal)
+        self.setTitleColor(CustomColor.text, for: .normal)
+        self.backgroundColor = CustomColor.whatsapp
+        let image = UIImage(systemName: "bubble.left.and.text.bubble.right.fill")
+        self.setImage(image, for: .normal)
+        self.tintColor = CustomColor.text
+        self.titleLabel?.font = UIFont().regularFontWith(size: fontSize)
+        self.layer.cornerRadius = 10
+        
+    }
+    
 }

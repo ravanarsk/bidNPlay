@@ -71,6 +71,8 @@
 		F4FAD9C42D06E5B400B48452 /* TournamentDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAD9C32D06E5B400B48452 /* TournamentDetailModel.swift */; };
 		F4FAD9C82D0713EC00B48452 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FAD9C72D0713EC00B48452 /* HeaderCell.xib */; };
 		F4FAD9C92D0713EC00B48452 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAD9C62D0713EC00B48452 /* HeaderCell.swift */; };
+		F4FAD9CD2D07218700B48452 /* BasicInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FAD9CC2D07218700B48452 /* BasicInfoCell.xib */; };
+		F4FAD9CE2D07218700B48452 /* BasicInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAD9CB2D07218700B48452 /* BasicInfoCell.swift */; };
 		FD76DDB4238C61EDFAC4D410 /* Pods_bidNPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +146,8 @@
 		F4FAD9C32D06E5B400B48452 /* TournamentDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetailModel.swift; sourceTree = "<group>"; };
 		F4FAD9C62D0713EC00B48452 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		F4FAD9C72D0713EC00B48452 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		F4FAD9CB2D07218700B48452 /* BasicInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoCell.swift; sourceTree = "<group>"; };
+		F4FAD9CC2D07218700B48452 /* BasicInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicInfoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 		F43066502D01C60E003D0EC6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F4FAD9CA2D07215C00B48452 /* Basic Info Cell */,
 				F4FAD9C52D0713CD00B48452 /* Header Cell */,
 				F43066562D01C706003D0EC6 /* Data Cell */,
 			);
@@ -513,6 +518,15 @@
 			path = "Header Cell";
 			sourceTree = "<group>";
 		};
+		F4FAD9CA2D07215C00B48452 /* Basic Info Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F4FAD9CB2D07218700B48452 /* BasicInfoCell.swift */,
+				F4FAD9CC2D07218700B48452 /* BasicInfoCell.xib */,
+			);
+			path = "Basic Info Cell";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -594,6 +608,7 @@
 				F47F64DD2CFF0E62002F8930 /* assets.bundle in Resources */,
 				F47F64E22CFF2B04002F8930 /* OTPVC.xib in Resources */,
 				F4AE354A2CFDA34900766A02 /* Poppins-Bold.ttf in Resources */,
+				F4FAD9CD2D07218700B48452 /* BasicInfoCell.xib in Resources */,
 				F47F64D42CFEF976002F8930 /* RegisterVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,6 +683,7 @@
 				F4E9266C2D0435C700D98217 /* NetworkUrls.swift in Sources */,
 				F4AE35312CFD9A3200766A02 /* SceneDelegate.swift in Sources */,
 				F4E926792D046D7B00D98217 /* NetworkError.swift in Sources */,
+				F4FAD9CE2D07218700B48452 /* BasicInfoCell.swift in Sources */,
 				F47F64E52CFF3209002F8930 /* LabelExt.swift in Sources */,
 				F4AE35602CFDA72300766A02 /* ViewConstants.swift in Sources */,
 				F4E9267F2D04711900D98217 /* TournamentsVM.swift in Sources */,

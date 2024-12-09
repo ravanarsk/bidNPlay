@@ -36,7 +36,7 @@ extension HeaderCell{
         self.holderView.layer.cornerRadius = 10
         self.holderView.backgroundColor = CustomColor.bg2
         self.tournamentName.textColor = CustomColor.text
-        self.tournamentName.font = UIFont().mediumFontWith(size: 14)
+        self.tournamentName.font = UIFont().mediumFontWith(size: 20)
         self.tournamentCode.textColor = CustomColor.text2
         self.tournamentCode.font = UIFont().regularFontWith(size: 12)
         self.fixtureButton.setDefaultTheme(name: "Fixture")

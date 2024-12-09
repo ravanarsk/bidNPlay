@@ -31,9 +31,9 @@ extension TournamentDetailVC{
     fileprivate func configureView(){
         
         self.setBackButton()
-        self.listTableView.registerCells(
-            names: ["DataCell","HeaderCell"]
-        )
+        self.listTableView.registerCells(names:[
+            "DataCell","HeaderCell", "BasicInfoCell"
+        ])
         self.listTableView.backgroundColor = CustomColor.bg
         self.listTableView.separatorStyle = .none
         self.listTableView.tableFooterView = UIView()
@@ -90,30 +90,34 @@ extension TournamentDetailVC: TournamentDetailDelegate{
 extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let model = self.detailVM.getSelectedModelWith()
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! HeaderCell
-            let model = self.detailVM.getSelectedModelWith()
+            cell.setUpCell(model: model)
+            return cell
+        }else if indexPath.row == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataCell
+            cell.setUpCell(model: model, index: indexPath.row)
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoCell", for: indexPath) as! BasicInfoCell
             cell.setUpCell(model: model)
             return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataCell
-        let model = self.detailVM.getSelectedModelWith()
-        cell.setUpCell(model: model, index: indexPath.row)
-        return cell
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if indexPath.row == 0{
-            return 170
+        if indexPath.row == 0 || indexPath.row == 1{
+            return UITableView.automaticDimension
         }
-        return UITableView.automaticDimension
+        return 340
         
     }
     
