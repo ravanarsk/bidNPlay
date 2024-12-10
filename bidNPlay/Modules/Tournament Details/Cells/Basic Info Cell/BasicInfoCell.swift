@@ -19,6 +19,8 @@ class BasicInfoCell: UITableViewCell {
     @IBOutlet weak var adminValue: UILabel!
     @IBOutlet weak var cellHeaderTitle: UILabel!
     
+    internal var phoneNumber : String = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configureCell()
@@ -64,6 +66,9 @@ extension BasicInfoCell{
         self.adminValue.font = UIFont().regularFontWith(size: 12)
         
         self.whatsappButton.setWhatsappTheme()
+        self.whatsappButton.addTarget(
+            self, action: #selector(callWhatsapp), for: .touchUpInside
+        )
         
     }
     
@@ -76,7 +81,34 @@ extension BasicInfoCell{
         
         self.tournamentTypeValue.text = (model.tournament_details.tournament_type ?? "").capitalized
         self.fixtureTypeValue.text = (model.tournament_details.fixture_type ?? "").capitalized
-        self.adminValue.text = (model.admin_country_code ?? "") + (model.admin_phone ?? "")
+        self.adminValue.text = "+" + (model.admin_country_code ?? "") + " " + (model.admin_phone ?? "")
+        self.phoneNumber = "+" + (model.admin_country_code ?? "") + (model.admin_phone ?? "")
+        
+    }
+    
+}
+
+
+//MARK: Button Functions
+extension BasicInfoCell{
+    
+    @objc fileprivate func callWhatsapp(){
+        
+        let urlWhats = "whatsapp://send?phone=(\(self.phoneNumber))"
+            if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
+                if let whatsappURL = URL(string: urlString) {
+                    if UIApplication.shared.canOpenURL(whatsappURL){
+                        if #available(iOS 10.0, *) {
+                            UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
+                        } else {
+                            UIApplication.shared.openURL(whatsappURL)
+                        }
+                    }
+                    else {
+                        print("Install Whatsapp")
+                    }
+                }
+            }
         
     }
 }
