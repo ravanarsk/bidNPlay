@@ -54,7 +54,12 @@ extension TournamentDetailVM{
             return self.model!
         }
         return TournamentDetailModel(tournament_details:
-                TournamentDetails(tournament_id: 0, players: [])
+                TournamentDetails(
+                    tournament_id: 0,
+                    players: [],
+                    teams: [],
+                    pots: []
+                )
         )
         
     }

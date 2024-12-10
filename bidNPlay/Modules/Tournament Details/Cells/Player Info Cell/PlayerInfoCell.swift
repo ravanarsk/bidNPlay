@@ -74,7 +74,7 @@ extension PlayerInfoCell{
         }
         let playerCount = model.tournament_details.players.count
         self.totalLabel.text = "Total: \(playerCount)/\(maxPlayers)"
-        let progress = Float((playerCount-1))/Float(maxPlayers)
+        let progress = Float((playerCount))/Float(maxPlayers)
         debugPrint(progress)
         self.progressView.setProgress(progress, animated: true)
         
