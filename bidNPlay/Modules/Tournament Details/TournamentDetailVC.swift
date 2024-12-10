@@ -105,19 +105,19 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
             cell.setUpCell(model: model)
             return cell
         }else if indexPath.row == 1{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataCell
-            cell.setUpCell(model: model, index: indexPath.row)
-            return cell
-        }else if indexPath.row == 2{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoCell", for: indexPath) as! BasicInfoCell
-            cell.setUpCell(model: model)
-            return cell
-        }else if indexPath.row == 3{
             let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerInfoCell", for: indexPath) as! PlayerInfoCell
             cell.setupCell(model: model)
             return cell
-        }else{
+        }else if indexPath.row == 2{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TeamInfoCell", for: indexPath) as! TeamInfoCell
+            return cell
+        }else if indexPath.row == 3{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataCell
+            cell.setUpCell(model: model)
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoCell", for: indexPath) as! BasicInfoCell
+            cell.setUpCell(model: model)
             return cell
         }
         
@@ -125,14 +125,14 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if indexPath.row == 0 || indexPath.row == 1{
+        if indexPath.row == 0 || indexPath.row == 3{
             return UITableView.automaticDimension
-        }else if indexPath.row == 2{
-            return 340
-        }else if indexPath.row == 3{
+        }else if indexPath.row == 1{
             return 190
-        }else{
+        }else if indexPath.row == 2{
             return 200
+        }else{
+            return 340
         }
         
     }
