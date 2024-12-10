@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F41263492D07FFB100D8DDDB /* PlayerInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41263472D07FFB100D8DDDB /* PlayerInfoCell.swift */; };
 		F412634A2D07FFB100D8DDDB /* PlayerInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41263482D07FFB100D8DDDB /* PlayerInfoCell.xib */; };
+		F412634E2D0812B200D8DDDB /* TeamInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F412634C2D0812B200D8DDDB /* TeamInfoCell.swift */; };
+		F412634F2D0812B200D8DDDB /* TeamInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F412634D2D0812B200D8DDDB /* TeamInfoCell.xib */; };
 		F430664E2D01C42B003D0EC6 /* TournamentDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F430664D2D01C42B003D0EC6 /* TournamentDetailVC.xib */; };
 		F430664F2D01C42B003D0EC6 /* TournamentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F430664C2D01C42B003D0EC6 /* TournamentDetailVC.swift */; };
 		F43066532D01C62E003D0EC6 /* DataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43066522D01C62E003D0EC6 /* DataCell.xib */; };
@@ -84,6 +86,8 @@
 		AE7D68D4C9662C5086586924 /* Pods-bidNPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.release.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.release.xcconfig"; sourceTree = "<group>"; };
 		F41263472D07FFB100D8DDDB /* PlayerInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoCell.swift; sourceTree = "<group>"; };
 		F41263482D07FFB100D8DDDB /* PlayerInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerInfoCell.xib; sourceTree = "<group>"; };
+		F412634C2D0812B200D8DDDB /* TeamInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoCell.swift; sourceTree = "<group>"; };
+		F412634D2D0812B200D8DDDB /* TeamInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamInfoCell.xib; sourceTree = "<group>"; };
 		F430664C2D01C42B003D0EC6 /* TournamentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetailVC.swift; sourceTree = "<group>"; };
 		F430664D2D01C42B003D0EC6 /* TournamentDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TournamentDetailVC.xib; sourceTree = "<group>"; };
 		F43066512D01C62E003D0EC6 /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
@@ -192,6 +196,15 @@
 			path = "Player Info Cell";
 			sourceTree = "<group>";
 		};
+		F412634B2D08107C00D8DDDB /* Team Info Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F412634C2D0812B200D8DDDB /* TeamInfoCell.swift */,
+				F412634D2D0812B200D8DDDB /* TeamInfoCell.xib */,
+			);
+			path = "Team Info Cell";
+			sourceTree = "<group>";
+		};
 		F430664B2D01C3FD003D0EC6 /* Tournament Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +220,7 @@
 		F43066502D01C60E003D0EC6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F412634B2D08107C00D8DDDB /* Team Info Cell */,
 				F41263462D07FF2700D8DDDB /* Player Info Cell */,
 				F4FAD9CA2D07215C00B48452 /* Basic Info Cell */,
 				F4FAD9C52D0713CD00B48452 /* Header Cell */,
@@ -612,6 +626,7 @@
 				F4E926892D047D6300D98217 /* EmptyListCell.xib in Resources */,
 				F4AE354C2CFDA34900766A02 /* Poppins-Medium.ttf in Resources */,
 				F4AE354E2CFDA34900766A02 /* Poppins-SemiBold.ttf in Resources */,
+				F412634F2D0812B200D8DDDB /* TeamInfoCell.xib in Resources */,
 				F4FAD9C82D0713EC00B48452 /* HeaderCell.xib in Resources */,
 				F43A8BAA2D0055CD0098F83B /* SettingsVC.xib in Resources */,
 				F4AE35692CFDAA5D00766A02 /* Main.storyboard in Resources */,
@@ -706,6 +721,7 @@
 				F4E926632D04341500D98217 /* LoginVM.swift in Sources */,
 				F4E9267D2D046DDA00D98217 /* CommonModels.swift in Sources */,
 				F47F64DC2CFF0E62002F8930 /* ADCountryPicker.swift in Sources */,
+				F412634E2D0812B200D8DDDB /* TeamInfoCell.swift in Sources */,
 				F43A8BA42D00550A0098F83B /* RankingVC.swift in Sources */,
 				F4E926742D043CD300D98217 /* LoginModel.swift in Sources */,
 				F47F64DB2CFF0E62002F8930 /* ADCountry.swift in Sources */,

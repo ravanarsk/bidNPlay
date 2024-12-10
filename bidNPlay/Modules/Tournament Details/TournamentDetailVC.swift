@@ -123,7 +123,7 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
         }else if indexPath.row == 2{
             return 340
         }
-        return 150
+        return 190
         
     }
     

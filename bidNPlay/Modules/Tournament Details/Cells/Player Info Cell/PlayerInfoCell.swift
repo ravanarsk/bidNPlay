@@ -9,6 +9,8 @@ import UIKit
 
 class PlayerInfoCell: UITableViewCell {
 
+    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var playerImage: UIImageView!
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var totalLabel: UILabel!
@@ -32,14 +34,28 @@ extension PlayerInfoCell{
     
     internal func configureCell(){
         
-        self.arrowImage.image = UIImage(systemName: "arrow.right.square")
         self.holderView.layer.cornerRadius = 10
+        self.holderView.backgroundColor = CustomColor.cellBg
+        
+        self.subTitleLabel.textColor = .black
+        self.subTitleLabel.font = UIFont().mediumFontWith(size: 12)
+        self.subTitleLabel.text = "VIEW"
+        
         self.visualEffectView.layer.cornerRadius = 10
         self.visualEffectView.layer.masksToBounds = true
         self.visualEffectView.clipsToBounds = true
+        
         self.arrowImage.tintColor = CustomColor.text
+        self.arrowImage.image = UIImage(
+            systemName: "arrow.right.square"
+        )
+        
+        self.playerImage.tintColor = .black
+        self.playerImage.image = UIImage(systemName: "person.circle")
+        
         self.progressView.tintColor = .black
         self.progressView.trackTintColor = CustomColor.text
+        
         self.totalLabel.textColor = .black
         self.totalLabel.font = UIFont().mediumFontWith(size: 12)
         
@@ -58,7 +74,9 @@ extension PlayerInfoCell{
         }
         let playerCount = model.tournament_details.players.count
         self.totalLabel.text = "Total: \(playerCount)/\(maxPlayers)"
-        self.progressView.progress = Float(playerCount/maxPlayers)
+        let progress = Float((playerCount-1))/Float(maxPlayers)
+        debugPrint(progress)
+        self.progressView.setProgress(progress, animated: true)
         
     }
     
