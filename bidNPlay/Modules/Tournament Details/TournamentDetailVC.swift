@@ -32,7 +32,7 @@ extension TournamentDetailVC{
         
         self.setBackButton()
         self.listTableView.registerCells(names:[
-            "DataCell","HeaderCell", "BasicInfoCell"
+            "DataCell","HeaderCell", "BasicInfoCell","PlayerInfoCell"
         ])
         self.listTableView.backgroundColor = CustomColor.bg
         self.listTableView.separatorStyle = .none
@@ -90,7 +90,7 @@ extension TournamentDetailVC: TournamentDetailDelegate{
 extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,9 +104,13 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataCell
             cell.setUpCell(model: model, index: indexPath.row)
             return cell
-        }else{
+        }else if indexPath.row == 2{
             let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoCell", for: indexPath) as! BasicInfoCell
             cell.setUpCell(model: model)
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerInfoCell", for: indexPath) as! PlayerInfoCell
+            cell.setupCell(model: model)
             return cell
         }
         
@@ -116,8 +120,10 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
         
         if indexPath.row == 0 || indexPath.row == 1{
             return UITableView.automaticDimension
+        }else if indexPath.row == 2{
+            return 340
         }
-        return 340
+        return 150
         
     }
     

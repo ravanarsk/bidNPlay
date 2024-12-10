@@ -53,7 +53,9 @@ extension TournamentDetailVM{
         if self.model != nil{
             return self.model!
         }
-        return TournamentDetailModel(tournament_details: TournamentDetails(tournament_id: 0))
+        return TournamentDetailModel(tournament_details:
+                TournamentDetails(tournament_id: 0, players: [])
+        )
         
     }
     

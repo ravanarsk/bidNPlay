@@ -34,5 +34,16 @@ struct TournamentDetails: Decodable{
     var fixture_type : String?
     var tournament_max_players : Int?
     var tournament_no_of_teams : Int?
+    var players : [PlayerDetails]
+    
+}
+
+struct PlayerDetails: Decodable{
+    
+    var tournament_player_id: Int
+    var user_id: Int
+    var player_name: String?
+    var player_country_code: String?
+    var player_phone: String?
     
 }

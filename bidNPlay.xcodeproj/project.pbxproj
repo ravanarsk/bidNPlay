@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F41263492D07FFB100D8DDDB /* PlayerInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41263472D07FFB100D8DDDB /* PlayerInfoCell.swift */; };
+		F412634A2D07FFB100D8DDDB /* PlayerInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41263482D07FFB100D8DDDB /* PlayerInfoCell.xib */; };
 		F430664E2D01C42B003D0EC6 /* TournamentDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F430664D2D01C42B003D0EC6 /* TournamentDetailVC.xib */; };
 		F430664F2D01C42B003D0EC6 /* TournamentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F430664C2D01C42B003D0EC6 /* TournamentDetailVC.swift */; };
 		F43066532D01C62E003D0EC6 /* DataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43066522D01C62E003D0EC6 /* DataCell.xib */; };
@@ -80,6 +82,8 @@
 		A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bidNPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC337FC5C0BA44A4A3A806A3 /* Pods-bidNPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.debug.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7D68D4C9662C5086586924 /* Pods-bidNPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.release.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.release.xcconfig"; sourceTree = "<group>"; };
+		F41263472D07FFB100D8DDDB /* PlayerInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoCell.swift; sourceTree = "<group>"; };
+		F41263482D07FFB100D8DDDB /* PlayerInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerInfoCell.xib; sourceTree = "<group>"; };
 		F430664C2D01C42B003D0EC6 /* TournamentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetailVC.swift; sourceTree = "<group>"; };
 		F430664D2D01C42B003D0EC6 /* TournamentDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TournamentDetailVC.xib; sourceTree = "<group>"; };
 		F43066512D01C62E003D0EC6 /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
@@ -179,6 +183,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F41263462D07FF2700D8DDDB /* Player Info Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F41263472D07FFB100D8DDDB /* PlayerInfoCell.swift */,
+				F41263482D07FFB100D8DDDB /* PlayerInfoCell.xib */,
+			);
+			path = "Player Info Cell";
+			sourceTree = "<group>";
+		};
 		F430664B2D01C3FD003D0EC6 /* Tournament Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +207,7 @@
 		F43066502D01C60E003D0EC6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F41263462D07FF2700D8DDDB /* Player Info Cell */,
 				F4FAD9CA2D07215C00B48452 /* Basic Info Cell */,
 				F4FAD9C52D0713CD00B48452 /* Header Cell */,
 				F43066562D01C706003D0EC6 /* Data Cell */,
@@ -591,6 +605,7 @@
 				F43A8BA52D00550A0098F83B /* RankingVC.xib in Resources */,
 				F4AE354B2CFDA34900766A02 /* Poppins-Light.ttf in Resources */,
 				F43066532D01C62E003D0EC6 /* DataCell.xib in Resources */,
+				F412634A2D07FFB100D8DDDB /* PlayerInfoCell.xib in Resources */,
 				F4AE354D2CFDA34900766A02 /* Poppins-Regular.ttf in Resources */,
 				F430664E2D01C42B003D0EC6 /* TournamentDetailVC.xib in Resources */,
 				F4AE353B2CFD9A3200766A02 /* Base in Resources */,
@@ -666,6 +681,7 @@
 				F4E9266B2D0435C700D98217 /* NetworkManager.swift in Sources */,
 				F4E9266D2D0435C700D98217 /* DefaultKeys.swift in Sources */,
 				F4E926762D04455800D98217 /* CommonDelegates.swift in Sources */,
+				F41263492D07FFB100D8DDDB /* PlayerInfoCell.swift in Sources */,
 				F47F64CE2CFEF079002F8930 /* ButtonExt.swift in Sources */,
 				F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */,
 				F4FAD9C22D06DF7900B48452 /* TournamentDetailVM.swift in Sources */,
