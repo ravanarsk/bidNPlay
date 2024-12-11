@@ -34,38 +34,6 @@ struct TournamentDetails: Decodable{
     var fixture_type : String?
     var tournament_max_players : Int?
     var tournament_no_of_teams : Int?
-    var players : [PlayerDetails]
-    var teams : [TeamDetails]
-    var pots : [PotDetails]
-    
-}
-
-struct PlayerDetails: Decodable{
-    
-    var tournament_player_id: Int
-    var user_id: Int
-    var player_name: String?
-    var player_country_code: String?
-    var player_phone: String?
-    
-}
-
-struct TeamDetails: Decodable{
-    
-    var team_id: Int
-    var team_name: String?
-    var team_code: String?
-    var tournament_id: Int?
-    var captain_user_id: Int?
-    
-}
-
-struct PotDetails: Decodable{
-    
-    var pot_id: Int
-    var pot_name: String?
-    var tournament_id: Int?
-    var base_price: Int?
-    var multi_player_status: Int?
+    var players_count : Int?
     
 }
