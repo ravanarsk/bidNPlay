@@ -15,5 +15,6 @@ struct APIURLs{
     static let otp = "/verify_otp"
     static let tournamentList = "/tournament_list"
     static let tournamentDetail = "/tournament_details"
+    static let join = "/join_tournament_by_code"
     
 }

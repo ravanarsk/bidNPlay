@@ -83,3 +83,35 @@ extension TournamentsVM{
     }
     
 }
+
+//MARK: Join Tournament
+extension TournamentsVM{
+    
+    internal func callJoinTournament(code: String){
+        
+        ActivityHUD().showProgressHUD()
+        let params = [
+            "user_id" : DefaultWrapper().getIntFrom(Key: Keys.userID),
+            "tournament_code" : code
+        ] as [String : Any]
+        let joinUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.join
+        debugPrint(params)
+        debugPrint(joinUrl)
+        NetworkManager.shared.post(urlString: joinUrl, params: params, responseType: BasicNetworkModel.self) { result in
+            
+            switch result{
+            case .success(let responseObj):
+                print(responseObj)
+                self.delegate?.joinTournamentResponse(
+                    msg: (responseObj.message ?? "Unknown reponse")
+                )
+            case .failure(let errorObj):
+                print(errorObj)
+                self.delegate?.showAlertWith(error: errorObj)
+            }
+            
+        }
+        
+    }
+    
+}

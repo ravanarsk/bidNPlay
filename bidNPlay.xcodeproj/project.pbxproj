@@ -15,6 +15,9 @@
 		F430664F2D01C42B003D0EC6 /* TournamentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F430664C2D01C42B003D0EC6 /* TournamentDetailVC.swift */; };
 		F43066532D01C62E003D0EC6 /* DataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43066522D01C62E003D0EC6 /* DataCell.xib */; };
 		F43066542D01C62E003D0EC6 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43066512D01C62E003D0EC6 /* DataCell.swift */; };
+		F439CF822D0959FA00DAF68A /* CustomTFAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F439CF812D0959FA00DAF68A /* CustomTFAlertVC.xib */; };
+		F439CF832D0959FA00DAF68A /* CustomTFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439CF802D0959FA00DAF68A /* CustomTFAlertVC.swift */; };
+		F439CF852D09685A00DAF68A /* CustomTFDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439CF842D09685A00DAF68A /* CustomTFDelegate.swift */; };
 		F43A8B9A2D003CB40098F83B /* DashboardTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A8B982D003CB40098F83B /* DashboardTab.swift */; };
 		F43A8B9B2D003CB40098F83B /* DashboardTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43A8B992D003CB40098F83B /* DashboardTab.xib */; };
 		F43A8B9F2D0054D00098F83B /* TournamentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A8B9D2D0054D00098F83B /* TournamentsVC.swift */; };
@@ -92,6 +95,9 @@
 		F430664D2D01C42B003D0EC6 /* TournamentDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TournamentDetailVC.xib; sourceTree = "<group>"; };
 		F43066512D01C62E003D0EC6 /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
 		F43066522D01C62E003D0EC6 /* DataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataCell.xib; sourceTree = "<group>"; };
+		F439CF802D0959FA00DAF68A /* CustomTFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTFAlertVC.swift; sourceTree = "<group>"; };
+		F439CF812D0959FA00DAF68A /* CustomTFAlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTFAlertVC.xib; sourceTree = "<group>"; };
+		F439CF842D09685A00DAF68A /* CustomTFDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTFDelegate.swift; sourceTree = "<group>"; };
 		F43A8B982D003CB40098F83B /* DashboardTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTab.swift; sourceTree = "<group>"; };
 		F43A8B992D003CB40098F83B /* DashboardTab.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardTab.xib; sourceTree = "<group>"; };
 		F43A8B9D2D0054D00098F83B /* TournamentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsVC.swift; sourceTree = "<group>"; };
@@ -247,6 +253,16 @@
 			path = "Data Cell";
 			sourceTree = "<group>";
 		};
+		F439CF7F2D09591300DAF68A /* Custom TextField Alert */ = {
+			isa = PBXGroup;
+			children = (
+				F439CF802D0959FA00DAF68A /* CustomTFAlertVC.swift */,
+				F439CF812D0959FA00DAF68A /* CustomTFAlertVC.xib */,
+				F439CF842D09685A00DAF68A /* CustomTFDelegate.swift */,
+			);
+			path = "Custom TextField Alert";
+			sourceTree = "<group>";
+		};
 		F43A8B972D003C030098F83B /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +414,7 @@
 		F4AE35542CFDA62800766A02 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F439CF7F2D09591300DAF68A /* Custom TextField Alert */,
 				F430664B2D01C3FD003D0EC6 /* Tournament Details */,
 				F43A8BA62D0055270098F83B /* Settings */,
 				F43A8BA12D0054DE0098F83B /* Ranking */,
@@ -625,6 +642,7 @@
 				F4AE353B2CFD9A3200766A02 /* Base in Resources */,
 				F4E926892D047D6300D98217 /* EmptyListCell.xib in Resources */,
 				F4AE354C2CFDA34900766A02 /* Poppins-Medium.ttf in Resources */,
+				F439CF822D0959FA00DAF68A /* CustomTFAlertVC.xib in Resources */,
 				F4AE354E2CFDA34900766A02 /* Poppins-SemiBold.ttf in Resources */,
 				F412634F2D0812B200D8DDDB /* TeamInfoCell.xib in Resources */,
 				F4FAD9C82D0713EC00B48452 /* HeaderCell.xib in Resources */,
@@ -704,8 +722,10 @@
 				F4AE35502CFDA37F00766A02 /* FontExtension.swift in Sources */,
 				F4EC46F02D00653B00EFC57F /* TournamentCell.swift in Sources */,
 				F4AE355F2CFDA72300766A02 /* CommonConstants.swift in Sources */,
+				F439CF832D0959FA00DAF68A /* CustomTFAlertVC.swift in Sources */,
 				F4EC46F32D007DC300EFC57F /* TableViewExt.swift in Sources */,
 				F4E9267B2D046DAB00D98217 /* ErrorStrings.swift in Sources */,
+				F439CF852D09685A00DAF68A /* CustomTFDelegate.swift in Sources */,
 				F4AE355B2CFDA6E800766A02 /* ActivityHUD.swift in Sources */,
 				F4FAD9C42D06E5B400B48452 /* TournamentDetailModel.swift in Sources */,
 				F4AE35532CFDA47100766A02 /* CustomColor.swift in Sources */,

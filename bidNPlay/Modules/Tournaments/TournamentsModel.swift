@@ -10,6 +10,7 @@ import Foundation
 protocol TournamentsDelegate : ErrorDelegate{
     
     func showTournaments()
+    func joinTournamentResponse(msg: String)
     
 }
 

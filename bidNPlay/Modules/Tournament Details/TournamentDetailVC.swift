@@ -137,4 +137,12 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 1{
+            
+        }
+        
+    }
+    
 }

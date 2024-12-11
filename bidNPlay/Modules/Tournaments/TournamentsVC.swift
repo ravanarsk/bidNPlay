@@ -32,6 +32,7 @@ extension TournamentsVC{
     
     fileprivate func configureVC(){
     
+        self.tournamentVM.delegate = self
         self.tournamentSegment.setTitle("My Tournaments", forSegmentAt: 0)
         self.tournamentSegment.setTitle("All Tournaments", forSegmentAt: 1)
         self.tournamentSegment.addTarget(
@@ -41,6 +42,15 @@ extension TournamentsVC{
         )
         
         self.user_id = DefaultWrapper().getIntFrom(Key: Keys.userID)
+        
+        let barButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "plus.circle"),
+            style: .done,
+            target: self,
+            action: #selector(showJoinTournament)
+        )
+        barButtonItem.tintColor = .white
+        self.navigationItem.rightBarButtonItem = barButtonItem
 
         self.listTableView.backgroundColor = CustomColor.bg
         self.listTableView.registerCells(names: [
@@ -71,7 +81,6 @@ extension TournamentsVC{
     
     fileprivate func callListingAPI(segment: Int){
         
-        self.tournamentVM.delegate = self
         self.tournamentVM.showTournamentListing(segment: segment)
         
     }
@@ -79,6 +88,18 @@ extension TournamentsVC{
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         
         self.callListingAPI(segment: sender.selectedSegmentIndex)
+        
+    }
+    
+    @objc fileprivate func showJoinTournament(){
+        
+        let vc = CustomTFAlertVC.loadFromNib()
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        vc.delegate = self
+        vc.titleForAlert = "Join Tournament"
+        vc.subTitleForAlert = "Please enter your shared tournament code to join tournaments."
+        self.present(vc, animated: true)
         
     }
     
@@ -144,6 +165,29 @@ extension TournamentsVC: TournamentsDelegate{
             self.listTableView.reloadData()
             
         }
+        
+    }
+    
+    func joinTournamentResponse(msg: String) {
+        
+        DispatchQueue.main.async {
+            
+            ActivityHUD().dismissProgressHUD()
+            self.showUpdateWith(msg: msg)
+            
+        }
+        
+    }
+    
+}
+
+//MARK: Custom Alert TF Delegates
+extension TournamentsVC: CustomTFDelegate{
+    
+    func getTextfieldEntry(value: String) {
+        
+        debugPrint(value)
+        self.tournamentVM.callJoinTournament(code: value)
         
     }
     
