@@ -13,6 +13,9 @@ class ListingCell: UITableViewCell {
     @IBOutlet weak var holderStack: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var visualEffectView: UIVisualEffectView!
+    @IBOutlet weak var arrowView: UIView!
+    @IBOutlet weak var arrowImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +40,15 @@ extension ListingCell{
         self.subTitleLabel.textColor = CustomColor.text2
         self.subTitleLabel.font = UIFont().regularFontWith(size: 14)
         
+        self.visualEffectView.layer.cornerRadius = 10
+        self.visualEffectView.layer.masksToBounds = true
+        self.visualEffectView.clipsToBounds = true
+        
+        self.arrowImage.tintColor = CustomColor.text
+        self.arrowImage.image = UIImage(
+            systemName: "arrow.right.square"
+        )
+        
     }
     
 }
@@ -48,20 +60,41 @@ extension ListingCell{
         
         self.titleLabel.text = player.playerName?.capitalized
         self.subTitleLabel.text = "+" + player.playerCountryCode + " " + player.playerPhone
+        self.visualEffectView.isHidden = true
+        self.arrowView.isHidden = true
         
     }
     
     internal func setTeamCell(team: Team){
         
         self.titleLabel.text = team.teamName.capitalized
-        self.subTitleLabel.text = team.captainUserName ?? ""
+        self.subTitleLabel.text = "Captain : " + (team.captainUserName ?? "").capitalized
+        self.visualEffectView.isHidden = false
+        self.arrowView.isHidden = false
         
     }
     
     internal func setTeamPlayerCell(player: TeamPlayer){
         
-        self.titleLabel.text = player.playerName?.capitalized
+        if player.isCaptain == 1{
+            self.titleLabel.text = (player.playerName ?? "").capitalized + " (C)"
+        }else if player.isViceCaptain == 1{
+            self.titleLabel.text = (player.playerName ?? "").capitalized + " (VC)"
+        }else{
+            self.titleLabel.text = (player.playerName ?? "").capitalized
+        }
         self.subTitleLabel.text = "+" + player.playerCountryCode + " " + player.playerPhone
+        self.visualEffectView.isHidden = true
+        self.arrowView.isHidden = true
+        
+    }
+    
+    internal func setPotCell(pot: Pot){
+        
+        self.titleLabel.text = pot.potName.capitalized
+        self.subTitleLabel.text = "Base Price : \(pot.basePrice)"
+        self.visualEffectView.isHidden = false
+        self.arrowView.isHidden = false
         
     }
     

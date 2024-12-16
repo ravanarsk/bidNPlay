@@ -19,4 +19,5 @@ struct APIURLs{
     static let playerList = "/tournament_players_list"
     static let teamList = "/tournament_teams_list"
     static let teamPlayerList = "/team_players"
+    static let potList = "/tournament_pots_list"
 }

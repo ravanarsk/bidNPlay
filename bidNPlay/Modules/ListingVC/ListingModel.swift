@@ -116,8 +116,8 @@ struct TeamPlayer: Decodable {
     let playerCountryCode: String
     let playerPhone: String
     let potName: String?
-    let basePrice: String?
-    let multiPlayerStatus: String?
+    let basePrice: Int?
+    let multiPlayerStatus: Int?
     let isCaptain: Int
     let teamName: String
     let isViceCaptain: Int
@@ -145,3 +145,29 @@ struct TeamPlayer: Decodable {
     
 }
 
+//MARK: Pot Model
+struct PotsResponse: Decodable {
+    
+    let status: Bool
+    let message: String
+    let pots: [Pot]
+    
+}
+
+struct Pot: Decodable {
+    
+    let potID: Int
+    let potName: String
+    let tournamentID: Int
+    let basePrice: Int
+
+    enum CodingKeys: String, CodingKey {
+        
+        case potID = "pot_id"
+        case potName = "pot_name"
+        case tournamentID = "tournament_id"
+        case basePrice = "base_price"
+        
+    }
+    
+}

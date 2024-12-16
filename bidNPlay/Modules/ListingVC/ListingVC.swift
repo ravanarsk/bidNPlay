@@ -63,6 +63,8 @@ extension ListingVC{
             self.listingVM.getTeamList(tournamentID: self.tournamentID!)
         }else if self.listingView == .TeamPlayers{
             self.listingVM.getTeamPlayerList(teamID: self.teamID!)
+        }else if self.listingView == .Pots{
+            self.listingVM.getPotList(tournamentID: self.tournamentID!)
         }
         
     }
@@ -73,6 +75,12 @@ extension ListingVC{
         self.setBackButton()
         if self.listingView == .Players{
             self.navigationItem.title = "Players List"
+        }else if self.listingView == .Teams{
+            self.navigationItem.title = "Team List"
+        }else if self.listingView == .Pots{
+            self.navigationItem.title = "Pot List"
+        }else if self.listingView == .TeamPlayers{
+            self.navigationItem.title = "Team Player List"
         }
         
     }
@@ -105,6 +113,9 @@ extension ListingVC: UITableViewDelegate, UITableViewDataSource{
             }else if self.listingView == .TeamPlayers{
                 let teamPlayer = self.listingVM.getTeamPlayerModel(index: indexPath.row)
                 cell.setTeamPlayerCell(player: teamPlayer)
+            }else if self.listingView == .Pots{
+                let pot = self.listingVM.getPotModel(index: indexPath.row)
+                cell.setPotCell(pot: pot)
             }
             return cell
         }
@@ -116,7 +127,19 @@ extension ListingVC: UITableViewDelegate, UITableViewDataSource{
         if self.listingVM.isEmpty() == true{
             return self.listTableView.frame.height
         }else{
-            return 100
+            return 120
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if self.listingView == .Teams{
+            let vc = ListingVC.loadFromNib()
+            vc.listingView = .TeamPlayers
+            let model = self.listingVM.getTeamModel(index: indexPath.row)
+            vc.teamID = model.teamID
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
     }

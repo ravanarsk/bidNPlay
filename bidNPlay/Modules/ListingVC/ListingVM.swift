@@ -15,6 +15,7 @@ class ListingVM{
     fileprivate var playerModel = [Player]()
     fileprivate var teamModel = [Team]()
     fileprivate var teamPlayerModel = [TeamPlayer]()
+    fileprivate var potModel = [Pot]()
     
 }
 
@@ -99,6 +100,32 @@ extension ListingVM{
         
     }
     
+    internal func getPotList(tournamentID: Int){
+        
+        ActivityHUD().showProgressHUD()
+        let params = [
+            "user_id" : DefaultWrapper().getIntFrom(Key: Keys.userID),
+            "tournament_id" : tournamentID
+        ] as [String : Any]
+        let listUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.potList
+        debugPrint(params)
+        debugPrint(listUrl)
+        NetworkManager.shared.get(urlString: listUrl, params: params, responseType: PotsResponse.self) { result in
+            
+            switch result{
+            case .success(let responseObj):
+                print(responseObj)
+                self.potModel = responseObj.pots
+                self.delegate?.modelUpdated()
+            case .failure(let errorObj):
+                print(errorObj)
+                self.delegate?.showAlertWith(error: errorObj)
+            }
+            
+        }
+        
+    }
+    
 }
 
 //MARK: Model fetch
@@ -114,6 +141,8 @@ extension ListingVM{
                 return self.teamModel.isEmpty ? 1 : self.teamModel.count
             case .TeamPlayers:
                 return self.teamPlayerModel.isEmpty ? 1 : self.teamPlayerModel.count
+            case .Pots:
+                return self.potModel.isEmpty ? 1 : self.potModel.count
             default:
                 return 1
             
@@ -139,6 +168,12 @@ extension ListingVM{
         
     }
     
+    internal func getPotModel(index: Int) -> Pot{
+        
+        return self.potModel[index]
+        
+    }
+    
     internal func isEmpty() -> Bool{
         
         switch self.listingView {
@@ -149,6 +184,8 @@ extension ListingVM{
                 return self.teamModel.isEmpty
             case .TeamPlayers:
                 return self.teamPlayerModel.isEmpty
+            case .Pots:
+                return self.potModel.isEmpty
             default:
                 return true
             
