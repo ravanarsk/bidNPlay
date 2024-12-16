@@ -18,10 +18,6 @@
 		F439CF822D0959FA00DAF68A /* CustomTFAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F439CF812D0959FA00DAF68A /* CustomTFAlertVC.xib */; };
 		F439CF832D0959FA00DAF68A /* CustomTFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439CF802D0959FA00DAF68A /* CustomTFAlertVC.swift */; };
 		F439CF852D09685A00DAF68A /* CustomTFDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439CF842D09685A00DAF68A /* CustomTFDelegate.swift */; };
-		F439CF892D09B3CE00DAF68A /* PlayerListing.xib in Resources */ = {isa = PBXBuildFile; fileRef = F439CF882D09B3CE00DAF68A /* PlayerListing.xib */; };
-		F439CF8A2D09B3CE00DAF68A /* PlayerListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439CF872D09B3CE00DAF68A /* PlayerListing.swift */; };
-		F439CF8C2D09B44C00DAF68A /* PlayerListingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439CF8B2D09B44C00DAF68A /* PlayerListingVM.swift */; };
-		F439CF8E2D09B46300DAF68A /* PlayerListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439CF8D2D09B46300DAF68A /* PlayerListingModel.swift */; };
 		F43A8B9A2D003CB40098F83B /* DashboardTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A8B982D003CB40098F83B /* DashboardTab.swift */; };
 		F43A8B9B2D003CB40098F83B /* DashboardTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43A8B992D003CB40098F83B /* DashboardTab.xib */; };
 		F43A8B9F2D0054D00098F83B /* TournamentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A8B9D2D0054D00098F83B /* TournamentsVC.swift */; };
@@ -41,6 +37,12 @@
 		F47F64E22CFF2B04002F8930 /* OTPVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47F64E12CFF2B04002F8930 /* OTPVC.xib */; };
 		F47F64E32CFF2B04002F8930 /* OTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F64E02CFF2B04002F8930 /* OTPVC.swift */; };
 		F47F64E52CFF3209002F8930 /* LabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F64E42CFF3209002F8930 /* LabelExt.swift */; };
+		F4A945FF2D1010BF0008E6D0 /* ListingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A945FD2D1010BF0008E6D0 /* ListingVC.swift */; };
+		F4A946002D1010BF0008E6D0 /* ListingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4A945FE2D1010BF0008E6D0 /* ListingVC.xib */; };
+		F4A946022D1010C90008E6D0 /* ListingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A946012D1010C90008E6D0 /* ListingVM.swift */; };
+		F4A946042D1010D40008E6D0 /* ListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A946032D1010D40008E6D0 /* ListingModel.swift */; };
+		F4A946092D10153F0008E6D0 /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A946072D10153F0008E6D0 /* ListingCell.swift */; };
+		F4A9460A2D10153F0008E6D0 /* ListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4A946082D10153F0008E6D0 /* ListingCell.xib */; };
 		F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE352E2CFD9A3200766A02 /* AppDelegate.swift */; };
 		F4AE35312CFD9A3200766A02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE35302CFD9A3200766A02 /* SceneDelegate.swift */; };
 		F4AE35382CFD9A3200766A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AE35372CFD9A3200766A02 /* Assets.xcassets */; };
@@ -102,10 +104,6 @@
 		F439CF802D0959FA00DAF68A /* CustomTFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTFAlertVC.swift; sourceTree = "<group>"; };
 		F439CF812D0959FA00DAF68A /* CustomTFAlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTFAlertVC.xib; sourceTree = "<group>"; };
 		F439CF842D09685A00DAF68A /* CustomTFDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTFDelegate.swift; sourceTree = "<group>"; };
-		F439CF872D09B3CE00DAF68A /* PlayerListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListing.swift; sourceTree = "<group>"; };
-		F439CF882D09B3CE00DAF68A /* PlayerListing.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerListing.xib; sourceTree = "<group>"; };
-		F439CF8B2D09B44C00DAF68A /* PlayerListingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListingVM.swift; sourceTree = "<group>"; };
-		F439CF8D2D09B46300DAF68A /* PlayerListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListingModel.swift; sourceTree = "<group>"; };
 		F43A8B982D003CB40098F83B /* DashboardTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTab.swift; sourceTree = "<group>"; };
 		F43A8B992D003CB40098F83B /* DashboardTab.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardTab.xib; sourceTree = "<group>"; };
 		F43A8B9D2D0054D00098F83B /* TournamentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsVC.swift; sourceTree = "<group>"; };
@@ -125,6 +123,12 @@
 		F47F64E02CFF2B04002F8930 /* OTPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVC.swift; sourceTree = "<group>"; };
 		F47F64E12CFF2B04002F8930 /* OTPVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTPVC.xib; sourceTree = "<group>"; };
 		F47F64E42CFF3209002F8930 /* LabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExt.swift; sourceTree = "<group>"; };
+		F4A945FD2D1010BF0008E6D0 /* ListingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingVC.swift; sourceTree = "<group>"; };
+		F4A945FE2D1010BF0008E6D0 /* ListingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingVC.xib; sourceTree = "<group>"; };
+		F4A946012D1010C90008E6D0 /* ListingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingVM.swift; sourceTree = "<group>"; };
+		F4A946032D1010D40008E6D0 /* ListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
+		F4A946072D10153F0008E6D0 /* ListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCell.swift; sourceTree = "<group>"; };
+		F4A946082D10153F0008E6D0 /* ListingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingCell.xib; sourceTree = "<group>"; };
 		F4AE352B2CFD9A3100766A02 /* bidNPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bidNPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AE352E2CFD9A3200766A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4AE35302CFD9A3200766A02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -271,17 +275,6 @@
 			path = "Custom TextField Alert";
 			sourceTree = "<group>";
 		};
-		F439CF862D09B3B200DAF68A /* Player Listing */ = {
-			isa = PBXGroup;
-			children = (
-				F439CF872D09B3CE00DAF68A /* PlayerListing.swift */,
-				F439CF882D09B3CE00DAF68A /* PlayerListing.xib */,
-				F439CF8B2D09B44C00DAF68A /* PlayerListingVM.swift */,
-				F439CF8D2D09B46300DAF68A /* PlayerListingModel.swift */,
-			);
-			path = "Player Listing";
-			sourceTree = "<group>";
-		};
 		F43A8B972D003C030098F83B /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +341,35 @@
 				F47F64E12CFF2B04002F8930 /* OTPVC.xib */,
 			);
 			path = OTP;
+			sourceTree = "<group>";
+		};
+		F4A945FC2D1010A50008E6D0 /* ListingVC */ = {
+			isa = PBXGroup;
+			children = (
+				F4A946052D1015190008E6D0 /* Cells */,
+				F4A945FD2D1010BF0008E6D0 /* ListingVC.swift */,
+				F4A945FE2D1010BF0008E6D0 /* ListingVC.xib */,
+				F4A946012D1010C90008E6D0 /* ListingVM.swift */,
+				F4A946032D1010D40008E6D0 /* ListingModel.swift */,
+			);
+			path = ListingVC;
+			sourceTree = "<group>";
+		};
+		F4A946052D1015190008E6D0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F4A946062D1015210008E6D0 /* ListingCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4A946062D1015210008E6D0 /* ListingCell */ = {
+			isa = PBXGroup;
+			children = (
+				F4A946072D10153F0008E6D0 /* ListingCell.swift */,
+				F4A946082D10153F0008E6D0 /* ListingCell.xib */,
+			);
+			path = ListingCell;
 			sourceTree = "<group>";
 		};
 		F4AE35222CFD9A3100766A02 = {
@@ -433,7 +455,7 @@
 		F4AE35542CFDA62800766A02 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F439CF862D09B3B200DAF68A /* Player Listing */,
+				F4A945FC2D1010A50008E6D0 /* ListingVC */,
 				F439CF7F2D09591300DAF68A /* Custom TextField Alert */,
 				F430664B2D01C3FD003D0EC6 /* Tournament Details */,
 				F43A8BA62D0055270098F83B /* Settings */,
@@ -653,10 +675,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4AE35382CFD9A3200766A02 /* Assets.xcassets in Resources */,
-				F439CF892D09B3CE00DAF68A /* PlayerListing.xib in Resources */,
 				F43A8BA52D00550A0098F83B /* RankingVC.xib in Resources */,
 				F4AE354B2CFDA34900766A02 /* Poppins-Light.ttf in Resources */,
 				F43066532D01C62E003D0EC6 /* DataCell.xib in Resources */,
+				F4A946002D1010BF0008E6D0 /* ListingVC.xib in Resources */,
 				F412634A2D07FFB100D8DDDB /* PlayerInfoCell.xib in Resources */,
 				F4AE354D2CFDA34900766A02 /* Poppins-Regular.ttf in Resources */,
 				F430664E2D01C42B003D0EC6 /* TournamentDetailVC.xib in Resources */,
@@ -674,6 +696,7 @@
 				F43A8B9B2D003CB40098F83B /* DashboardTab.xib in Resources */,
 				F43A8BA02D0054D00098F83B /* TournamentsVC.xib in Resources */,
 				F47F64DE2CFF0E62002F8930 /* CallingCodes.plist in Resources */,
+				F4A9460A2D10153F0008E6D0 /* ListingCell.xib in Resources */,
 				F47F64DD2CFF0E62002F8930 /* assets.bundle in Resources */,
 				F47F64E22CFF2B04002F8930 /* OTPVC.xib in Resources */,
 				F4AE354A2CFDA34900766A02 /* Poppins-Bold.ttf in Resources */,
@@ -738,15 +761,14 @@
 				F41263492D07FFB100D8DDDB /* PlayerInfoCell.swift in Sources */,
 				F47F64CE2CFEF079002F8930 /* ButtonExt.swift in Sources */,
 				F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */,
-				F439CF8E2D09B46300DAF68A /* PlayerListingModel.swift in Sources */,
 				F4FAD9C22D06DF7900B48452 /* TournamentDetailVM.swift in Sources */,
-				F439CF8C2D09B44C00DAF68A /* PlayerListingVM.swift in Sources */,
 				F47F64E32CFF2B04002F8930 /* OTPVC.swift in Sources */,
 				F4AE35502CFDA37F00766A02 /* FontExtension.swift in Sources */,
 				F4EC46F02D00653B00EFC57F /* TournamentCell.swift in Sources */,
 				F4AE355F2CFDA72300766A02 /* CommonConstants.swift in Sources */,
 				F439CF832D0959FA00DAF68A /* CustomTFAlertVC.swift in Sources */,
 				F4EC46F32D007DC300EFC57F /* TableViewExt.swift in Sources */,
+				F4A946042D1010D40008E6D0 /* ListingModel.swift in Sources */,
 				F4E9267B2D046DAB00D98217 /* ErrorStrings.swift in Sources */,
 				F439CF852D09685A00DAF68A /* CustomTFDelegate.swift in Sources */,
 				F4AE355B2CFDA6E800766A02 /* ActivityHUD.swift in Sources */,
@@ -762,15 +784,16 @@
 				F4AE35602CFDA72300766A02 /* ViewConstants.swift in Sources */,
 				F4E9267F2D04711900D98217 /* TournamentsVM.swift in Sources */,
 				F4E926632D04341500D98217 /* LoginVM.swift in Sources */,
+				F4A946022D1010C90008E6D0 /* ListingVM.swift in Sources */,
 				F4E9267D2D046DDA00D98217 /* CommonModels.swift in Sources */,
 				F47F64DC2CFF0E62002F8930 /* ADCountryPicker.swift in Sources */,
+				F4A946092D10153F0008E6D0 /* ListingCell.swift in Sources */,
 				F412634E2D0812B200D8DDDB /* TeamInfoCell.swift in Sources */,
 				F43A8BA42D00550A0098F83B /* RankingVC.swift in Sources */,
 				F4E926742D043CD300D98217 /* LoginModel.swift in Sources */,
 				F47F64DB2CFF0E62002F8930 /* ADCountry.swift in Sources */,
 				F43A8B9F2D0054D00098F83B /* TournamentsVC.swift in Sources */,
 				F43066542D01C62E003D0EC6 /* DataCell.swift in Sources */,
-				F439CF8A2D09B3CE00DAF68A /* PlayerListing.swift in Sources */,
 				F4AE35582CFDA67400766A02 /* BaseVC.swift in Sources */,
 				F4AE35672CFDA83600766A02 /* NibExt.swift in Sources */,
 				F4FAD9C92D0713EC00B48452 /* HeaderCell.swift in Sources */,
@@ -779,6 +802,7 @@
 				F47F64D02CFEF2C4002F8930 /* TextFieldExt.swift in Sources */,
 				F4E926882D047D6300D98217 /* EmptyListCell.swift in Sources */,
 				F47F64D52CFEF976002F8930 /* RegisterVC.swift in Sources */,
+				F4A945FF2D1010BF0008E6D0 /* ListingVC.swift in Sources */,
 				F4E926812D04713000D98217 /* TournamentsModel.swift in Sources */,
 				F43A8BA92D0055CD0098F83B /* SettingsVC.swift in Sources */,
 			);

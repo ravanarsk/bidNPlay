@@ -139,7 +139,13 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let model = self.detailVM.getSelectedModelWith()
         if indexPath.row == 1{
+            
+            let vc = ListingVC.loadFromNib()
+            vc.tournamentID = model.tournament_details.tournament_id
+            vc.listingView = .Players
+            self.navigationController?.pushViewController(vc, animated: true)
             
         }
         

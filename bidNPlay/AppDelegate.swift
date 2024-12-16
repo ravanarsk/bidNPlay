@@ -41,6 +41,18 @@ extension AppDelegate{
     fileprivate func initAppDelegate(application : UIApplication){
         
         IQKeyboardManager.shared.enable = true
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = CustomColor.bg
+        appearance.titleTextAttributes = [
+            .foregroundColor: CustomColor.text
+        ]
+        appearance.largeTitleTextAttributes = [
+            .foregroundColor: CustomColor.text
+        ]
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().barTintColor = CustomColor.bg
         UINavigationBar.appearance().tintColor = CustomColor.bg
         
