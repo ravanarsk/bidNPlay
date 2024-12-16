@@ -43,6 +43,8 @@
 		F4A946042D1010D40008E6D0 /* ListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A946032D1010D40008E6D0 /* ListingModel.swift */; };
 		F4A946092D10153F0008E6D0 /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A946072D10153F0008E6D0 /* ListingCell.swift */; };
 		F4A9460A2D10153F0008E6D0 /* ListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4A946082D10153F0008E6D0 /* ListingCell.xib */; };
+		F4A9460E2D1064020008E6D0 /* FixtureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9460C2D1064020008E6D0 /* FixtureVC.swift */; };
+		F4A9460F2D1064020008E6D0 /* FixtureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4A9460D2D1064020008E6D0 /* FixtureVC.xib */; };
 		F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE352E2CFD9A3200766A02 /* AppDelegate.swift */; };
 		F4AE35312CFD9A3200766A02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE35302CFD9A3200766A02 /* SceneDelegate.swift */; };
 		F4AE35382CFD9A3200766A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AE35372CFD9A3200766A02 /* Assets.xcassets */; };
@@ -129,6 +131,8 @@
 		F4A946032D1010D40008E6D0 /* ListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
 		F4A946072D10153F0008E6D0 /* ListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCell.swift; sourceTree = "<group>"; };
 		F4A946082D10153F0008E6D0 /* ListingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingCell.xib; sourceTree = "<group>"; };
+		F4A9460C2D1064020008E6D0 /* FixtureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureVC.swift; sourceTree = "<group>"; };
+		F4A9460D2D1064020008E6D0 /* FixtureVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FixtureVC.xib; sourceTree = "<group>"; };
 		F4AE352B2CFD9A3100766A02 /* bidNPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bidNPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AE352E2CFD9A3200766A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4AE35302CFD9A3200766A02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -372,6 +376,15 @@
 			path = ListingCell;
 			sourceTree = "<group>";
 		};
+		F4A9460B2D10637C0008E6D0 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				F4A9460C2D1064020008E6D0 /* FixtureVC.swift */,
+				F4A9460D2D1064020008E6D0 /* FixtureVC.xib */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 		F4AE35222CFD9A3100766A02 = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +468,7 @@
 		F4AE35542CFDA62800766A02 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F4A9460B2D10637C0008E6D0 /* Fixtures */,
 				F4A945FC2D1010A50008E6D0 /* ListingVC */,
 				F439CF7F2D09591300DAF68A /* Custom TextField Alert */,
 				F430664B2D01C3FD003D0EC6 /* Tournament Details */,
@@ -679,6 +693,7 @@
 				F4AE354B2CFDA34900766A02 /* Poppins-Light.ttf in Resources */,
 				F43066532D01C62E003D0EC6 /* DataCell.xib in Resources */,
 				F4A946002D1010BF0008E6D0 /* ListingVC.xib in Resources */,
+				F4A9460F2D1064020008E6D0 /* FixtureVC.xib in Resources */,
 				F412634A2D07FFB100D8DDDB /* PlayerInfoCell.xib in Resources */,
 				F4AE354D2CFDA34900766A02 /* Poppins-Regular.ttf in Resources */,
 				F430664E2D01C42B003D0EC6 /* TournamentDetailVC.xib in Resources */,
@@ -768,6 +783,7 @@
 				F4AE355F2CFDA72300766A02 /* CommonConstants.swift in Sources */,
 				F439CF832D0959FA00DAF68A /* CustomTFAlertVC.swift in Sources */,
 				F4EC46F32D007DC300EFC57F /* TableViewExt.swift in Sources */,
+				F4A9460E2D1064020008E6D0 /* FixtureVC.swift in Sources */,
 				F4A946042D1010D40008E6D0 /* ListingModel.swift in Sources */,
 				F4E9267B2D046DAB00D98217 /* ErrorStrings.swift in Sources */,
 				F439CF852D09685A00DAF68A /* CustomTFDelegate.swift in Sources */,
