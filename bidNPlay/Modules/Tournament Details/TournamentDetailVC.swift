@@ -110,6 +110,8 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
             return cell
         }else if indexPath.row == 2{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TeamInfoCell", for: indexPath) as! TeamInfoCell
+            cell.delegate = self
+            cell.setCell(model: model)
             return cell
         }else if indexPath.row == 3{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataCell
@@ -117,6 +119,7 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoCell", for: indexPath) as! BasicInfoCell
+            cell.delegate = self
             cell.setUpCell(model: model)
             return cell
         }
@@ -125,11 +128,15 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
+        let model = self.detailVM.getSelectedModelWith()
         if indexPath.row == 0 || indexPath.row == 3{
             return UITableView.automaticDimension
         }else if indexPath.row == 1{
             return 190
         }else if indexPath.row == 2{
+            if model.tournament_details.tournament_type == "Individual"{
+                return 0
+            }
             return 200
         }else{
             return 340
@@ -139,15 +146,56 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let model = self.detailVM.getSelectedModelWith()
         if indexPath.row == 1{
+            self.segueToListing(viewSelection: .Players)
+        }
+        
+    }
+    
+}
+
+//MARK: Team Info Cell and Basic Info Cell Delegates
+extension TournamentDetailVC: TeamInfoDelegate, BasicInfoDelegate{
+    
+    func teamClicked() {
+        self.segueToListing(viewSelection: .Teams)
+    }
+    
+    func potClicked() {
+        self.segueToListing(viewSelection: .Pots)
+    }
+    
+    func whatsappClicked(){
+        
+        let model = detailVM.getSelectedModelWith()
+        if let countryCode = model.admin_country_code, let phoneNumber = model.admin_phone {
+            let phone = "+\(countryCode) \(phoneNumber)"
+            let whatsappURLString = "whatsapp://send?phone=\(phone)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             
-            let vc = ListingVC.loadFromNib()
-            vc.tournamentID = model.tournament_details.tournament_id
-            vc.listingView = .Players
-            self.navigationController?.pushViewController(vc, animated: true)
+            if let urlString = whatsappURLString,
+               let whatsappURL = URL(string: urlString),
+               UIApplication.shared.canOpenURL(whatsappURL) {
+                UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
+            } else {
+                self.showUpdateWith(msg: "Install whatsapp on this device to continue")
+            }
             
         }
+
+    }
+    
+}
+
+//MARK: Segue Actions
+extension TournamentDetailVC{
+    
+    fileprivate func segueToListing(viewSelection: ListingView){
+        
+        let model = self.detailVM.getSelectedModelWith()
+        let vc = ListingVC.loadFromNib()
+        vc.tournamentID = model.tournament_details.tournament_id
+        vc.listingView = viewSelection
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

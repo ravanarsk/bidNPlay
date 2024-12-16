@@ -7,6 +7,13 @@
 
 import UIKit
 
+protocol TeamInfoDelegate {
+    
+    func teamClicked()
+    func potClicked()
+    
+}
+
 class TeamInfoCell: UITableViewCell {
 
     @IBOutlet weak var teamVisualEffect: UIVisualEffectView!
@@ -23,6 +30,8 @@ class TeamInfoCell: UITableViewCell {
     @IBOutlet weak var potSubTitle: UILabel!
     @IBOutlet weak var potButton: UIButton!
     @IBOutlet weak var potArrow: UIImageView!
+    
+    internal var delegate : TeamInfoDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -91,6 +100,39 @@ extension TeamInfoCell{
         self.potVisualEffect.layer.masksToBounds = true
         self.potVisualEffect.clipsToBounds = true
         
+        self.teamButton.addTarget(self, action: #selector(teamAction), for: .touchUpInside)
+        self.potButton.addTarget(self, action: #selector(potAction), for: .touchUpInside)
+        
+    }
+    
+}
+
+//MARK: Set Cell
+extension TeamInfoCell{
+    
+    internal func setCell(model: TournamentDetailModel){
+        
+        if model.tournament_details.tournament_type == "Team_woa"{
+            self.potHolderView.isHidden = true
+            self.potVisualEffect.isHidden = true
+        }else{
+            self.potHolderView.isHidden = false
+            self.potVisualEffect.isHidden = false
+        }
+        
+    }
+    
+}
+
+//MARK: Button Actions
+extension TeamInfoCell{
+    
+    @objc fileprivate func teamAction(){
+        self.delegate?.teamClicked()
+    }
+    
+    @objc fileprivate func potAction(){
+        self.delegate?.potClicked()
     }
     
 }
