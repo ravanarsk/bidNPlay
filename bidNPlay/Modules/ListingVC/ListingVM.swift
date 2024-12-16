@@ -16,7 +16,7 @@ class ListingVM{
     fileprivate var teamModel = [Team]()
     fileprivate var teamPlayerModel = [TeamPlayer]()
     fileprivate var potModel = [Pot]()
-    
+    fileprivate var potPlayerModel = [PotPlayer]()
 }
 
 //MARK: API Calls
@@ -126,6 +126,32 @@ extension ListingVM{
         
     }
     
+    internal func getPotPlayerList(potID: Int){
+        
+        ActivityHUD().showProgressHUD()
+        let params = [
+            "user_id" : DefaultWrapper().getIntFrom(Key: Keys.userID),
+            "pot_id" : potID
+        ] as [String : Any]
+        let listUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.potPlayerList
+        debugPrint(params)
+        debugPrint(listUrl)
+        NetworkManager.shared.get(urlString: listUrl, params: params, responseType: PotPlayersResponse.self) { result in
+            
+            switch result{
+            case .success(let responseObj):
+                print(responseObj)
+                self.potPlayerModel = responseObj.players
+                self.delegate?.modelUpdated()
+            case .failure(let errorObj):
+                print(errorObj)
+                self.delegate?.showAlertWith(error: errorObj)
+            }
+            
+        }
+        
+    }
+    
 }
 
 //MARK: Model fetch
@@ -143,6 +169,8 @@ extension ListingVM{
                 return self.teamPlayerModel.isEmpty ? 1 : self.teamPlayerModel.count
             case .Pots:
                 return self.potModel.isEmpty ? 1 : self.potModel.count
+            case .PotPlayer:
+                return self.potPlayerModel.isEmpty ? 1 : self.potPlayerModel.count
             default:
                 return 1
             
@@ -174,6 +202,12 @@ extension ListingVM{
         
     }
     
+    internal func getPotPlayerModel(index: Int) -> PotPlayer{
+        
+        return self.potPlayerModel[index]
+        
+    }
+    
     internal func isEmpty() -> Bool{
         
         switch self.listingView {
@@ -186,6 +220,8 @@ extension ListingVM{
                 return self.teamPlayerModel.isEmpty
             case .Pots:
                 return self.potModel.isEmpty
+            case .PotPlayer:
+                return self.potPlayerModel.isEmpty
             default:
                 return true
             

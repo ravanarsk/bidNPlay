@@ -14,6 +14,7 @@ class ListingVC: BaseVC {
     internal var listingView : ListingView?
     internal var tournamentID : Int?
     internal var teamID : Int?
+    internal var potID : Int?
     fileprivate var listingVM = ListingVM()
     
     override func viewDidLoad() {
@@ -65,6 +66,8 @@ extension ListingVC{
             self.listingVM.getTeamPlayerList(teamID: self.teamID!)
         }else if self.listingView == .Pots{
             self.listingVM.getPotList(tournamentID: self.tournamentID!)
+        }else if self.listingView == .PotPlayer{
+            self.listingVM.getPotPlayerList(potID: self.potID!)
         }
         
     }
@@ -81,6 +84,8 @@ extension ListingVC{
             self.navigationItem.title = "Pot List"
         }else if self.listingView == .TeamPlayers{
             self.navigationItem.title = "Team Player List"
+        }else if self.listingView == .PotPlayer{
+            self.navigationItem.title = "Pot Player List"
         }
         
     }
@@ -116,8 +121,12 @@ extension ListingVC: UITableViewDelegate, UITableViewDataSource{
             }else if self.listingView == .Pots{
                 let pot = self.listingVM.getPotModel(index: indexPath.row)
                 cell.setPotCell(pot: pot)
+            }else if self.listingView == .PotPlayer{
+                let potPlayer = self.listingVM.getPotPlayerModel(index: indexPath.row)
+                cell.setPotPlayerCell(player: potPlayer)
             }
             return cell
+            
         }
         
     }
@@ -139,6 +148,12 @@ extension ListingVC: UITableViewDelegate, UITableViewDataSource{
             vc.listingView = .TeamPlayers
             let model = self.listingVM.getTeamModel(index: indexPath.row)
             vc.teamID = model.teamID
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if self.listingView == .Pots{
+            let vc = ListingVC.loadFromNib()
+            vc.listingView = .PotPlayer
+            let model = self.listingVM.getPotModel(index: indexPath.row)
+            vc.potID = model.potID
             self.navigationController?.pushViewController(vc, animated: true)
         }
         

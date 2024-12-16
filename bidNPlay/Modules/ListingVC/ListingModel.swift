@@ -12,6 +12,7 @@ enum ListingView {
     case Teams
     case TeamPlayers
     case Pots
+    case PotPlayer
 }
 
 protocol ListingDelegate: ErrorDelegate{
@@ -171,3 +172,49 @@ struct Pot: Decodable {
     }
     
 }
+
+//MARK: Pot Players
+struct PotPlayersResponse: Decodable {
+    
+    let status: Bool
+    let message: String
+    let isAdmin: Int
+    let players: [PotPlayer]
+    let currentRoundNo: Int
+
+    enum CodingKeys: String, CodingKey {
+        
+        case status
+        case message
+        case isAdmin = "is_admin"
+        case players
+        case currentRoundNo = "current_round_no"
+        
+    }
+    
+}
+
+struct PotPlayer: Decodable {
+    
+    let potPlayerID: Int
+    let playerName: String
+    let playerCountryCode: String
+    let playerPhone: String
+    let teamName: String?
+    let userID: Int
+    let soldStatus: String?
+
+    enum CodingKeys: String, CodingKey {
+        
+        case potPlayerID = "pot_player_id"
+        case playerName = "player_name"
+        case playerCountryCode = "player_country_code"
+        case playerPhone = "player_phone"
+        case teamName = "team_name"
+        case userID = "user_id"
+        case soldStatus = "sold_status"
+        
+    }
+    
+}
+

@@ -98,4 +98,13 @@ extension ListingCell{
         
     }
     
+    internal func setPotPlayerCell(player: PotPlayer){
+        
+        self.titleLabel.text = player.playerName.capitalized
+        self.subTitleLabel.text = "\((player.teamName ?? "").capitalized) - \((player.soldStatus ?? "").capitalized)"
+        self.visualEffectView.isHidden = true
+        self.arrowView.isHidden = true
+        
+    }
+    
 }
