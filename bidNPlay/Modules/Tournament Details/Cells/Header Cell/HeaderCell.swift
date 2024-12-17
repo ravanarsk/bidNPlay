@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol HeaderCellDelegate{
+    func leaveJoinClicked()
+    func fixtureClicked()
+}
+
 class HeaderCell: UITableViewCell {
 
     @IBOutlet weak var holderView: UIView!
@@ -16,6 +21,8 @@ class HeaderCell: UITableViewCell {
     @IBOutlet weak var buttonStack: UIStackView!
     @IBOutlet weak var leaveButton: UIButton!
     @IBOutlet weak var fixtureButton: UIButton!
+    
+    internal var delegate : HeaderCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,6 +47,12 @@ extension HeaderCell{
         self.tournamentCode.textColor = CustomColor.text2
         self.tournamentCode.font = UIFont().regularFontWith(size: 12)
         self.fixtureButton.setDefaultTheme(name: "Fixture")
+        self.fixtureButton.addTarget(
+            self, action: #selector(fixtureAction), for: .touchUpInside
+        )
+        self.leaveButton.addTarget(
+            self, action: #selector(leaveJoinAction), for: .touchUpInside
+        )
         
     }
     
@@ -60,4 +73,16 @@ extension HeaderCell{
         
     }
     
+}
+
+//MARK: Button Actions
+extension HeaderCell{
+    
+    @objc fileprivate func leaveJoinAction(){
+        self.delegate?.leaveJoinClicked()
+    }
+    
+    @objc fileprivate func fixtureAction(){
+        self.delegate?.fixtureClicked()
+    }
 }

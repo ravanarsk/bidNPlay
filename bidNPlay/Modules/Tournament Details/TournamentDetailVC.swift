@@ -106,6 +106,7 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
         let model = self.detailVM.getSelectedModelWith()
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! HeaderCell
+            cell.delegate = self
             cell.setUpCell(model: model)
             return cell
         }else if indexPath.row == 1{
@@ -159,7 +160,7 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
 }
 
 //MARK: Team Info Cell and Basic Info Cell Delegates
-extension TournamentDetailVC: TeamInfoDelegate, BasicInfoDelegate{
+extension TournamentDetailVC: TeamInfoDelegate, BasicInfoDelegate, HeaderCellDelegate{
     
     func teamClicked() {
         self.segueToListing(viewSelection: .Teams)
@@ -186,6 +187,26 @@ extension TournamentDetailVC: TeamInfoDelegate, BasicInfoDelegate{
             
         }
 
+    }
+    
+    func leaveJoinClicked() {
+        
+    }
+    
+    func fixtureClicked() {
+        
+        let model = self.detailVM.getSelectedModelWith()
+        if model.current_round_no == nil{
+            self.showUpdateWith(msg: "Fixture not available")
+        }else{
+            let vc = FixtureVC.loadFromNib()
+            vc.roundNo = model.current_round_no
+            vc.roundName = model.current_round_name
+            vc.tournamentID = model.tournament_details.tournament_id
+            vc.isIndividual = self.isIndividual
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
 }

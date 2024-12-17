@@ -11,6 +11,7 @@ class FixtureVM{
     
     var individualFixtureModel = [IndividualFixture]()
     var delegate: FixtureDelegate?
+    var isIndividual : Bool = false
     
 }
 
@@ -40,6 +41,43 @@ extension FixtureVM{
                 self.delegate?.showAlertWith(error: errorObj)
             }
             
+        }
+        
+    }
+    
+}
+
+//MARK: Model fetch
+extension FixtureVM{
+    
+    internal func getRowCount() -> Int {
+        
+        if self.isIndividual == true{
+            return self.individualFixtureModel.isEmpty ? 1 : self.individualFixtureModel.count
+        }else{
+            return 1
+        }
+        
+    }
+    
+    internal func getIndividualModel(index: Int) -> IndividualFixture{
+        
+        return self.individualFixtureModel[index]
+        
+    }
+    
+//    internal func getTeamModel(index: Int) -> Team{
+//        
+//        return self.teamModel[index]
+//        
+//    }
+    
+    internal func isEmpty() -> Bool{
+        
+        if self.isIndividual == true{
+            return self.individualFixtureModel.isEmpty
+        }else{
+            return false
         }
         
     }

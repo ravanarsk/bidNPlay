@@ -39,11 +39,30 @@ extension FixtureCell{
         self.rightTeamName.textColor = CustomColor.text
         self.rightTeamName.font = UIFont().mediumFontWith(size: 16)
         self.rightScore.textColor = CustomColor.text2
-        self.rightScore.font = UIFont().regularFontWith(size: 14)
+        self.rightScore.font = UIFont().regularFontWith(size: 15)
         self.leftTeamName.textColor = CustomColor.text
         self.leftTeamName.font = UIFont().mediumFontWith(size: 16)
         self.leftScore.textColor = CustomColor.text2
-        self.leftScore.font = UIFont().regularFontWith(size: 14)
+        self.leftScore.font = UIFont().regularFontWith(size: 15)
+        
+    }
+    
+}
+
+//MARK: Setup cell
+extension FixtureCell{
+    
+    internal func setIndividualCell(model: IndividualFixture){
+        
+        self.leftTeamName.text = model.homeUserName.capitalized
+        self.rightTeamName.text = model.awayUserName.capitalized
+        if let leftScore = model.homeUserGoals, let rightScore = model.awayUserGoals{
+            self.leftScore.text = "\(leftScore)"
+            self.rightScore.text = "\(rightScore)"
+        }else{
+            self.leftScore.text = ""
+            self.rightScore.text = ""
+        }
         
     }
     
