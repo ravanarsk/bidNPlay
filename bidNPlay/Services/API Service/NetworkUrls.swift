@@ -15,10 +15,12 @@ struct APIURLs{
     static let otp = "/verify_otp"
     static let tournamentList = "/tournament_list"
     static let tournamentDetail = "/tournament_details"
+    static let indvidualTournamentDetail = "/individual_tournament_details"
     static let join = "/join_tournament_by_code"
     static let playerList = "/tournament_players_list"
     static let teamList = "/tournament_teams_list"
     static let teamPlayerList = "/team_players"
     static let potList = "/tournament_pots_list"
     static let potPlayerList = "/tournament_pot_players"
+    static let individualFixtureList = "/individual_fixtures_by_round"
 }

@@ -9,21 +9,46 @@ import UIKit
 
 class FixtureVC: UIViewController {
 
+    @IBOutlet weak var roundLabel: UILabel!
+    @IBOutlet weak var listTableView: UITableView!
+    @IBOutlet weak var changeRoundButton: UIButton!
+    
+    let fixtureVM = FixtureVM()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.configureCell()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupCell()
     }
 
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//MARK: Configure view
+extension FixtureVC{
+    
+    fileprivate func configureCell(){
+        
+        self.listTableView.backgroundColor = CustomColor.bg
+        self.listTableView.registerCells(names: [
+            "FixtureCell","EmptyListCell"
+        ])
+        self.listTableView.tableFooterView = UIView()
+        self.listTableView.separatorStyle = .none
+        self.listTableView.showsVerticalScrollIndicator = false
+        self.listTableView.showsHorizontalScrollIndicator = false
+        //self.listTableView.delegate = self
+        //self.listTableView.dataSource = self
+        
     }
-    */
-
+    
+    fileprivate func setupCell(){
+        
+        //self.fixtureVM.delegate = self
+        
+    }
+    
 }

@@ -148,6 +148,11 @@ extension TournamentsVC: UITableViewDelegate, UITableViewDataSource{
         let vc = TournamentDetailVC.loadFromNib()
         let model = self.tournamentVM.getSelectedModelWith(index: indexPath.row)
         vc.tournamentID = model.tournament_id
+        if model.tournament_type == "Individual"{
+            vc.isIndividual = true
+        }else{
+            vc.isIndividual = false
+        }
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

@@ -11,6 +11,7 @@ class TournamentDetailVC: BaseVC {
 
     @IBOutlet weak var listTableView: UITableView!
     internal var tournamentID : Int?
+    internal var isIndividual : Bool = false
     fileprivate var detailVM = TournamentDetailVM()
     
     override func viewDidLoad() {
@@ -65,7 +66,10 @@ extension TournamentDetailVC{
         
         self.detailVM.delegate = self
         if let id = self.tournamentID{
-            self.detailVM.callTournamentDetailAPI(tournamentID: id)
+            self.detailVM.callTournamentDetailAPI(
+                tournamentID: id,
+                isIndividual: self.isIndividual
+            )
         }
         
     }

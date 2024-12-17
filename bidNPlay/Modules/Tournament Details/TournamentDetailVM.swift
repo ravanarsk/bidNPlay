@@ -17,14 +17,19 @@ class TournamentDetailVM{
 //MARK: API Listing
 extension TournamentDetailVM{
     
-    internal func callTournamentDetailAPI(tournamentID: Int){
+    internal func callTournamentDetailAPI(tournamentID: Int, isIndividual: Bool){
         
         ActivityHUD().showProgressHUD()
         let params = [
             "user_id" : DefaultWrapper().getIntFrom(Key: Keys.userID),
             "tournament_id" : tournamentID
         ] as [String : Any]
-        let detailUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.tournamentDetail
+        var detailUrl = APIURLs.baseUrl + APIURLs.api
+        if isIndividual == true{
+            detailUrl = detailUrl + APIURLs.indvidualTournamentDetail
+        }else{
+            detailUrl = detailUrl + APIURLs.tournamentDetail
+        }
         debugPrint(params)
         debugPrint(detailUrl)
         NetworkManager.shared.get(urlString: detailUrl, params: params, responseType: TournamentDetailModel.self) { result in

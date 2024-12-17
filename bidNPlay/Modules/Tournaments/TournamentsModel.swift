@@ -29,5 +29,6 @@ struct TournamentListDetailModel: Decodable{
     var winner_team_name: String?
     var winner_user_name: String?
     var tournament_code: String
+    var tournament_type : String?
     
 }

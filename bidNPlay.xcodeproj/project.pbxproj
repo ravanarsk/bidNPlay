@@ -37,6 +37,10 @@
 		F47F64E22CFF2B04002F8930 /* OTPVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47F64E12CFF2B04002F8930 /* OTPVC.xib */; };
 		F47F64E32CFF2B04002F8930 /* OTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F64E02CFF2B04002F8930 /* OTPVC.swift */; };
 		F47F64E52CFF3209002F8930 /* LabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F64E42CFF3209002F8930 /* LabelExt.swift */; };
+		F484A5AE2D1158F80054D7DB /* FixtureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F484A5AC2D1158F80054D7DB /* FixtureCell.swift */; };
+		F484A5AF2D1158F80054D7DB /* FixtureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F484A5AD2D1158F80054D7DB /* FixtureCell.xib */; };
+		F484A5B12D115F570054D7DB /* FixtureVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F484A5B02D115F570054D7DB /* FixtureVM.swift */; };
+		F484A5B32D11604B0054D7DB /* FixtureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F484A5B22D11604B0054D7DB /* FixtureModel.swift */; };
 		F4A945FF2D1010BF0008E6D0 /* ListingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A945FD2D1010BF0008E6D0 /* ListingVC.swift */; };
 		F4A946002D1010BF0008E6D0 /* ListingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4A945FE2D1010BF0008E6D0 /* ListingVC.xib */; };
 		F4A946022D1010C90008E6D0 /* ListingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A946012D1010C90008E6D0 /* ListingVM.swift */; };
@@ -125,6 +129,10 @@
 		F47F64E02CFF2B04002F8930 /* OTPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVC.swift; sourceTree = "<group>"; };
 		F47F64E12CFF2B04002F8930 /* OTPVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTPVC.xib; sourceTree = "<group>"; };
 		F47F64E42CFF3209002F8930 /* LabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExt.swift; sourceTree = "<group>"; };
+		F484A5AC2D1158F80054D7DB /* FixtureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureCell.swift; sourceTree = "<group>"; };
+		F484A5AD2D1158F80054D7DB /* FixtureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FixtureCell.xib; sourceTree = "<group>"; };
+		F484A5B02D115F570054D7DB /* FixtureVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureVM.swift; sourceTree = "<group>"; };
+		F484A5B22D11604B0054D7DB /* FixtureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureModel.swift; sourceTree = "<group>"; };
 		F4A945FD2D1010BF0008E6D0 /* ListingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingVC.swift; sourceTree = "<group>"; };
 		F4A945FE2D1010BF0008E6D0 /* ListingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingVC.xib; sourceTree = "<group>"; };
 		F4A946012D1010C90008E6D0 /* ListingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingVM.swift; sourceTree = "<group>"; };
@@ -347,6 +355,23 @@
 			path = OTP;
 			sourceTree = "<group>";
 		};
+		F484A5AA2D1158B20054D7DB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F484A5AB2D1158D30054D7DB /* FixtureCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F484A5AB2D1158D30054D7DB /* FixtureCell */ = {
+			isa = PBXGroup;
+			children = (
+				F484A5AC2D1158F80054D7DB /* FixtureCell.swift */,
+				F484A5AD2D1158F80054D7DB /* FixtureCell.xib */,
+			);
+			path = FixtureCell;
+			sourceTree = "<group>";
+		};
 		F4A945FC2D1010A50008E6D0 /* ListingVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,8 +404,11 @@
 		F4A9460B2D10637C0008E6D0 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				F484A5AA2D1158B20054D7DB /* Cells */,
 				F4A9460C2D1064020008E6D0 /* FixtureVC.swift */,
 				F4A9460D2D1064020008E6D0 /* FixtureVC.xib */,
+				F484A5B02D115F570054D7DB /* FixtureVM.swift */,
+				F484A5B22D11604B0054D7DB /* FixtureModel.swift */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -703,6 +731,7 @@
 				F439CF822D0959FA00DAF68A /* CustomTFAlertVC.xib in Resources */,
 				F4AE354E2CFDA34900766A02 /* Poppins-SemiBold.ttf in Resources */,
 				F412634F2D0812B200D8DDDB /* TeamInfoCell.xib in Resources */,
+				F484A5AF2D1158F80054D7DB /* FixtureCell.xib in Resources */,
 				F4FAD9C82D0713EC00B48452 /* HeaderCell.xib in Resources */,
 				F43A8BAA2D0055CD0098F83B /* SettingsVC.xib in Resources */,
 				F4AE35692CFDAA5D00766A02 /* Main.storyboard in Resources */,
@@ -777,6 +806,7 @@
 				F47F64CE2CFEF079002F8930 /* ButtonExt.swift in Sources */,
 				F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */,
 				F4FAD9C22D06DF7900B48452 /* TournamentDetailVM.swift in Sources */,
+				F484A5B32D11604B0054D7DB /* FixtureModel.swift in Sources */,
 				F47F64E32CFF2B04002F8930 /* OTPVC.swift in Sources */,
 				F4AE35502CFDA37F00766A02 /* FontExtension.swift in Sources */,
 				F4EC46F02D00653B00EFC57F /* TournamentCell.swift in Sources */,
@@ -787,6 +817,7 @@
 				F4A946042D1010D40008E6D0 /* ListingModel.swift in Sources */,
 				F4E9267B2D046DAB00D98217 /* ErrorStrings.swift in Sources */,
 				F439CF852D09685A00DAF68A /* CustomTFDelegate.swift in Sources */,
+				F484A5AE2D1158F80054D7DB /* FixtureCell.swift in Sources */,
 				F4AE355B2CFDA6E800766A02 /* ActivityHUD.swift in Sources */,
 				F4FAD9C42D06E5B400B48452 /* TournamentDetailModel.swift in Sources */,
 				F4AE35532CFDA47100766A02 /* CustomColor.swift in Sources */,
@@ -802,6 +833,7 @@
 				F4E926632D04341500D98217 /* LoginVM.swift in Sources */,
 				F4A946022D1010C90008E6D0 /* ListingVM.swift in Sources */,
 				F4E9267D2D046DDA00D98217 /* CommonModels.swift in Sources */,
+				F484A5B12D115F570054D7DB /* FixtureVM.swift in Sources */,
 				F47F64DC2CFF0E62002F8930 /* ADCountryPicker.swift in Sources */,
 				F4A946092D10153F0008E6D0 /* ListingCell.swift in Sources */,
 				F412634E2D0812B200D8DDDB /* TeamInfoCell.swift in Sources */,

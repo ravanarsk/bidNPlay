@@ -21,6 +21,7 @@ struct TournamentDetailModel: Decodable{
     var admin_phone : String?
     var already_joined : Int?
     var tournament_details : TournamentDetails
+    var current_round_no: Int?
     
 }
 
