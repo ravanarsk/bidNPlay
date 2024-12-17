@@ -37,7 +37,8 @@ extension FixtureVC{
     
     fileprivate func configureCell(){
         
-        self.changeRoundButton.setDefaultTheme(name: "Change Round")
+        self.changeRoundButton.setDefaultTheme(name: "Select Round")
+        self.changeRoundButton.addTarget(self, action: #selector(changeAction), for: .touchUpInside)
         self.roundLabel.textColor = CustomColor.text
         self.roundLabel.font = UIFont().semiBoldFontWith(size: 18)
         self.listTableView.backgroundColor = CustomColor.bg
@@ -76,6 +77,21 @@ extension FixtureVC{
         
     }
     
+}
+
+//MARK: Button Actions
+extension FixtureVC{
+    
+    @objc fileprivate func changeAction(){
+        
+        let vc = FixtureRoundVC.loadFromNib()
+        vc.tournamentID = self.tournamentID
+        vc.delegate = self
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
+        
+    }
 }
 
 //MARK: Tableview Delegates
@@ -126,6 +142,24 @@ extension FixtureVC: FixtureDelegate{
             ActivityHUD().dismissProgressHUD()
             self.listTableView.reloadData()
             
+        }
+        
+    }
+    
+}
+
+//MARK: Change Round Delegate
+extension FixtureVC: GetRoundDetailDelegate{
+    
+    func selectedRound(round: Round) {
+        
+        DispatchQueue.main.async {
+            
+            ActivityHUD().dismissProgressHUD()
+            self.roundNo = round.roundNo
+            self.roundName = round.roundName
+            self.roundLabel.text = self.roundName
+            self.callFixtureAPI()
         }
         
     }
