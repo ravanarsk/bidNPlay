@@ -25,6 +25,7 @@ struct APIURLs{
     static let individualFixtureList = "/individual_fixtures_by_round"
     static let individualFixtureRoundsList = "/individual_tournament_fixture_rounds"
     static let profile = "/view_profile"
-    static let register = "register_user"
+    static let register = "/register_user"
+    static let otpVerify = "/verify_registration_otp"
     
 }

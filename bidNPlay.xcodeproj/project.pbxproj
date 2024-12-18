@@ -20,6 +20,7 @@
 		F43647E32D12CEFD003B71F8 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43647E22D12CEFD003B71F8 /* ProfileVM.swift */; };
 		F43647E52D130590003B71F8 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43647E42D130590003B71F8 /* RegisterVM.swift */; };
 		F43647E72D1305D2003B71F8 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43647E62D1305D2003B71F8 /* RegisterModel.swift */; };
+		F43647E92D130E14003B71F8 /* OTPVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43647E82D130E14003B71F8 /* OTPVM.swift */; };
 		F439CF822D0959FA00DAF68A /* CustomTFAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F439CF812D0959FA00DAF68A /* CustomTFAlertVC.xib */; };
 		F439CF832D0959FA00DAF68A /* CustomTFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439CF802D0959FA00DAF68A /* CustomTFAlertVC.swift */; };
 		F439CF852D09685A00DAF68A /* CustomTFDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439CF842D09685A00DAF68A /* CustomTFDelegate.swift */; };
@@ -123,6 +124,7 @@
 		F43647E22D12CEFD003B71F8 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		F43647E42D130590003B71F8 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
 		F43647E62D1305D2003B71F8 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		F43647E82D130E14003B71F8 /* OTPVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVM.swift; sourceTree = "<group>"; };
 		F439CF802D0959FA00DAF68A /* CustomTFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTFAlertVC.swift; sourceTree = "<group>"; };
 		F439CF812D0959FA00DAF68A /* CustomTFAlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTFAlertVC.xib; sourceTree = "<group>"; };
 		F439CF842D09685A00DAF68A /* CustomTFDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTFDelegate.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 			children = (
 				F47F64E02CFF2B04002F8930 /* OTPVC.swift */,
 				F47F64E12CFF2B04002F8930 /* OTPVC.xib */,
+				F43647E82D130E14003B71F8 /* OTPVM.swift */,
 			);
 			path = OTP;
 			sourceTree = "<group>";
@@ -926,6 +929,7 @@
 				F47F64D02CFEF2C4002F8930 /* TextFieldExt.swift in Sources */,
 				F4E926882D047D6300D98217 /* EmptyListCell.swift in Sources */,
 				F47F64D52CFEF976002F8930 /* RegisterVC.swift in Sources */,
+				F43647E92D130E14003B71F8 /* OTPVM.swift in Sources */,
 				F4A945FF2D1010BF0008E6D0 /* ListingVC.swift in Sources */,
 				F4E926812D04713000D98217 /* TournamentsModel.swift in Sources */,
 				F43A8BA92D0055CD0098F83B /* SettingsVC.swift in Sources */,

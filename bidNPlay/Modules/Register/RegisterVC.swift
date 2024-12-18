@@ -51,7 +51,11 @@ extension RegisterVC{
         self.phoneNumberTF.aboveOverlayTheme(placeHolder: "Phone Number")
         self.registerButton.setDefaultTheme(name: "Register")
         
-        self.passwordTF.keyboardType = .numberPad
+        self.phoneNumberTF.keyboardType = .numberPad
+        self.registerButton.addTarget(
+            self, action: #selector(registerAction), for: .touchUpInside
+        )
+        
     }
     
 }

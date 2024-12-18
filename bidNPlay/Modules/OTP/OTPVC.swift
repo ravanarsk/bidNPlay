@@ -17,6 +17,7 @@ class OTPVC: BaseVC {
     @IBOutlet weak var resendButton: UIButton!
     
     var email : String?
+    fileprivate var otpVM = OTPVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,9 @@ extension OTPVC{
         self.verifyButton.addTarget(
             self, action: #selector(verifyAction), for: .touchUpInside
         )
+        self.resendButton.addTarget(
+            self, action: #selector(verifyAction), for: .touchUpInside
+        )
         
     }
     
@@ -56,10 +60,30 @@ extension OTPVC{
     
     @objc fileprivate func verifyAction(){
         
-        let view = DashboardTab.loadFromNib()
-        if let window = UIApplication.shared.windows.first{
-            window.rootViewController = view
-            window.makeKeyAndVisible()
+        self.otpVM.delegate = self
+        self.otpVM.preludeCheckToLoginAPI(
+            email: self.email ?? "",
+            otp: self.OTPTF.text ?? ""
+        )
+        
+    }
+    
+}
+
+//MARK: View Model Delegates
+extension OTPVC: LoginDelegate{
+    
+    func loginSuccess() {
+        
+        DispatchQueue.main.async {
+            
+            ActivityHUD().dismissProgressHUD()
+            let view = DashboardTab.loadFromNib()
+            if let window = UIApplication.shared.windows.first{
+                window.rootViewController = view
+                window.makeKeyAndVisible()
+            }
+            
         }
         
     }
