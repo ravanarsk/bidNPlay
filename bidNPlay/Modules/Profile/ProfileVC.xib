@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="bidNPlay" customModuleProvider="target">
+            <connections>
+                <outlet property="deleteButton" destination="TF8-s1-eCX" id="LSo-Cj-3bY"/>
+                <outlet property="listTableView" destination="3Xa-wc-KuG" id="mqK-4M-7aR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TF8-s1-eCX">
+                    <rect key="frame" x="20" y="758" width="353" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="DG1-vW-zFu"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3Xa-wc-KuG">
+                    <rect key="frame" x="0.0" y="59" width="393" height="679"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TF8-s1-eCX" secondAttribute="bottom" constant="10" id="AZt-tn-XCa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3Xa-wc-KuG" secondAttribute="trailing" id="P01-Jc-wdG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TF8-s1-eCX" secondAttribute="trailing" constant="20" id="jlH-N9-z16"/>
+                <constraint firstItem="3Xa-wc-KuG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kzz-GB-NPo"/>
+                <constraint firstItem="TF8-s1-eCX" firstAttribute="top" secondItem="3Xa-wc-KuG" secondAttribute="bottom" constant="20" id="lIy-DR-PbC"/>
+                <constraint firstItem="3Xa-wc-KuG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tKg-5b-XAP"/>
+                <constraint firstItem="TF8-s1-eCX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="zeL-uR-Kqm"/>
+            </constraints>
+            <point key="canvasLocation" x="56" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

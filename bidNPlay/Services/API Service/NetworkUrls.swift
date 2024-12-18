@@ -24,5 +24,6 @@ struct APIURLs{
     static let potPlayerList = "/tournament_pot_players"
     static let individualFixtureList = "/individual_fixtures_by_round"
     static let individualFixtureRoundsList = "/individual_tournament_fixture_rounds"
+    static let profile = "/view_profile"
     
 }

@@ -63,3 +63,26 @@ extension RoundCell{
     }
     
 }
+
+//MARK: Setup Settings Cell(Temp)
+extension RoundCell{
+    
+    internal func setSettingsCell(index: Int){
+        
+        self.backgroundColor = CustomColor.bg
+        self.holderView.backgroundColor = CustomColor.bg2
+        if index == 0{
+            self.titleLabel.text = "Profile"
+        }else if index == 1{
+            self.titleLabel.text = "Terms and conditions"
+        }else if index == 2{
+            self.titleLabel.text = "Privacy Policy"
+        }else{
+            self.titleLabel.text = "Log out"
+        }
+        self.visualEffectView.isHidden = false
+        self.arrowView.isHidden = false
+        
+    }
+    
+}

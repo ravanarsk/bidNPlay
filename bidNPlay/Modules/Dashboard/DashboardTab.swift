@@ -83,19 +83,19 @@ extension DashboardTab{
         let navigationForMatches = UINavigationController(
             rootViewController: tournamentVC
         )
-        let navigationForRankings = UINavigationController(
-            rootViewController: rankingVC
-        )
+//        let navigationForRankings = UINavigationController(
+//            rootViewController: rankingVC
+//        )
         let navigationForSettings = UINavigationController(
             rootViewController: settingVC
         )
         
         navigationForMatches.tabBarItem = tab1
-        navigationForRankings.tabBarItem = tab2
+        //navigationForRankings.tabBarItem = tab2
         navigationForSettings.tabBarItem = tab3
         
         self.setViewControllers(
-            [navigationForMatches, navigationForRankings,navigationForSettings],
+            [navigationForMatches,navigationForSettings],
             animated: true
         )
         
