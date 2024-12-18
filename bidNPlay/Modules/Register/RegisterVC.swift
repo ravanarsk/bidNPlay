@@ -18,6 +18,8 @@ class RegisterVC: BaseVC {
     @IBOutlet weak var phoneNumberTF: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     
+    let registerVM = RegisterVM()
+    
     let countryPickerView = ADCountryPicker(style: .plain)
     
     override func viewDidLoad() {
@@ -70,6 +72,15 @@ extension RegisterVC{
     
     @objc fileprivate func registerAction(){
         
+        self.registerVM.delegate = self
+        self.registerVM.preludeCheckToRegisterAPI(
+            name: self.nameTF.text ?? "",
+            email: self.emailTF.text ?? "",
+            password: self.passwordTF.text ?? "",
+            countryCode: self.countryCodeTF.text ?? "",
+            phone: self.phoneNumberTF.text ?? ""
+        )
+        
     }
     
 }
@@ -79,8 +90,26 @@ extension RegisterVC : ADCountryPickerDelegate{
     
     func countryPicker(_ picker: ADCountryPicker, didSelectCountryWithName name: String, code: String, dialCode: String) {
         
-        self.countryCodeTF.text = "\(name) : (\(dialCode))"
+        self.countryCodeTF.text = dialCode
         picker.dismiss(animated: true)
+        
+    }
+    
+}
+
+//MARK: View Model Delegates
+extension RegisterVC : RegisterDelegate{
+    
+    func registerSuccess() {
+        
+        DispatchQueue.main.async {
+            
+            ActivityHUD().dismissProgressHUD()
+            let vc = OTPVC.loadFromNib()
+            vc.email = self.emailTF.text
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
         
     }
     

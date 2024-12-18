@@ -18,6 +18,8 @@
 		F43647E02D12CEE8003B71F8 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43647DE2D12CEE8003B71F8 /* ProfileVC.swift */; };
 		F43647E12D12CEE8003B71F8 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43647DF2D12CEE8003B71F8 /* ProfileVC.xib */; };
 		F43647E32D12CEFD003B71F8 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43647E22D12CEFD003B71F8 /* ProfileVM.swift */; };
+		F43647E52D130590003B71F8 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43647E42D130590003B71F8 /* RegisterVM.swift */; };
+		F43647E72D1305D2003B71F8 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43647E62D1305D2003B71F8 /* RegisterModel.swift */; };
 		F439CF822D0959FA00DAF68A /* CustomTFAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F439CF812D0959FA00DAF68A /* CustomTFAlertVC.xib */; };
 		F439CF832D0959FA00DAF68A /* CustomTFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439CF802D0959FA00DAF68A /* CustomTFAlertVC.swift */; };
 		F439CF852D09685A00DAF68A /* CustomTFDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439CF842D09685A00DAF68A /* CustomTFDelegate.swift */; };
@@ -119,6 +121,8 @@
 		F43647DE2D12CEE8003B71F8 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F43647DF2D12CEE8003B71F8 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		F43647E22D12CEFD003B71F8 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
+		F43647E42D130590003B71F8 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		F43647E62D1305D2003B71F8 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		F439CF802D0959FA00DAF68A /* CustomTFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTFAlertVC.swift; sourceTree = "<group>"; };
 		F439CF812D0959FA00DAF68A /* CustomTFAlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTFAlertVC.xib; sourceTree = "<group>"; };
 		F439CF842D09685A00DAF68A /* CustomTFDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTFDelegate.swift; sourceTree = "<group>"; };
@@ -359,6 +363,8 @@
 			children = (
 				F47F64D22CFEF976002F8930 /* RegisterVC.swift */,
 				F47F64D32CFEF976002F8930 /* RegisterVC.xib */,
+				F43647E42D130590003B71F8 /* RegisterVM.swift */,
+				F43647E62D1305D2003B71F8 /* RegisterModel.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -868,6 +874,7 @@
 				F41263492D07FFB100D8DDDB /* PlayerInfoCell.swift in Sources */,
 				F47F64CE2CFEF079002F8930 /* ButtonExt.swift in Sources */,
 				F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */,
+				F43647E72D1305D2003B71F8 /* RegisterModel.swift in Sources */,
 				F484A5B72D1189C50054D7DB /* FixtureRoundVC.swift in Sources */,
 				F4FAD9C22D06DF7900B48452 /* TournamentDetailVM.swift in Sources */,
 				F484A5B32D11604B0054D7DB /* FixtureModel.swift in Sources */,
@@ -913,6 +920,7 @@
 				F4AE35672CFDA83600766A02 /* NibExt.swift in Sources */,
 				F4FAD9C92D0713EC00B48452 /* HeaderCell.swift in Sources */,
 				F484A5BA2D118A640054D7DB /* FixtureRoundVM.swift in Sources */,
+				F43647E52D130590003B71F8 /* RegisterVM.swift in Sources */,
 				F4E9266E2D0435C700D98217 /* DefaultWrapper.swift in Sources */,
 				F430664F2D01C42B003D0EC6 /* TournamentDetailVC.swift in Sources */,
 				F47F64D02CFEF2C4002F8930 /* TextFieldExt.swift in Sources */,

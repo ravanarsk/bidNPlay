@@ -16,6 +16,8 @@ class OTPVC: BaseVC {
     @IBOutlet weak var verifyButton: UIButton!
     @IBOutlet weak var resendButton: UIButton!
     
+    var email : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureVC()
