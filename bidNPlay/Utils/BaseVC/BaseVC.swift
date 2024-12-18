@@ -131,17 +131,17 @@ extension BaseVC{
 extension BaseVC{
     
    internal func gotoLoginVC(){
-//        
-//        let rootViewController = LoginVC.loadFromNib()
-//        if let window = UIApplication.shared.windows.first{
-//            let navigationController = UINavigationController(
-//                rootViewController: rootViewController
-//            )
-//            window.rootViewController = navigationController
-//            DefaultWrapper().removeAll()
-//            window.makeKeyAndVisible()
-//        }
-//
+        
+        let rootViewController = LoginVC.loadFromNib()
+        if let window = UIApplication.shared.windows.first{
+            let navigationController = UINavigationController(
+                rootViewController: rootViewController
+            )
+            window.rootViewController = navigationController
+            DefaultWrapper().removeAll()
+            window.makeKeyAndVisible()
+        }
+
    }
     
 }

@@ -83,6 +83,8 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource{
             self.openURLInSafariController("https://dev.sectorqube.com/bidnplay/public/api/terms_conditions")
         }else if indexPath.row == 2{
             self.openURLInSafariController("https://dev.sectorqube.com/bidnplay/public/api/privacy_policy")
+        }else{
+            self.logoutAlert()
         }
         
     }
@@ -114,6 +116,30 @@ extension SettingsVC{
         let safariVC = SFSafariViewController(url: url)
         safariVC.preferredControlTintColor = .systemBlue
         self.present(safariVC, animated: true, completion: nil)
+        
+    }
+    
+}
+
+//MARK: Logout
+extension SettingsVC{
+    
+    fileprivate func logoutAlert(){
+        
+        let alertVC = UIAlertController(
+            title: "Logout?",
+            message: "Do you wish to logout from this account?",
+            preferredStyle: .alert
+        )
+        let yesAction = UIAlertAction(
+            title: "Yes", style: .default
+        ) { action in
+            self.gotoLoginVC()
+        }
+        let noAction = UIAlertAction(title: "No", style: .cancel)
+        alertVC.addAction(yesAction)
+        alertVC.addAction(noAction)
+        self.present(alertVC, animated: true)
         
     }
     
