@@ -62,7 +62,7 @@ extension TournamentDetailVC{
 //MARK: API Call
 extension TournamentDetailVC{
     
-    fileprivate func callDetailAPI(){
+    internal func callDetailAPI(){
         
         self.detailVM.delegate = self
         if let id = self.tournamentID{
@@ -88,6 +88,17 @@ extension TournamentDetailVC: TournamentDetailDelegate{
                 self.listTableView.delegate = self
             }
             self.listTableView.reloadData()
+        }
+        
+    }
+    
+    func reloadAPI() {
+        
+        DispatchQueue.main.async {
+            
+            ActivityHUD().dismissProgressHUD()
+            self.callDetailAPI()
+            
         }
         
     }
@@ -190,6 +201,14 @@ extension TournamentDetailVC: TeamInfoDelegate, BasicInfoDelegate, HeaderCellDel
     }
     
     func leaveJoinClicked() {
+        
+        let model = self.detailVM.getSelectedModelWith()
+        self.detailVM.delegate = self
+        if model.already_joined == 1{
+            self.detailVM.callLeaveAPI(tournamentID: self.tournamentID!)
+        }else{
+            self.detailVM.callJoinAPI(tournamentID: self.tournamentID!)
+        }
         
     }
     

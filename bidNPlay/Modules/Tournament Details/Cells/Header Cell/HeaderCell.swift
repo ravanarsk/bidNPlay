@@ -70,6 +70,11 @@ extension HeaderCell{
         }else{
             self.leaveButton.setDefaultTheme(name: "Join")
         }
+        if model.current_round_no != nil{
+            self.leaveButton.isHidden = true
+        }else{
+            self.leaveButton.isHidden = false
+        }
         
     }
     

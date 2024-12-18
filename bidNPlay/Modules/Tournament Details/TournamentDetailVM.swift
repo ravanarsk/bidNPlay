@@ -48,6 +48,56 @@ extension TournamentDetailVM{
         
     }
     
+    internal func callJoinAPI(tournamentID: Int){
+        
+        ActivityHUD().showProgressHUD()
+        let params = [
+            "user_id" : DefaultWrapper().getIntFrom(Key: Keys.userID),
+            "tournament_id" : tournamentID
+        ] as [String : Any]
+        let joinUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.joinTournament
+        debugPrint(params)
+        debugPrint(joinUrl)
+        NetworkManager.shared.post(urlString: joinUrl, params: params, responseType: BasicNetworkModel.self) { result in
+            
+            switch result{
+            case .success(let responseObj):
+                print(responseObj)
+                self.delegate?.reloadAPI()
+            case .failure(let errorObj):
+                print(errorObj)
+                self.delegate?.showAlertWith(error: errorObj)
+            }
+            
+        }
+        
+    }
+    
+    internal func callLeaveAPI(tournamentID: Int){
+        
+        ActivityHUD().showProgressHUD()
+        let params = [
+            "user_id" : DefaultWrapper().getIntFrom(Key: Keys.userID),
+            "tournament_id" : tournamentID
+        ] as [String : Any]
+        let leaveUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.leaveTournament
+        debugPrint(params)
+        debugPrint(leaveUrl)
+        NetworkManager.shared.delete(urlString: leaveUrl, params: params, responseType: BasicNetworkModel.self) { result in
+            
+            switch result{
+            case .success(let responseObj):
+                print(responseObj)
+                self.delegate?.reloadAPI()
+            case .failure(let errorObj):
+                print(errorObj)
+                self.delegate?.showAlertWith(error: errorObj)
+            }
+            
+        }
+        
+    }
+    
 }
 
 //MARK: Model Fetch

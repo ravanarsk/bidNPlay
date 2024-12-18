@@ -10,6 +10,7 @@ import Foundation
 protocol TournamentDetailDelegate: ErrorDelegate{
     
     func showTournamentDetails()
+    func reloadAPI()
     
 }
 

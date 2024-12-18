@@ -201,14 +201,28 @@ extension NetworkManager{
 //MARK: DELETE Request
 extension NetworkManager{
     
-    func delete<T: Decodable>(urlString: String, params: [String: Any]? = nil, responseType: T.Type, completion: @escaping CompletionHandler<T>) {
+    func delete<T: Decodable>(urlString: String, params: [String: Any?]? = nil, responseType: T.Type, completion: @escaping CompletionHandler<T>) {
         
-        guard let url = URL(string: urlString) else{
+        guard var urlComponents = URLComponents(string: urlString) else {
             completion(.failure(NetworkError.urlError))
             return
         }
         
-        // Create the URLRequest
+        // Add parameters to URL query string if provided
+        if let parameters = params {
+            urlComponents.queryItems = parameters.map { key, value in
+                URLQueryItem(
+                    name: key,
+                    value: value.flatMap { "\($0)" } ?? "null"
+                )
+            }
+        }
+        
+        guard let url = urlComponents.url else {
+            completion(.failure(NetworkError.invalidUrl))
+            return
+        }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
         let token = DefaultWrapper().getStringFrom(Key: Keys.tokenID)
@@ -216,19 +230,13 @@ extension NetworkManager{
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
         
-        if let parameters = params {
-            let formData = parameters.map { "\($0.key)=\($0.value)" }.joined(separator: "&")
-            request.httpBody = formData.data(using: .utf8)
-        }
-        
-        let task = URLSession.shared.dataTask(with: request) {
+        let task = URLSession.shared.dataTask(with: request){
             (data, response, error) in
             
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NetworkError.noData))
                 return
@@ -250,6 +258,7 @@ extension NetworkManager{
             }
             
         }
+        
         task.resume()
         
     }

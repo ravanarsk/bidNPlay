@@ -27,5 +27,6 @@ struct APIURLs{
     static let profile = "/view_profile"
     static let register = "/register_user"
     static let otpVerify = "/verify_registration_otp"
-    
+    static let joinTournament = "/join_tournament"
+    static let leaveTournament = "/leave_tournament"
 }
