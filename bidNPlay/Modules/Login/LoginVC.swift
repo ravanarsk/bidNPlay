@@ -92,4 +92,5 @@ extension LoginVC : LoginDelegate{
         
     }
     
+    func resendOTPSuccess() {}
 }

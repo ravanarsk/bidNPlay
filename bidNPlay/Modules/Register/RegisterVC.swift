@@ -111,6 +111,11 @@ extension RegisterVC : RegisterDelegate{
             ActivityHUD().dismissProgressHUD()
             let vc = OTPVC.loadFromNib()
             vc.email = self.emailTF.text
+            vc.name = self.nameTF.text
+            vc.password = self.passwordTF.text
+            vc.countryCode = self.countryCodeTF.text
+            vc.phone = self.phoneNumberTF.text
+            
             self.navigationController?.pushViewController(vc, animated: true)
             
         }

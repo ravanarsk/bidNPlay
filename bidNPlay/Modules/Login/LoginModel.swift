@@ -10,6 +10,7 @@ import Foundation
 protocol LoginDelegate: ErrorDelegate{
     
     func loginSuccess()
+    func resendOTPSuccess() // Using Register API
     
 }
 

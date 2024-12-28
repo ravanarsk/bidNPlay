@@ -177,6 +177,22 @@ extension BaseVC : ErrorDelegate{
         
     }
     
+    func showAlertWith(msg: String) {
+        ActivityHUD().dismissProgressHUD()
+        let alertVC = UIAlertController(
+            title: CommonConstants.errorTitle,
+            message: msg,
+            preferredStyle: .alert
+        )
+        let doneAction = UIAlertAction(
+            title: CommonConstants.done, style: .default
+        ) { action in
+//            self.navigationController?.popViewController(animated: true)
+        }
+        alertVC.addAction(doneAction)
+        self.present(alertVC, animated: true)
+    }
+    
     func popAlertWith(msg: String){
         
         ActivityHUD().dismissProgressHUD()

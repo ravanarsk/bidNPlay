@@ -19,15 +19,15 @@ extension RegisterVM{
     internal func preludeCheckToRegisterAPI(name: String, email: String, password: String, countryCode: String, phone: String){
         
         if name.replacingOccurrences(of: " ", with: "") == ""{
-            self.delegate?.popAlertWith(msg: "Enter name")
+            self.delegate?.showAlertWith(msg: "Enter name")
         }else if ValidationMethods().isValidEmail(email: email) == false{
-            self.delegate?.popAlertWith(msg: "Enter valid email")
+            self.delegate?.showAlertWith(msg: "Enter valid email")
         }else if password.replacingOccurrences(of: " ", with: "") == ""{
-            self.delegate?.popAlertWith(msg: "Enter valid password")
+            self.delegate?.showAlertWith(msg: "Enter valid password")
         }else if countryCode.replacingOccurrences(of: " ", with: "") == ""{
-            self.delegate?.popAlertWith(msg: "Enter country code")
+            self.delegate?.showAlertWith(msg: "Enter country code")
         }else if phone.replacingOccurrences(of: " ", with: "") == ""{
-            self.delegate?.popAlertWith(msg: "Enter phone")
+            self.delegate?.showAlertWith(msg: "Enter phone")
         }else{
             
             let code = countryCode.replacingOccurrences(of: "+", with: "")
