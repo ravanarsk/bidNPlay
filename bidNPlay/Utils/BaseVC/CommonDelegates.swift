@@ -10,6 +10,7 @@ import Foundation
 protocol ErrorDelegate{
     
     func showAlertWith(error: Error)
+    func showAlertWith(msg: String)
     func popAlertWith(msg: String)
     func invalidToken()
     

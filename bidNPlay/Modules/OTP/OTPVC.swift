@@ -15,13 +15,23 @@ class OTPVC: BaseVC {
     @IBOutlet weak var OTPTF: UITextField!
     @IBOutlet weak var verifyButton: UIButton!
     @IBOutlet weak var resendButton: UIButton!
+    @IBOutlet var lblOTPTimer: UILabel!
     
     var email : String?
+    var name: String?
+    var password: String?
+    var countryCode: String?
+    var phone: String?
+    
+    fileprivate var timer: Timer?
+    fileprivate var count: Int = 60
+    
     fileprivate var otpVM = OTPVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureVC()
+        self.startTimer();
     }
 
 }
@@ -48,9 +58,29 @@ extension OTPVC{
             self, action: #selector(verifyAction), for: .touchUpInside
         )
         self.resendButton.addTarget(
-            self, action: #selector(verifyAction), for: .touchUpInside
+            self, action: #selector(resendOTPAction), for: .touchUpInside
         )
         
+    }
+    
+    fileprivate func startTimer(){
+        
+        self.lblOTPTimer.text = "60"
+        resendButton.isHidden = true
+        lblOTPTimer.isHidden = false
+        
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1,
+                                          repeats: true, block: { [weak self] currentObject in
+            if self?.count == 0{
+                self?.timer?.invalidate()
+                self?.count = 60
+                self?.resendButton.isHidden = false
+                self?.lblOTPTimer.isHidden = true
+            }
+            
+            self?.count -= 1
+            self?.lblOTPTimer.text = String(self?.count ?? 0)
+        })
     }
     
 }
@@ -59,13 +89,20 @@ extension OTPVC{
 extension OTPVC{
     
     @objc fileprivate func verifyAction(){
-        
         self.otpVM.delegate = self
         self.otpVM.preludeCheckToLoginAPI(
             email: self.email ?? "",
             otp: self.OTPTF.text ?? ""
         )
-        
+    }
+    
+    @objc fileprivate func resendOTPAction(){
+        self.otpVM.delegate = self
+        self.otpVM.preludeCheckToRegisterAPI(name: self.name ?? "",
+                                             email: self.email ?? "",
+                                             password: self.password ?? "",
+                                             countryCode: self.countryCode ?? "",
+                                             phone: self.phone ?? "")
     }
     
 }
@@ -86,6 +123,13 @@ extension OTPVC: LoginDelegate{
             
         }
         
+    }
+    
+    func resendOTPSuccess() {
+        DispatchQueue.main.async { [weak self] in
+            ActivityHUD().dismissProgressHUD()
+            self?.startTimer()
+        }
     }
     
 }
