@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE38777E2D210AE000D3DE70 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38777D2D210AE000D3DE70 /* SettingsVM.swift */; };
+		CE3877802D2112EE00D3DE70 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38777F2D2112EE00D3DE70 /* SettingsModel.swift */; };
 		F41263492D07FFB100D8DDDB /* PlayerInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41263472D07FFB100D8DDDB /* PlayerInfoCell.swift */; };
 		F412634A2D07FFB100D8DDDB /* PlayerInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41263482D07FFB100D8DDDB /* PlayerInfoCell.xib */; };
 		F412634E2D0812B200D8DDDB /* TeamInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F412634C2D0812B200D8DDDB /* TeamInfoCell.swift */; };
@@ -111,6 +113,8 @@
 		A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bidNPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC337FC5C0BA44A4A3A806A3 /* Pods-bidNPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.debug.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7D68D4C9662C5086586924 /* Pods-bidNPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.release.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.release.xcconfig"; sourceTree = "<group>"; };
+		CE38777D2D210AE000D3DE70 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
+		CE38777F2D2112EE00D3DE70 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		F41263472D07FFB100D8DDDB /* PlayerInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoCell.swift; sourceTree = "<group>"; };
 		F41263482D07FFB100D8DDDB /* PlayerInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerInfoCell.xib; sourceTree = "<group>"; };
 		F412634C2D0812B200D8DDDB /* TeamInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoCell.swift; sourceTree = "<group>"; };
@@ -356,6 +360,8 @@
 			children = (
 				F43A8BA72D0055CD0098F83B /* SettingsVC.swift */,
 				F43A8BA82D0055CD0098F83B /* SettingsVC.xib */,
+				CE38777D2D210AE000D3DE70 /* SettingsVM.swift */,
+				CE38777F2D2112EE00D3DE70 /* SettingsModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -893,6 +899,8 @@
 				F4E9267B2D046DAB00D98217 /* ErrorStrings.swift in Sources */,
 				F439CF852D09685A00DAF68A /* CustomTFDelegate.swift in Sources */,
 				F484A5AE2D1158F80054D7DB /* FixtureCell.swift in Sources */,
+				CE3877802D2112EE00D3DE70 /* SettingsModel.swift in Sources */,
+				CE38777E2D210AE000D3DE70 /* SettingsVM.swift in Sources */,
 				F4AE355B2CFDA6E800766A02 /* ActivityHUD.swift in Sources */,
 				F4FAD9C42D06E5B400B48452 /* TournamentDetailModel.swift in Sources */,
 				F43647E32D12CEFD003B71F8 /* ProfileVM.swift in Sources */,

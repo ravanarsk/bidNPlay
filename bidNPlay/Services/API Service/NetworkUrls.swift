@@ -13,6 +13,7 @@ struct APIURLs{
     static let api = "/api"
     static let login = "/user_login"
     static let otp = "/verify_otp"
+    static let deleteUser = "/delete_user"
     static let tournamentList = "/tournament_list"
     static let tournamentDetail = "/tournament_details"
     static let indvidualTournamentDetail = "/individual_tournament_details"

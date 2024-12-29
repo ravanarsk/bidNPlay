@@ -12,6 +12,8 @@ class SettingsVC: BaseVC {
 
     @IBOutlet weak var listTableView: UITableView!
     
+    private var viewModel = SettingsVM()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
@@ -57,7 +59,7 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 4
+        return 5
         
     }
     
@@ -86,6 +88,10 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource{
             self.openURLInSafariController("https://dev.sectorqube.com/bidnplay/public/api/terms_conditions")
         }else if indexPath.row == 2{
             self.openURLInSafariController("https://dev.sectorqube.com/bidnplay/public/api/privacy_policy")
+        }else if indexPath.row == 3{
+            // Delete Account
+//            self.openURLInSafariController("https://dev.sectorqube.com/bidnplay/public/api/privacy_policy")
+            deleteUserAlert()
         }else{
             self.logoutAlert()
         }
@@ -124,6 +130,37 @@ extension SettingsVC{
     
 }
 
+//MARK: Delete User
+extension SettingsVC {
+    
+    fileprivate func deleteUserAlert(){
+        
+        viewModel.delegate = self
+        
+        let alertVC = UIAlertController(
+            title: "Delete Account?",
+            message: "Do you wish to delete your account?",
+            preferredStyle: .alert
+        )
+        let yesAction = UIAlertAction(
+            title: "Yes", style: .destructive
+        ) { [weak viewModel] action in
+            viewModel?.callDeleteAPI()
+        }
+        
+        let noAction = UIAlertAction(
+            title: "No", style: .cancel
+        ) { action in
+            
+        }
+        
+        alertVC.addAction(yesAction)
+        alertVC.addAction(noAction)
+        self.present(alertVC, animated: true)
+    }
+    
+}
+
 //MARK: Logout
 extension SettingsVC{
     
@@ -146,4 +183,14 @@ extension SettingsVC{
         
     }
     
+}
+
+//MARK: SettingsDelegate
+extension SettingsVC: SettingsDelegate {
+    
+    func userDeleteSuccess() {
+        DispatchQueue.main.sync {
+            gotoLoginVC()
+        }
+    }
 }
