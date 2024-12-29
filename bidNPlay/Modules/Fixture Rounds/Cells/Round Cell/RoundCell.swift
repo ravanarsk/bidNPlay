@@ -77,6 +77,8 @@ extension RoundCell{
             self.titleLabel.text = "Terms and conditions"
         }else if index == 2{
             self.titleLabel.text = "Privacy Policy"
+        }else if index == 3{
+            self.titleLabel.text = "Delete Account"
         }else{
             self.titleLabel.text = "Log out"
         }
