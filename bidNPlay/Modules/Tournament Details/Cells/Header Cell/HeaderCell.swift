@@ -10,6 +10,8 @@ import UIKit
 protocol HeaderCellDelegate{
     func leaveJoinClicked()
     func fixtureClicked()
+    func signUpCaptainClicked()
+    func removeAsCaptainClicked()
 }
 
 class HeaderCell: UITableViewCell {
@@ -21,6 +23,9 @@ class HeaderCell: UITableViewCell {
     @IBOutlet weak var buttonStack: UIStackView!
     @IBOutlet weak var leaveButton: UIButton!
     @IBOutlet weak var fixtureButton: UIButton!
+    @IBOutlet weak var signUpCaptainButton: UIButton!
+    @IBOutlet weak var removeAsCaptainButton: UIButton!
+    @IBOutlet weak var signUpStack: UIStackView!
     
     internal var delegate : HeaderCellDelegate?
     
@@ -53,6 +58,14 @@ extension HeaderCell{
         self.leaveButton.addTarget(
             self, action: #selector(leaveJoinAction), for: .touchUpInside
         )
+        self.signUpCaptainButton.addTarget(self,
+                                           action: #selector(signUpCaptainAction),
+                                           for: .touchUpInside)
+        
+        self.removeAsCaptainButton.addTarget(self,
+                                           action: #selector(removeAsCaptainAction),
+                                           for: .touchUpInside)
+        
         
     }
     
@@ -76,6 +89,23 @@ extension HeaderCell{
             self.leaveButton.isHidden = false
         }
         
+        self.signUpCaptainButton.setDefaultTheme(name: "Sign Up as Captain")
+        self.removeAsCaptainButton.setDefaultTheme(name: "Remove Captain")
+        
+        if model.already_captain == 1 {
+            self.signUpCaptainButton.isHidden = true
+            self.removeAsCaptainButton.isHidden = false
+        } else {
+            self.signUpCaptainButton.isHidden = false
+            self.removeAsCaptainButton.isHidden = true
+        }
+        
+        if model.tournament_details.tournament_type != "Individual"{
+            self.signUpStack.isHidden = false
+        } else {
+            self.signUpStack.isHidden = true
+        }
+        
     }
     
 }
@@ -89,5 +119,13 @@ extension HeaderCell{
     
     @objc fileprivate func fixtureAction(){
         self.delegate?.fixtureClicked()
+    }
+    
+    @objc fileprivate func signUpCaptainAction(){
+        self.delegate?.signUpCaptainClicked()
+    }
+    
+    @objc fileprivate func removeAsCaptainAction(){
+        self.delegate?.removeAsCaptainClicked()
     }
 }

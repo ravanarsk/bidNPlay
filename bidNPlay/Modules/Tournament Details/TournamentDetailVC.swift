@@ -228,6 +228,42 @@ extension TournamentDetailVC: TeamInfoDelegate, BasicInfoDelegate, HeaderCellDel
         
     }
     
+    func signUpCaptainClicked() {
+        let alertVC = UIAlertController(
+            title: "Sign up as captain",
+            message: "",
+            preferredStyle: .alert
+        )
+        alertVC.addTextField()
+        
+        let yesAction = UIAlertAction(
+            title: "SIGN UP", style: .default
+        ) { [weak self] action in
+            
+            let answer = alertVC.textFields![0].text ?? ""
+            
+            if (answer.count > 0) {
+                self?.detailVM.addTournamentTeamAPI(teamName: answer, tournamentID: (self?.tournamentID)!)
+            }
+            
+        }
+        
+        let noAction = UIAlertAction(
+            title: "Cancel", style: .cancel
+        ) { action in
+            
+        }
+        
+        alertVC.addAction(yesAction)
+        alertVC.addAction(noAction)
+        self.present(alertVC, animated: true)
+    }
+    
+    func removeAsCaptainClicked() {
+        self.detailVM.removeAsCaptainAPI(tournamentID: (self.tournamentID)!)
+    }
+    
+    
 }
 
 //MARK: Segue Actions

@@ -30,4 +30,6 @@ struct APIURLs{
     static let otpVerify = "/verify_registration_otp"
     static let joinTournament = "/join_tournament"
     static let leaveTournament = "/leave_tournament"
+    static let tournamentAddTeam = "/add_tournament_team"
+    static let removeAsCaptain = "/remove_as_captain"
 }
