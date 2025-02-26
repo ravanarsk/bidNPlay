@@ -67,16 +67,25 @@ extension FixtureVC{
     
     fileprivate func callFixtureAPI(){
         
-        guard let tournamentID = self.tournamentID, let roundNo = self.roundNo else{
-            return
+        if self.isIndividual {
+            
+            guard let tournamentID = self.tournamentID, let roundNo = self.roundNo else{
+                return
+            }
+            self.fixtureVM.getIndividualFixtureList(
+                tournamentID: tournamentID,
+                roundNo: roundNo
+            )
+        } else {
+     // TODO: Implement API for listing Fixture for Team.
+            // And Implement Subfixture API list
+            guard let tournamentID = self.tournamentID, let roundNo = self.roundNo else{
+                return
+            }
+            self.fixtureVM.getTeamFixtureList(tournamentID: tournamentID,
+                                              roundNo: roundNo)
         }
-        self.fixtureVM.getIndividualFixtureList(
-            tournamentID: tournamentID,
-            roundNo: roundNo
-        )
-        
     }
-    
 }
 
 //MARK: Button Actions
@@ -86,6 +95,7 @@ extension FixtureVC{
         
         let vc = FixtureRoundVC.loadFromNib()
         vc.tournamentID = self.tournamentID
+        vc.isIndividual = self.isIndividual
         vc.delegate = self
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
@@ -114,6 +124,9 @@ extension FixtureVC: UITableViewDelegate , UITableViewDataSource{
                     index: indexPath.row
                 )
                 cell.setIndividualCell(model: model)
+            } else {
+                let model = self.fixtureVM.getTeamModel(index: indexPath.row)
+                cell.setTeamFixtureCell(model: model)
             }
             return cell
         }
@@ -130,22 +143,27 @@ extension FixtureVC: UITableViewDelegate , UITableViewDataSource{
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if !self.fixtureVM.isIndividual, !self.fixtureVM.isEmpty() {
+            let teamFixture = fixtureVM.getTeamModel(index: indexPath.row)
+            let vc = SubFixturesVC.loadFromNib()
+            vc.fixtureID = teamFixture.fixtureId
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
 }
 
 //MARK: View model Delegates
 extension FixtureVC: FixtureDelegate{
     
     func modelUpdated() {
-        
         DispatchQueue.main.async {
-            
             ActivityHUD().dismissProgressHUD()
             self.listTableView.reloadData()
-            
         }
-        
     }
-    
 }
 
 //MARK: Change Round Delegate

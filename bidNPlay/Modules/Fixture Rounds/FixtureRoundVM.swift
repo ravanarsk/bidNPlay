@@ -43,6 +43,28 @@ extension FixtureRoundVM{
         
     }
     
+    internal func getTeamFixtureRoundList(tournamentID: Int){
+        
+        ActivityHUD().showProgressHUD()
+        let params = [
+            "user_id" : DefaultWrapper().getIntFrom(Key: Keys.userID),
+            "tournament_id" : tournamentID
+        ] as [String : Any]
+        let listUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.teamTournamentFixtureRounds
+        NetworkManager.shared.get(urlString: listUrl, params: params, responseType: RoundsResponse.self) { result in
+            
+            switch result{
+            case .success(let responseObj):
+                self.listModel = responseObj.rounds
+                self.delegate?.modelUpdated()
+            case .failure(let errorObj):
+                self.delegate?.showAlertWith(error: errorObj)
+            }
+            
+        }
+        
+    }
+    
 }
 
 //MARK: Model fetch

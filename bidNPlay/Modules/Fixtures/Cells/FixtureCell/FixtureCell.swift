@@ -66,4 +66,18 @@ extension FixtureCell{
         
     }
     
+    internal func setTeamFixtureCell(model: TeamFixture){
+        self.leftTeamName.text = model.homeTeamName.capitalized
+        self.rightTeamName.text = model.awayTeamName.capitalized
+        self.leftScore.text = "\(model.homeTeamPoints)"
+        self.rightScore.text = "\(model.awayTeamPoints)"
+    }
+    
+    internal func setTeamSubFixtureCell(model: TeamSubFixtureModel){
+        self.leftTeamName.text = model.homeUserName.capitalized
+        self.rightTeamName.text = model.awayUserName.capitalized
+        self.leftScore.text = "\(model.homeUserGoals ?? 0)"
+        self.rightScore.text = "\(model.awayUserGoals ?? 0)"
+    }
+    
 }

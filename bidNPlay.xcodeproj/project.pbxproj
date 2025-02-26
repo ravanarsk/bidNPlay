@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		CE38777E2D210AE000D3DE70 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38777D2D210AE000D3DE70 /* SettingsVM.swift */; };
 		CE3877802D2112EE00D3DE70 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38777F2D2112EE00D3DE70 /* SettingsModel.swift */; };
+		CE7DA42F2D6EE94800EBE0F5 /* SubFixtureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7DA42E2D6EE94800EBE0F5 /* SubFixtureModel.swift */; };
+		CE9EC6E52D6CB86200AE463F /* SubFixturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9EC6E42D6CB86200AE463F /* SubFixturesVC.swift */; };
+		CE9EC6E72D6CB88A00AE463F /* SubFixturesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9EC6E62D6CB88A00AE463F /* SubFixturesVM.swift */; };
+		CE9EC6EB2D6CB8BF00AE463F /* SubFixturesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9EC6EA2D6CB8BF00AE463F /* SubFixturesVC.xib */; };
 		F41263492D07FFB100D8DDDB /* PlayerInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41263472D07FFB100D8DDDB /* PlayerInfoCell.swift */; };
 		F412634A2D07FFB100D8DDDB /* PlayerInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41263482D07FFB100D8DDDB /* PlayerInfoCell.xib */; };
 		F412634E2D0812B200D8DDDB /* TeamInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F412634C2D0812B200D8DDDB /* TeamInfoCell.swift */; };
@@ -115,6 +119,10 @@
 		AE7D68D4C9662C5086586924 /* Pods-bidNPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.release.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.release.xcconfig"; sourceTree = "<group>"; };
 		CE38777D2D210AE000D3DE70 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
 		CE38777F2D2112EE00D3DE70 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		CE7DA42E2D6EE94800EBE0F5 /* SubFixtureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubFixtureModel.swift; sourceTree = "<group>"; };
+		CE9EC6E42D6CB86200AE463F /* SubFixturesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubFixturesVC.swift; sourceTree = "<group>"; };
+		CE9EC6E62D6CB88A00AE463F /* SubFixturesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubFixturesVM.swift; sourceTree = "<group>"; };
+		CE9EC6EA2D6CB8BF00AE463F /* SubFixturesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubFixturesVC.xib; sourceTree = "<group>"; };
 		F41263472D07FFB100D8DDDB /* PlayerInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoCell.swift; sourceTree = "<group>"; };
 		F41263482D07FFB100D8DDDB /* PlayerInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerInfoCell.xib; sourceTree = "<group>"; };
 		F412634C2D0812B200D8DDDB /* TeamInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoCell.swift; sourceTree = "<group>"; };
@@ -234,6 +242,17 @@
 				A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE9EC6E32D6CB83200AE463F /* SubFixtures */ = {
+			isa = PBXGroup;
+			children = (
+				CE9EC6E42D6CB86200AE463F /* SubFixturesVC.swift */,
+				CE7DA42E2D6EE94800EBE0F5 /* SubFixtureModel.swift */,
+				CE9EC6E62D6CB88A00AE463F /* SubFixturesVM.swift */,
+				CE9EC6EA2D6CB8BF00AE463F /* SubFixturesVC.xib */,
+			);
+			path = SubFixtures;
 			sourceTree = "<group>";
 		};
 		D72FF43ED42E441D61B40741 /* Pods */ = {
@@ -568,6 +587,7 @@
 		F4AE35542CFDA62800766A02 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE9EC6E32D6CB83200AE463F /* SubFixtures */,
 				F43647DB2D12B1C8003B71F8 /* Profile */,
 				F484A5B42D1189700054D7DB /* Fixture Rounds */,
 				F4A9460B2D10637C0008E6D0 /* Fixtures */,
@@ -811,6 +831,7 @@
 				F484A5AF2D1158F80054D7DB /* FixtureCell.xib in Resources */,
 				F4FAD9C82D0713EC00B48452 /* HeaderCell.xib in Resources */,
 				F43A8BAA2D0055CD0098F83B /* SettingsVC.xib in Resources */,
+				CE9EC6EB2D6CB8BF00AE463F /* SubFixturesVC.xib in Resources */,
 				F4AE35692CFDAA5D00766A02 /* Main.storyboard in Resources */,
 				F4AE35642CFDA7A700766A02 /* LoginVC.xib in Resources */,
 				F4EC46F12D00653B00EFC57F /* TournamentCell.xib in Resources */,
@@ -879,10 +900,12 @@
 				F4E926722D043AD400D98217 /* ValidationMethods.swift in Sources */,
 				F4E9266B2D0435C700D98217 /* NetworkManager.swift in Sources */,
 				F4E9266D2D0435C700D98217 /* DefaultKeys.swift in Sources */,
+				CE9EC6E52D6CB86200AE463F /* SubFixturesVC.swift in Sources */,
 				F4E926762D04455800D98217 /* CommonDelegates.swift in Sources */,
 				F41263492D07FFB100D8DDDB /* PlayerInfoCell.swift in Sources */,
 				F47F64CE2CFEF079002F8930 /* ButtonExt.swift in Sources */,
 				F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */,
+				CE9EC6E72D6CB88A00AE463F /* SubFixturesVM.swift in Sources */,
 				F43647E72D1305D2003B71F8 /* RegisterModel.swift in Sources */,
 				F484A5B72D1189C50054D7DB /* FixtureRoundVC.swift in Sources */,
 				F4FAD9C22D06DF7900B48452 /* TournamentDetailVM.swift in Sources */,
@@ -930,6 +953,7 @@
 				F4AE35582CFDA67400766A02 /* BaseVC.swift in Sources */,
 				F4AE35672CFDA83600766A02 /* NibExt.swift in Sources */,
 				F4FAD9C92D0713EC00B48452 /* HeaderCell.swift in Sources */,
+				CE7DA42F2D6EE94800EBE0F5 /* SubFixtureModel.swift in Sources */,
 				F484A5BA2D118A640054D7DB /* FixtureRoundVM.swift in Sources */,
 				F43647E52D130590003B71F8 /* RegisterVM.swift in Sources */,
 				F4E9266E2D0435C700D98217 /* DefaultWrapper.swift in Sources */,
