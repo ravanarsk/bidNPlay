@@ -30,6 +30,10 @@ struct APIURLs{
     static let teamSubFixtureList = "/sub_fixtures_list"
     static let teamTournamentFixtureRounds = "/team_tournament_fixture_rounds"
     
+    static let teamTournamentTable = "/team_tournament_table"
+    static let individualTournamentTable = "/individual_tournament_table"
+    static let teamPlayerStats = "/tournament_player_stats"
+    
     static let profile = "/view_profile"
     static let register = "/register_user"
     static let otpVerify = "/verify_registration_otp"
