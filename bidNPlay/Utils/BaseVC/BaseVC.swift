@@ -67,6 +67,27 @@ extension BaseVC{
         
     }
     
+    func showConfirmationAlert(title: String, message: String, yes: @escaping ()-> Void, no: @escaping () -> Void){
+        
+        ActivityHUD().dismissProgressHUD()
+        let alertVC = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive) { action in
+            yes()
+        }
+        
+        let noAction = UIAlertAction(title: "No", style: .cancel) { action in
+            no()
+        }
+        alertVC.addAction(yesAction)
+        alertVC.addAction(noAction)
+        self.present(alertVC, animated: true)
+        
+    }
+    
 }
 
 //MARK: Back button

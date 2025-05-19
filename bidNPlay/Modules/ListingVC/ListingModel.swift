@@ -146,6 +146,13 @@ struct TeamPlayer: Decodable {
     
 }
 
+// MARK: PickerVCModel
+extension TeamPlayer: PickerVCModel {
+    func displayText() -> String {
+        return playerName ?? ""
+    }
+}
+
 //MARK: Pot Model
 struct PotsResponse: Decodable {
     

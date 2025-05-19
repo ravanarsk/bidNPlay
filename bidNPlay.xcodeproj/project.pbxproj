@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1585852DD1AC3100E4DC53 /* SubFixtureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1585832DD1AC3100E4DC53 /* SubFixtureCell.swift */; };
+		CE1585862DD1AC3100E4DC53 /* SubFixtureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1585842DD1AC3100E4DC53 /* SubFixtureCell.xib */; };
+		CE15858A2DD1B77A00E4DC53 /* AddFixtureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1585882DD1B77A00E4DC53 /* AddFixtureVC.swift */; };
+		CE15858B2DD1B77A00E4DC53 /* AddFixtureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1585892DD1B77A00E4DC53 /* AddFixtureVC.xib */; };
+		CE15858D2DD1B79500E4DC53 /* AddFixtureVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15858C2DD1B79500E4DC53 /* AddFixtureVM.swift */; };
+		CE1585912DD1C27600E4DC53 /* PickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15858F2DD1C27600E4DC53 /* PickerVC.swift */; };
+		CE1585922DD1C27600E4DC53 /* PickerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1585902DD1C27600E4DC53 /* PickerVC.xib */; };
+		CE1585A62DD60CE500E4DC53 /* AddFixtureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1585A52DD60CE500E4DC53 /* AddFixtureModel.swift */; };
 		CE38777E2D210AE000D3DE70 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38777D2D210AE000D3DE70 /* SettingsVM.swift */; };
 		CE3877802D2112EE00D3DE70 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38777F2D2112EE00D3DE70 /* SettingsModel.swift */; };
 		CE7DA42F2D6EE94800EBE0F5 /* SubFixtureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7DA42E2D6EE94800EBE0F5 /* SubFixtureModel.swift */; };
@@ -127,6 +135,14 @@
 		A8F791C94A2AD317F76CF026 /* Pods_bidNPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bidNPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC337FC5C0BA44A4A3A806A3 /* Pods-bidNPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.debug.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7D68D4C9662C5086586924 /* Pods-bidNPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bidNPlay.release.xcconfig"; path = "Target Support Files/Pods-bidNPlay/Pods-bidNPlay.release.xcconfig"; sourceTree = "<group>"; };
+		CE1585832DD1AC3100E4DC53 /* SubFixtureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubFixtureCell.swift; sourceTree = "<group>"; };
+		CE1585842DD1AC3100E4DC53 /* SubFixtureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubFixtureCell.xib; sourceTree = "<group>"; };
+		CE1585882DD1B77A00E4DC53 /* AddFixtureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFixtureVC.swift; sourceTree = "<group>"; };
+		CE1585892DD1B77A00E4DC53 /* AddFixtureVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFixtureVC.xib; sourceTree = "<group>"; };
+		CE15858C2DD1B79500E4DC53 /* AddFixtureVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFixtureVM.swift; sourceTree = "<group>"; };
+		CE15858F2DD1C27600E4DC53 /* PickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerVC.swift; sourceTree = "<group>"; };
+		CE1585902DD1C27600E4DC53 /* PickerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerVC.xib; sourceTree = "<group>"; };
+		CE1585A52DD60CE500E4DC53 /* AddFixtureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFixtureModel.swift; sourceTree = "<group>"; };
 		CE38777D2D210AE000D3DE70 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
 		CE38777F2D2112EE00D3DE70 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		CE7DA42E2D6EE94800EBE0F5 /* SubFixtureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubFixtureModel.swift; sourceTree = "<group>"; };
@@ -264,6 +280,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE1585822DD1AC0C00E4DC53 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE1585832DD1AC3100E4DC53 /* SubFixtureCell.swift */,
+				CE1585842DD1AC3100E4DC53 /* SubFixtureCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE1585872DD1B74F00E4DC53 /* AddFixture */ = {
+			isa = PBXGroup;
+			children = (
+				CE1585882DD1B77A00E4DC53 /* AddFixtureVC.swift */,
+				CE15858C2DD1B79500E4DC53 /* AddFixtureVM.swift */,
+				CE1585892DD1B77A00E4DC53 /* AddFixtureVC.xib */,
+				CE1585A52DD60CE500E4DC53 /* AddFixtureModel.swift */,
+			);
+			path = AddFixture;
+			sourceTree = "<group>";
+		};
+		CE15858E2DD1C25900E4DC53 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				CE15858F2DD1C27600E4DC53 /* PickerVC.swift */,
+				CE1585902DD1C27600E4DC53 /* PickerVC.xib */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
 		CE7DA5822D7E2F8400EBE0F5 /* PlayerStats */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +343,7 @@
 		CE9EC6E32D6CB83200AE463F /* SubFixtures */ = {
 			isa = PBXGroup;
 			children = (
+				CE1585822DD1AC0C00E4DC53 /* Cells */,
 				CE9EC6E42D6CB86200AE463F /* SubFixturesVC.swift */,
 				CE7DA42E2D6EE94800EBE0F5 /* SubFixtureModel.swift */,
 				CE9EC6E62D6CB88A00AE463F /* SubFixturesVM.swift */,
@@ -647,6 +693,8 @@
 		F4AE35542CFDA62800766A02 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE15858E2DD1C25900E4DC53 /* Picker */,
+				CE1585872DD1B74F00E4DC53 /* AddFixture */,
 				CE7DA58D2D7F6EA200EBE0F5 /* TeamTable */,
 				CE7DA5822D7E2F8400EBE0F5 /* PlayerStats */,
 				CE9EC6E32D6CB83200AE463F /* SubFixtures */,
@@ -881,6 +929,7 @@
 				F484A5C22D118F980054D7DB /* RoundCell.xib in Resources */,
 				F4A9460F2D1064020008E6D0 /* FixtureVC.xib in Resources */,
 				CE7DA5902D7F6EBC00EBE0F5 /* TeamTableVC.xib in Resources */,
+				CE1585862DD1AC3100E4DC53 /* SubFixtureCell.xib in Resources */,
 				F412634A2D07FFB100D8DDDB /* PlayerInfoCell.xib in Resources */,
 				F4AE354D2CFDA34900766A02 /* Poppins-Regular.ttf in Resources */,
 				F43647E12D12CEE8003B71F8 /* ProfileVC.xib in Resources */,
@@ -902,9 +951,11 @@
 				F43A8B9B2D003CB40098F83B /* DashboardTab.xib in Resources */,
 				F43A8BA02D0054D00098F83B /* TournamentsVC.xib in Resources */,
 				F47F64DE2CFF0E62002F8930 /* CallingCodes.plist in Resources */,
+				CE1585922DD1C27600E4DC53 /* PickerVC.xib in Resources */,
 				F4A9460A2D10153F0008E6D0 /* ListingCell.xib in Resources */,
 				F47F64DD2CFF0E62002F8930 /* assets.bundle in Resources */,
 				F47F64E22CFF2B04002F8930 /* OTPVC.xib in Resources */,
+				CE15858B2DD1B77A00E4DC53 /* AddFixtureVC.xib in Resources */,
 				CE7DA58C2D7E322000EBE0F5 /* PlayerStatsCell.xib in Resources */,
 				F4AE354A2CFDA34900766A02 /* Poppins-Bold.ttf in Resources */,
 				F4FAD9CD2D07218700B48452 /* BasicInfoCell.xib in Resources */,
@@ -979,15 +1030,19 @@
 				F484A5B32D11604B0054D7DB /* FixtureModel.swift in Sources */,
 				F47F64E32CFF2B04002F8930 /* OTPVC.swift in Sources */,
 				F4AE35502CFDA37F00766A02 /* FontExtension.swift in Sources */,
+				CE1585A62DD60CE500E4DC53 /* AddFixtureModel.swift in Sources */,
 				F4EC46F02D00653B00EFC57F /* TournamentCell.swift in Sources */,
 				CE7DA5932D7F6EC700EBE0F5 /* TeamTableVM.swift in Sources */,
 				F4AE355F2CFDA72300766A02 /* CommonConstants.swift in Sources */,
+				CE15858A2DD1B77A00E4DC53 /* AddFixtureVC.swift in Sources */,
 				F439CF832D0959FA00DAF68A /* CustomTFAlertVC.swift in Sources */,
 				F484A5C12D118F980054D7DB /* RoundCell.swift in Sources */,
 				F4EC46F32D007DC300EFC57F /* TableViewExt.swift in Sources */,
 				F4A9460E2D1064020008E6D0 /* FixtureVC.swift in Sources */,
+				CE1585852DD1AC3100E4DC53 /* SubFixtureCell.swift in Sources */,
 				F4A946042D1010D40008E6D0 /* ListingModel.swift in Sources */,
 				F4E9267B2D046DAB00D98217 /* ErrorStrings.swift in Sources */,
+				CE15858D2DD1B79500E4DC53 /* AddFixtureVM.swift in Sources */,
 				F439CF852D09685A00DAF68A /* CustomTFDelegate.swift in Sources */,
 				F484A5AE2D1158F80054D7DB /* FixtureCell.swift in Sources */,
 				CE3877802D2112EE00D3DE70 /* SettingsModel.swift in Sources */,
@@ -1037,6 +1092,7 @@
 				F4A945FF2D1010BF0008E6D0 /* ListingVC.swift in Sources */,
 				F4E926812D04713000D98217 /* TournamentsModel.swift in Sources */,
 				F43A8BA92D0055CD0098F83B /* SettingsVC.swift in Sources */,
+				CE1585912DD1C27600E4DC53 /* PickerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1179,26 +1235,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZXSX587GRY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bidNPlay/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BidNPlay;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sqt.bidNPlay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bidnplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = BidNPlay_Development;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1215,26 +1276,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZXSX587GRY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bidNPlay/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BidNPlay;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sqt.bidNPlay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bidnplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = BidNPlay_Development;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

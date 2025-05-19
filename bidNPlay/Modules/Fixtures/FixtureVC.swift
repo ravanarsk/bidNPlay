@@ -149,6 +149,7 @@ extension FixtureVC: UITableViewDelegate , UITableViewDataSource{
             let teamFixture = fixtureVM.getTeamModel(index: indexPath.row)
             let vc = SubFixturesVC.loadFromNib()
             vc.fixtureID = teamFixture.fixtureId
+            vc.teamFixture = teamFixture
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

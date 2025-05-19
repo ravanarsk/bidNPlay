@@ -49,3 +49,15 @@ struct TeamSubFixtureResponse: Decodable {
     let sub_fixture_creation_permission: Int
     let sub_fixture_score_permission: Int
 }
+
+
+struct DeleteTeamSubFixtureResponse: Decodable {
+    let status: Bool?
+    let message: String?
+}
+
+struct AddSubFixtureScoreResponse: Decodable {
+    let status: Bool?
+    let message: String?
+}
+
