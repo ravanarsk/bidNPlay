@@ -45,6 +45,23 @@ extension TournamentDetailVC{
         self.listTableView.showsVerticalScrollIndicator = false
         self.listTableView.showsHorizontalScrollIndicator = false
         
+        let button1 = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"),
+                                      style: .plain, target: self, action: nil)
+        button1.tintColor = .white
+        
+        let menuItems = UIMenu(title: "",options: [.displayInline],children: [
+            UIAction(title: "Table", handler: { [weak self] _ in
+                self?.segueToTableStats()
+            }),
+            UIAction(title: "Player Stats", handler: { [weak self] _ in
+                self?.segueToPlayerStats()
+            })
+        ])
+        
+                               button1.menu = menuItems
+        
+        
+        self.navigationItem.rightBarButtonItem  = button1
     }
     
     fileprivate func setUpView(){
@@ -228,6 +245,42 @@ extension TournamentDetailVC: TeamInfoDelegate, BasicInfoDelegate, HeaderCellDel
         
     }
     
+    func signUpCaptainClicked() {
+        let alertVC = UIAlertController(
+            title: "Sign up as captain",
+            message: "",
+            preferredStyle: .alert
+        )
+        alertVC.addTextField()
+        
+        let yesAction = UIAlertAction(
+            title: "SIGN UP", style: .default
+        ) { [weak self] action in
+            
+            let answer = alertVC.textFields![0].text ?? ""
+            
+            if (answer.count > 0) {
+                self?.detailVM.addTournamentTeamAPI(teamName: answer, tournamentID: (self?.tournamentID)!)
+            }
+            
+        }
+        
+        let noAction = UIAlertAction(
+            title: "Cancel", style: .cancel
+        ) { action in
+            
+        }
+        
+        alertVC.addAction(yesAction)
+        alertVC.addAction(noAction)
+        self.present(alertVC, animated: true)
+    }
+    
+    func removeAsCaptainClicked() {
+        self.detailVM.removeAsCaptainAPI(tournamentID: (self.tournamentID)!)
+    }
+    
+    
 }
 
 //MARK: Segue Actions
@@ -239,6 +292,26 @@ extension TournamentDetailVC{
         let vc = ListingVC.loadFromNib()
         vc.tournamentID = model.tournament_details.tournament_id
         vc.listingView = viewSelection
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    fileprivate func segueToTableStats(){
+        
+//        let model = self.detailVM.getSelectedModelWith()
+        let vc = TeamTableVC.loadFromNib()
+        vc.tournamentID = self.tournamentID
+        vc.isIndividual = self.isIndividual
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    fileprivate func segueToPlayerStats(){
+        
+//        let model = self.detailVM.getSelectedModelWith()
+        let vc = PlayerStatsVC.loadFromNib()
+        vc.tournamentID = self.tournamentID
+        vc.isIndividual = self.isIndividual
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

@@ -18,6 +18,7 @@ class FixtureRoundVC: BaseVC {
     
     internal var fixtureVM = FixtureRoundVM()
     internal var tournamentID : Int?
+    internal var isIndividual : Bool = true
     internal var delegate : GetRoundDetailDelegate?
     
     override func viewDidLoad() {
@@ -69,10 +70,14 @@ extension FixtureRoundVC{
         
         self.titleLabel.text = "Select a round"
         self.fixtureVM.delegate = self
-        self.fixtureVM.getIndividualFixtureRoundList(
-            tournamentID: self.tournamentID!
-        )
         
+        if self.isIndividual {
+            self.fixtureVM.getIndividualFixtureRoundList(
+                tournamentID: self.tournamentID!
+            )
+        } else {
+            self.fixtureVM.getTeamFixtureRoundList(tournamentID: self.tournamentID!)
+        }
     }
     
 }

@@ -84,10 +84,35 @@ extension NetworkManager{
                 if let responseErr = responseError{
                     completion(.failure(responseErr))
                 }else{
+                    
+                    if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any],
+                       let jsonData = try? JSONSerialization.data(withJSONObject: json, options: []),
+                       let stringJSON = String(bytes: jsonData, encoding: String.Encoding.utf8) {
+                        debugPrint("""
+***
+Response : \(stringJSON)
+###
+""")
+                    }
+                    
+//                    let response = String(data: data, encoding: .utf8);
+//                    debugPrint("Response : \(String(describing: response))")
+                    
                     let decoder = JSONDecoder()
                     let responseObject = try decoder.decode(responseType, from: data)
                     completion(.success(responseObject))
                 }
+            }catch let DecodingError.dataCorrupted(context) {
+                print(context)
+            } catch let DecodingError.keyNotFound(key, context) {
+                print("Key '\(key)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch let DecodingError.valueNotFound(value, context) {
+                print("Value '\(value)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch let DecodingError.typeMismatch(type, context)  {
+                print("Type '\(type)' mismatch:", context.debugDescription)
+                print("codingPath:", context.codingPath)
             } catch {
                 completion(.failure(error))
             }
@@ -183,6 +208,17 @@ extension NetworkManager{
                 if let responseErr = responseError{
                     completion(.failure(responseErr))
                 }else{
+                    
+                    if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any],
+                       let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted, .withoutEscapingSlashes]),
+                       let stringJSON = String(bytes: jsonData, encoding: String.Encoding.utf8) {
+                        debugPrint("""
+***
+Response : \(stringJSON)
+###
+""")
+                    }
+                    
                     let decoder = JSONDecoder()
                     let responseObject = try decoder.decode(responseType, from: data)
                     completion(.success(responseObject))

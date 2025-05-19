@@ -98,6 +98,57 @@ extension TournamentDetailVM{
         
     }
     
+    internal func addTournamentTeamAPI(teamName: String, tournamentID: Int){
+        
+        ActivityHUD().showProgressHUD()
+        let params = [
+            "user_id" : DefaultWrapper().getIntFrom(Key: Keys.userID),
+            "tournament_id" : tournamentID,
+            "team_name" : teamName
+        ] as [String : Any]
+        let leaveUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.tournamentAddTeam
+        debugPrint(params)
+        debugPrint(leaveUrl)
+        NetworkManager.shared.post(urlString: leaveUrl, params: params, responseType: BasicNetworkModel.self) { result in
+            
+            switch result{
+            case .success(let responseObj):
+                print(responseObj)
+                self.delegate?.reloadAPI()
+            case .failure(let errorObj):
+                print(errorObj)
+                self.delegate?.showAlertWith(error: errorObj)
+            }
+            
+        }
+        
+    }
+    
+    internal func removeAsCaptainAPI( tournamentID: Int){
+        
+        ActivityHUD().showProgressHUD()
+        let params = [
+            "user_id" : DefaultWrapper().getIntFrom(Key: Keys.userID),
+            "tournament_id" : tournamentID
+        ] as [String : Any]
+        let leaveUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.removeAsCaptain
+        debugPrint(params)
+        debugPrint(leaveUrl)
+        NetworkManager.shared.delete(urlString: leaveUrl, params: params, responseType: BasicNetworkModel.self) { result in
+            switch result{
+            case .success(let responseObj):
+                print(responseObj)
+                self.delegate?.reloadAPI()
+            case .failure(let errorObj):
+                print(errorObj)
+                self.delegate?.showAlertWith(error: errorObj)
+            }
+            
+        }
+        
+    }
+    
+    
 }
 
 //MARK: Model Fetch

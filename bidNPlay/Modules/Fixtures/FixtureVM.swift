@@ -10,6 +10,7 @@ import Foundation
 class FixtureVM{
     
     var individualFixtureModel = [IndividualFixture]()
+    var teamFixtureModel = [TeamFixture]()
     var delegate: FixtureDelegate?
     var isIndividual : Bool = false
     
@@ -27,17 +28,36 @@ extension FixtureVM{
             "round_no" : roundNo
         ] as [String : Any]
         let listUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.individualFixtureList
-        debugPrint(params)
-        debugPrint(listUrl)
         NetworkManager.shared.get(urlString: listUrl, params: params, responseType: IndividualFixtureResponse.self) { result in
             
             switch result{
             case .success(let responseObj):
-                print(responseObj)
                 self.individualFixtureModel = responseObj.fixtures
                 self.delegate?.modelUpdated()
             case .failure(let errorObj):
-                print(errorObj)
+                self.delegate?.showAlertWith(error: errorObj)
+            }
+            
+        }
+        
+    }
+    
+    internal func getTeamFixtureList(tournamentID: Int, roundNo: Int){
+        
+        ActivityHUD().showProgressHUD()
+        let params = [
+            "user_id" : DefaultWrapper().getIntFrom(Key: Keys.userID),
+            "tournament_id" : tournamentID,
+            "round_no" : roundNo
+        ] as [String : Any]
+        let listUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.teamFixtureList
+        NetworkManager.shared.get(urlString: listUrl, params: params, responseType: TeamFixtureResponse.self) { result in
+            
+            switch result{
+            case .success(let responseObj):
+                self.teamFixtureModel = responseObj.fixtures
+                self.delegate?.modelUpdated()
+            case .failure(let errorObj):
                 self.delegate?.showAlertWith(error: errorObj)
             }
             
@@ -52,34 +72,27 @@ extension FixtureVM{
     
     internal func getRowCount() -> Int {
         
-        if self.isIndividual == true{
+        if self.isIndividual == true{ // Individual Fixture
             return self.individualFixtureModel.isEmpty ? 1 : self.individualFixtureModel.count
-        }else{
-            return 1
+        } else{ // Team Fixture
+            return self.teamFixtureModel.isEmpty ? 1 : self.teamFixtureModel.count
         }
         
     }
     
-    internal func getIndividualModel(index: Int) -> IndividualFixture{
-        
+    internal func getIndividualModel(index: Int) -> IndividualFixture {
         return self.individualFixtureModel[index]
-        
     }
     
-//    internal func getTeamModel(index: Int) -> Team{
-//        
-//        return self.teamModel[index]
-//        
-//    }
+    internal func getTeamModel(index: Int) -> TeamFixture {
+        return self.teamFixtureModel[index]
+    }
     
     internal func isEmpty() -> Bool{
-        
         if self.isIndividual == true{
             return self.individualFixtureModel.isEmpty
         }else{
-            return false
+            return self.teamFixtureModel.isEmpty
         }
-        
     }
-    
 }

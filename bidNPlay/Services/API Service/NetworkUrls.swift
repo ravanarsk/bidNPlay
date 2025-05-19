@@ -25,9 +25,24 @@ struct APIURLs{
     static let potPlayerList = "/tournament_pot_players"
     static let individualFixtureList = "/individual_fixtures_by_round"
     static let individualFixtureRoundsList = "/individual_tournament_fixture_rounds"
+    
+    static let teamFixtureList = "/team_fixtures_by_round"
+    static let teamSubFixtureList = "/sub_fixtures_list"
+    static let teamTournamentFixtureRounds = "/team_tournament_fixture_rounds"
+    
+    static let teamTournamentTable = "/team_tournament_table"
+    static let individualTournamentTable = "/individual_tournament_table"
+    static let teamPlayerStats = "/tournament_player_stats"
+    
+    static let addTeamPlayerFixture = "/add_team_player_fixture"
+    static let deleteTeamSubFixture = "/delete_team_sub_fixture"
+    static let addSubFixtureScore = "/add_sub_fixture_score"
+    
     static let profile = "/view_profile"
     static let register = "/register_user"
     static let otpVerify = "/verify_registration_otp"
     static let joinTournament = "/join_tournament"
     static let leaveTournament = "/leave_tournament"
+    static let tournamentAddTeam = "/add_tournament_team"
+    static let removeAsCaptain = "/remove_as_captain"
 }
