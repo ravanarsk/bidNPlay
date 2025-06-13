@@ -86,6 +86,14 @@ extension SubFixturesVC: UITableViewDelegate , UITableViewDataSource{
         
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if let permission = fixtureVM.teamSubFixtureResponse?.sub_fixture_score_permission, permission == 1 {
+            return .delete
+        } else {
+            return .none
+        }
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
