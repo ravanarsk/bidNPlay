@@ -50,7 +50,25 @@ extension TournamentsVC{
             action: #selector(showJoinTournament)
         )
         barButtonItem.tintColor = .white
-        self.navigationItem.rightBarButtonItem = barButtonItem
+        
+        let addAction = UIAction(title: "Create Tournament", image: nil) { [weak self] _ in
+            print("Create Tournament")
+            let vc = CreateTournamentVC.loadFromNib()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        let refreshAction = UIAction(title: "Join Tournament", image: nil) { [weak self] _ in
+            print("Join Tournament")
+            self?.showJoinTournament()
+        }
+        
+        let menu = UIMenu(title: "", children: [addAction, refreshAction])
+        
+        let barItem = UIBarButtonItem(image: UIImage(systemName: "plus.circle"), menu: menu)
+        barItem.tintColor = .white
+        
+        self.navigationItem.rightBarButtonItem = barItem
+        
+//        self.navigationItem.rightBarButtonItem = barButtonItem
 
         self.listTableView.backgroundColor = CustomColor.bg
         self.listTableView.registerCells(names: [

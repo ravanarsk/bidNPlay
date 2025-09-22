@@ -31,6 +31,8 @@
 		CE9EC6EB2D6CB8BF00AE463F /* SubFixturesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9EC6EA2D6CB8BF00AE463F /* SubFixturesVC.xib */; };
 		CEC3B3F62D8D2EFB00A3F777 /* TeamStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3B3F42D8D2EFB00A3F777 /* TeamStatsCell.swift */; };
 		CEC3B3F72D8D2EFB00A3F777 /* TeamStatsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC3B3F52D8D2EFB00A3F777 /* TeamStatsCell.xib */; };
+		D12F5E6B2E7EAF0B00DB7C16 /* CreateTournamentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12F5E6A2E7EAF0B00DB7C16 /* CreateTournamentVC.xib */; };
+		D12F5E6C2E7EAF0B00DB7C16 /* CreateTournamentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12F5E692E7EAF0B00DB7C16 /* CreateTournamentVC.swift */; };
 		F41263492D07FFB100D8DDDB /* PlayerInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41263472D07FFB100D8DDDB /* PlayerInfoCell.swift */; };
 		F412634A2D07FFB100D8DDDB /* PlayerInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41263482D07FFB100D8DDDB /* PlayerInfoCell.xib */; };
 		F412634E2D0812B200D8DDDB /* TeamInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F412634C2D0812B200D8DDDB /* TeamInfoCell.swift */; };
@@ -159,6 +161,8 @@
 		CE9EC6EA2D6CB8BF00AE463F /* SubFixturesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubFixturesVC.xib; sourceTree = "<group>"; };
 		CEC3B3F42D8D2EFB00A3F777 /* TeamStatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStatsCell.swift; sourceTree = "<group>"; };
 		CEC3B3F52D8D2EFB00A3F777 /* TeamStatsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamStatsCell.xib; sourceTree = "<group>"; };
+		D12F5E692E7EAF0B00DB7C16 /* CreateTournamentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTournamentVC.swift; sourceTree = "<group>"; };
+		D12F5E6A2E7EAF0B00DB7C16 /* CreateTournamentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTournamentVC.xib; sourceTree = "<group>"; };
 		F41263472D07FFB100D8DDDB /* PlayerInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoCell.swift; sourceTree = "<group>"; };
 		F41263482D07FFB100D8DDDB /* PlayerInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerInfoCell.xib; sourceTree = "<group>"; };
 		F412634C2D0812B200D8DDDB /* TeamInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoCell.swift; sourceTree = "<group>"; };
@@ -359,6 +363,15 @@
 				CEC3B3F52D8D2EFB00A3F777 /* TeamStatsCell.xib */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		D12F5E682E7EAEE300DB7C16 /* CreateTournament */ = {
+			isa = PBXGroup;
+			children = (
+				D12F5E692E7EAF0B00DB7C16 /* CreateTournamentVC.swift */,
+				D12F5E6A2E7EAF0B00DB7C16 /* CreateTournamentVC.xib */,
+			);
+			path = CreateTournament;
 			sourceTree = "<group>";
 		};
 		D72FF43ED42E441D61B40741 /* Pods */ = {
@@ -693,6 +706,7 @@
 		F4AE35542CFDA62800766A02 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D12F5E682E7EAEE300DB7C16 /* CreateTournament */,
 				CE15858E2DD1C25900E4DC53 /* Picker */,
 				CE1585872DD1B74F00E4DC53 /* AddFixture */,
 				CE7DA58D2D7F6EA200EBE0F5 /* TeamTable */,
@@ -947,6 +961,7 @@
 				CE9EC6EB2D6CB8BF00AE463F /* SubFixturesVC.xib in Resources */,
 				F4AE35692CFDAA5D00766A02 /* Main.storyboard in Resources */,
 				F4AE35642CFDA7A700766A02 /* LoginVC.xib in Resources */,
+				D12F5E6B2E7EAF0B00DB7C16 /* CreateTournamentVC.xib in Resources */,
 				F4EC46F12D00653B00EFC57F /* TournamentCell.xib in Resources */,
 				F43A8B9B2D003CB40098F83B /* DashboardTab.xib in Resources */,
 				F43A8BA02D0054D00098F83B /* TournamentsVC.xib in Resources */,
@@ -997,9 +1012,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-bidNPlay/Pods-bidNPlay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-bidNPlay/Pods-bidNPlay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1030,6 +1049,7 @@
 				F484A5B32D11604B0054D7DB /* FixtureModel.swift in Sources */,
 				F47F64E32CFF2B04002F8930 /* OTPVC.swift in Sources */,
 				F4AE35502CFDA37F00766A02 /* FontExtension.swift in Sources */,
+				D12F5E6C2E7EAF0B00DB7C16 /* CreateTournamentVC.swift in Sources */,
 				CE1585A62DD60CE500E4DC53 /* AddFixtureModel.swift in Sources */,
 				F4EC46F02D00653B00EFC57F /* TournamentCell.swift in Sources */,
 				CE7DA5932D7F6EC700EBE0F5 /* TeamTableVM.swift in Sources */,
