@@ -16,16 +16,30 @@ class CreateTournamentVC: BaseVC {
     @IBOutlet var btnTeamCount: UIButton!
     
     @IBOutlet var txtTitle: UITextField!
+    @IBOutlet var errorTitle: UILabel!
+    
     @IBOutlet var txtDescription: UITextView!
+    @IBOutlet var errorDescription: UILabel!
+    
     @IBOutlet var txtPlayerCount: UITextField!
+    @IBOutlet var errorPlayerCount: UILabel!
+    
     @IBOutlet var txtTeamCount: UITextField!
+    @IBOutlet var errorTeamCount: UILabel!
+    
     @IBOutlet var isPrivate: UISwitch!
     
     @IBOutlet var stackPlayerCount: UIStackView!
     @IBOutlet var stackTeamCount: UIStackView!
+    
+    @IBOutlet var stackPlayerCountTXT: UIStackView!
+    @IBOutlet var stackTeamCountTXT: UIStackView!
 
-    private var tournamentType: String = "team"
-    private var fixtureType: String = "league"
+    private var tournamentType: TournamentType = .team
+    private var fixtureType: FixtureType = .league
+    
+    private var selectedPlayerCount = ""
+    private var selectedTeamCount = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +47,7 @@ class CreateTournamentVC: BaseVC {
         // Do any additional setup after loading the view.
         
         self.setBackButton()
+        self.navigationItem.title = "Create Tournament"
         loadTournamentTypeMenu()
         loadFixtureTypeMenu()
         loadPlayerCountMenu()
@@ -58,27 +73,20 @@ extension CreateTournamentVC {
     private func loadTournamentTypeMenu() {
         
         let handler: UIActionHandler = { [weak self] action in
-            switch action.identifier.rawValue {
-            case "team":
-                debugPrint("Team")
-            case "individual":
-                debugPrint("Individual")
-            case "teamAuction":
-                debugPrint("Team Auction")
-            default:
-                debugPrint("Not in Menu")
-            }
             
-            self?.tournamentType = action.identifier.rawValue
+            
+            self?.tournamentType = .init(rawValue: action.identifier.rawValue) ?? .team
             self?.handleViewVisibilityBasedOnMenu()
         }
         
-        let team = UIAction(title: "Team", identifier: UIAction.Identifier("team"), state: .on, handler: handler)
-           let individual = UIAction(title: "Individual", identifier: UIAction.Identifier("individual"), handler: handler)
-           let teamWithAuction = UIAction(title: "Team - with auction", identifier: UIAction.Identifier("teamAuction"), handler: handler)
-
-           btnTournamentType.menu = UIMenu(children: [team, individual, teamWithAuction])
-           btnTournamentType.showsMenuAsPrimaryAction = true
+        var children = [UIAction]()
+        for item in TournamentType.allCases {
+            let action = UIAction(title: item.name,identifier: UIAction.Identifier( item.rawValue),  handler: handler)
+            children.append(action)
+        }
+        
+        btnTournamentType.menu = UIMenu(children: children)
+        btnTournamentType.showsMenuAsPrimaryAction = true
         if #available(iOS 15.0, *) {
             btnTournamentType.changesSelectionAsPrimaryAction = true
         }
@@ -88,23 +96,18 @@ extension CreateTournamentVC {
     private func loadFixtureTypeMenu() {
         
         let handler: UIActionHandler = { [weak self] action in
-            switch action.identifier.rawValue {
-            case "league":
-                debugPrint("league")
-            case "knockout":
-                debugPrint("knockout")
-            default:
-                debugPrint("Not in Menu")
-            }
-            
-            self?.fixtureType = action.identifier.rawValue
+            self?.fixtureType = .init(rawValue: action.identifier.rawValue) ?? .league
             self?.handleViewVisibilityBasedOnMenu()
         }
         
-        let league = UIAction(title: "League", identifier: UIAction.Identifier("league"), state: .on, handler: handler)
-           let knockout = UIAction(title: "Knockout", identifier: UIAction.Identifier("knockout"), handler: handler)
+        var children = [UIAction]()
+        
+        for item in FixtureType.allCases {
+            let action = UIAction(title: item.name, identifier: UIAction.Identifier(item.rawValue), handler: handler)
+            children.append(action)
+        }
 
-        btnFixtureType.menu = UIMenu(children: [league, knockout])
+        btnFixtureType.menu = UIMenu(children: children)
         btnFixtureType.showsMenuAsPrimaryAction = true
         if #available(iOS 15.0, *) {
             btnFixtureType.changesSelectionAsPrimaryAction = true
@@ -114,31 +117,15 @@ extension CreateTournamentVC {
     
     private func loadPlayerCountMenu() {
         
-        let handler: UIActionHandler = { action in
-            switch action.identifier.rawValue {
-            case "2":
-                debugPrint("2")
-            case "4":
-                debugPrint("4")
-            case "8":
-                debugPrint("8")
-            case "16":
-                debugPrint("16")
-            case "32":
-                debugPrint("32")
-            case "64":
-                debugPrint("64")
-            case "128":
-                debugPrint("128")
-            default:
-                debugPrint("Not in Menu")
-            }
+        let handler: UIActionHandler = { [weak self]action in
+            
+            self?.selectedPlayerCount = action.identifier.rawValue
         }
         
         
         var children: [UIAction] = []
-        for i in ["2","4","8","16","32","64","128"] {
-            let action = UIAction(title: i, identifier: UIAction.Identifier(i), handler: handler)
+        for i in PlayerCount {
+            let action = UIAction(title: "\(i)", identifier: UIAction.Identifier("\(i)"), handler: handler)
             children.append(action)
         }
 
@@ -152,31 +139,13 @@ extension CreateTournamentVC {
     
     private func loadTeamCountMenu() {
         
-        let handler: UIActionHandler = { action in
-            switch action.identifier.rawValue {
-            case "2":
-                debugPrint("2")
-            case "4":
-                debugPrint("4")
-            case "8":
-                debugPrint("8")
-            case "16":
-                debugPrint("16")
-            case "32":
-                debugPrint("32")
-            case "64":
-                debugPrint("64")
-            case "128":
-                debugPrint("128")
-            default:
-                debugPrint("Not in Menu")
-            }
+        let handler: UIActionHandler = { [weak self] action in
+            self?.selectedTeamCount = action.identifier.rawValue
         }
         
-        
         var children: [UIAction] = []
-        for i in ["2","4","8","16","32","64","128"] {
-            let action = UIAction(title: i, identifier: UIAction.Identifier(i), handler: handler)
+        for i in TeamCount {
+            let action = UIAction(title: "\(i)", identifier: UIAction.Identifier("\(i)"), handler: handler)
             children.append(action)
         }
 
@@ -198,34 +167,81 @@ extension CreateTournamentVC {
         
         
         switch tournamentType {
-        case "team", "teamAuction":
+            
+        case  .team, .teamWithAuction:
             debugPrint("Team")
             txtPlayerCount.isHidden = true
             stackPlayerCount.isHidden = true
             
-        case "individual":
+        case .individual:
             debugPrint("Individual")
             txtTeamCount.isHidden = true
             stackTeamCount.isHidden = true
-            
-        default:
-            debugPrint("Not in Menu")
         }
         
         switch fixtureType {
-        case "league":
+        case .league:
             debugPrint("league")
             stackPlayerCount.isHidden = true
             stackTeamCount.isHidden = true
-        case "knockout":
+        case .knockout:
             debugPrint("knockout")
             txtPlayerCount.isHidden = true
             txtTeamCount.isHidden = true
-        default:
-            debugPrint("Not in Menu")
         }
         
+    }
+}
+
+// MARK: API
+extension CreateTournamentVC {
+    
+    func validateFormAndCreate() -> Bool {
+        
+        var flag = false
         
         
+        guard let title = txtTitle.text, !title.isEmpty else {
+//            showErrorMessage("Title is required")
+            return false
+        }
+        
+        guard let description = txtDescription.text, !description.isEmpty else {
+            return false
+        }
+        
+        let playerCount: String
+        let teamCount: String
+        
+        switch tournamentType {
+            
+        case .team, .teamWithAuction:
+            switch fixtureType {
+                
+            case .league:
+                playerCount = txtPlayerCount.text ?? ""
+                teamCount = txtTeamCount.text ?? ""
+            case .knockout:
+                playerCount = selectedPlayerCount
+                teamCount = selectedTeamCount
+            }
+        case .individual:
+            
+            teamCount = ""
+            switch fixtureType {
+                
+            case .league:
+                playerCount = txtPlayerCount.text ?? ""
+            case .knockout:
+                playerCount = selectedPlayerCount
+            }
+        }
+        
+        guard let playerCount = Int(playerCount), playerCount > 0 else {
+            return false
+        }        
+        
+        
+        return flag
     }
 }
