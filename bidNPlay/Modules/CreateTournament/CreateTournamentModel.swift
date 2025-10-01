@@ -7,8 +7,13 @@
 
 import Foundation
 
-protocol CreateTournament {
-    
+protocol CreateTournamentDelegate: ErrorDelegate {
+    func tournamentCreated(_ response: CreateTournamentResponse)
+}
+
+struct CreateTournamentResponse: BaseResponseModel, Decodable{
+    var status: Bool?
+    var message: String?    
 }
 
 enum TournamentType: String, Codable, CaseIterable {

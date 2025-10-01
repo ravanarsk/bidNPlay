@@ -38,13 +38,20 @@ class CreateTournamentVC: BaseVC {
     private var tournamentType: TournamentType = .team
     private var fixtureType: FixtureType = .league
     
-    private var selectedPlayerCount = ""
-    private var selectedTeamCount = ""
+//    private var selectedPlayerCount = ""
+//    private var selectedTeamCount = ""
+    
+    private var teamCount: String = ""
+    private var playerCount: String = ""
+    
+    private var viewModel = CreateTournamentVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        viewModel.delegate = self
         
         self.setBackButton()
         self.navigationItem.title = "Create Tournament"
@@ -52,6 +59,7 @@ class CreateTournamentVC: BaseVC {
         loadFixtureTypeMenu()
         loadPlayerCountMenu()
         loadTeamCountMenu()
+        handleViewVisibilityBasedOnMenu()
     }
 
 
@@ -119,7 +127,7 @@ extension CreateTournamentVC {
         
         let handler: UIActionHandler = { [weak self]action in
             
-            self?.selectedPlayerCount = action.identifier.rawValue
+            self?.playerCount = action.identifier.rawValue
         }
         
         
@@ -140,7 +148,7 @@ extension CreateTournamentVC {
     private func loadTeamCountMenu() {
         
         let handler: UIActionHandler = { [weak self] action in
-            self?.selectedTeamCount = action.identifier.rawValue
+            self?.teamCount = action.identifier.rawValue
         }
         
         var children: [UIAction] = []
@@ -160,88 +168,130 @@ extension CreateTournamentVC {
    
     private func handleViewVisibilityBasedOnMenu() {
         
-        txtPlayerCount.isHidden = false
-        stackPlayerCount.isHidden = false
-        txtTeamCount.isHidden = false
-        stackTeamCount.isHidden = false
-        
+        stackPlayerCountTXT.isHidden = true
+        stackPlayerCount.isHidden = true
+        stackTeamCountTXT.isHidden = true
+        stackTeamCount.isHidden = true
         
         switch tournamentType {
-            
         case  .team, .teamWithAuction:
-            debugPrint("Team")
-            txtPlayerCount.isHidden = true
-            stackPlayerCount.isHidden = true
+            switch fixtureType {
+            case .league:
+                stackPlayerCountTXT.isHidden = false
+                stackTeamCountTXT.isHidden = false
+
+            case .knockout:
+                stackPlayerCountTXT.isHidden = false
+                stackTeamCount.isHidden = false
+            }
             
         case .individual:
-            debugPrint("Individual")
-            txtTeamCount.isHidden = true
-            stackTeamCount.isHidden = true
+            switch fixtureType {
+            case .league:
+                stackPlayerCountTXT.isHidden = false
+            case .knockout:
+                stackPlayerCount.isHidden = false
+            }
         }
         
-        switch fixtureType {
-        case .league:
-            debugPrint("league")
-            stackPlayerCount.isHidden = true
-            stackTeamCount.isHidden = true
-        case .knockout:
-            debugPrint("knockout")
-            txtPlayerCount.isHidden = true
-            txtTeamCount.isHidden = true
-        }
         
+        
+    }
+    
+    @IBAction func createAction(_ sender: UIButton) {
+        
+//        debugPrint(selectedTeamCount)
+//        debugPrint(selectedPlayerCount)
+        
+//        return
+        
+        if validateForm() {
+            viewModel.createTournamentAPI(title: txtTitle.text!,
+                                          desc: txtDescription.text!,
+                                          tournamentType: tournamentType.rawValue,
+                                          fixtureType: fixtureType.rawValue,
+                                          playerCount: playerCount,
+                                          teamCount: teamCount,
+                                          isPrivate: isPrivate.isOn)
+        }
     }
 }
 
 // MARK: API
 extension CreateTournamentVC {
     
-    func validateFormAndCreate() -> Bool {
+    private func validateForm() -> Bool {
         
-        var flag = false
+        var flag = true
         
         
-        guard let title = txtTitle.text, !title.isEmpty else {
-//            showErrorMessage("Title is required")
-            return false
+        let title = txtTitle.text!
+        let desc = txtDescription.text!
+        
+        
+        
+        if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            errorTitle.isHidden = false
+            flag = false
+        } else {
+            errorTitle.isHidden = true
         }
         
-        guard let description = txtDescription.text, !description.isEmpty else {
-            return false
+        if desc.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            errorDescription.isHidden = false
+            flag = false
+        } else {
+            errorDescription.isHidden = true
         }
-        
-        let playerCount: String
-        let teamCount: String
         
         switch tournamentType {
-            
-        case .team, .teamWithAuction:
+        case  .team, .teamWithAuction:
             switch fixtureType {
-                
             case .league:
                 playerCount = txtPlayerCount.text ?? ""
                 teamCount = txtTeamCount.text ?? ""
             case .knockout:
-                playerCount = selectedPlayerCount
-                teamCount = selectedTeamCount
+                playerCount = txtPlayerCount.text ?? ""
+                teamCount = btnTeamCount.titleLabel?.text ?? ""
             }
         case .individual:
-            
-            teamCount = ""
             switch fixtureType {
-                
             case .league:
                 playerCount = txtPlayerCount.text ?? ""
             case .knockout:
-                playerCount = selectedPlayerCount
+                playerCount = btnPlayerCount.titleLabel?.text ?? ""
             }
+            teamCount = "0"
         }
         
-        guard let playerCount = Int(playerCount), playerCount > 0 else {
-            return false
-        }        
+        if playerCount.trimmingCharacters(in: .init(charactersIn: "0123456789").inverted).isEmpty {
+            errorPlayerCount.isHidden = false
+            flag = false
+        } else {
+            errorPlayerCount.isHidden = true
+        }
         
+        if teamCount.trimmingCharacters(in: .init(charactersIn: "0123456789").inverted).isEmpty {
+            errorTeamCount.isHidden = false
+            flag = false
+        } else {
+            errorTeamCount.isHidden = true
+        }
         
         return flag
+    }
+}
+
+// MARK: CreateTournamentDelegate
+extension CreateTournamentVC: CreateTournamentDelegate {
+    func tournamentCreated(_ response: CreateTournamentResponse) {
+        DispatchQueue.main.async { [weak self] in
+            ActivityHUD().dismissProgressHUD()
+            if response.status ?? false {
+                self?.popSuccessAlertWith(msg: response.message ?? "")
+            } else {
+                self?.showAlertWith(msg: response.message ?? "")
+            }
+        }
     }
 }

@@ -26,6 +26,8 @@ struct APIURLs{
     static let individualFixtureList = "/individual_fixtures_by_round"
     static let individualFixtureRoundsList = "/individual_tournament_fixture_rounds"
     
+    static let createTournament = "/create_tournament"
+    
     static let teamFixtureList = "/team_fixtures_by_round"
     static let teamSubFixtureList = "/sub_fixtures_list"
     static let teamTournamentFixtureRounds = "/team_tournament_fixture_rounds"
