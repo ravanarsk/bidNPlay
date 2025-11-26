@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SubFixturesDelegate: ErrorDelegate {
     func modelUpdated()
@@ -120,5 +121,22 @@ extension SubFixturesVM {
             
         }
         
+    }
+    
+    internal func openWhatsappForHomeUser(at index: Int) {
+        let model = getItem(at: index)
+        let phone = "\(model.homeUserCountryCode)\(model.homeUserPhone)"
+        
+        if let url = URL(string: "https://wa.me/\(phone)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    internal func openWhatsappForAwayUser(at index: Int) {
+        let model = getItem(at: index)
+        let phone = "\(model.awayUserCountryCode)\(model.awayUserPhone)"
+        
+        if let url = URL(string: "https://wa.me/\(phone)") {
+            UIApplication.shared.open(url)
+        }
     }
 }

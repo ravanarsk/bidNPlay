@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ListingVM{
     
@@ -229,4 +230,31 @@ extension ListingVM{
         
     }
     
+}
+
+extension ListingVM {
+    internal func openWhatsappForPlayer(at index: Int) {
+        let model = getPlayerModel(index: index)
+        
+        let phone = "\(model.playerCountryCode)\(model.playerPhone)"
+        if let url = URL(string: "https://wa.me/\(phone)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    internal func openWhatsappForTeamPlayer(at index: Int) {
+        let model = getTeamPlayerModel(index: index)
+        
+        let phone = "\(model.playerCountryCode)\(model.playerPhone)"
+        if let url = URL(string: "https://wa.me/\(phone)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    internal func openWhatsappForPotPlayer(at index: Int) {
+        let model = getPotPlayerModel(index: index)
+        
+        let phone = "\(model.playerCountryCode)\(model.playerPhone)"
+        if let url = URL(string: "https://wa.me/\(phone)") {
+            UIApplication.shared.open(url)
+        }
+    }
 }

@@ -202,16 +202,22 @@ extension TournamentDetailVC: TeamInfoDelegate, BasicInfoDelegate, HeaderCellDel
         
         let model = detailVM.getSelectedModelWith()
         if let countryCode = model.admin_country_code, let phoneNumber = model.admin_phone {
-            let phone = "+\(countryCode) \(phoneNumber)"
-            let whatsappURLString = "whatsapp://send?phone=\(phone)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             
-            if let urlString = whatsappURLString,
-               let whatsappURL = URL(string: urlString),
-               UIApplication.shared.canOpenURL(whatsappURL) {
-                UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
-            } else {
-                self.showUpdateWith(msg: "Install whatsapp on this device to continue")
+            let phone = "\(countryCode)\(phoneNumber)"
+            if let url = URL(string: "https://wa.me/\(phone)") {
+                UIApplication.shared.open(url)
             }
+            
+//            let phone = "+\(countryCode) \(phoneNumber)"
+//            let whatsappURLString = "whatsapp://send?phone=\(phone)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+//            
+//            if let urlString = whatsappURLString,
+//               let whatsappURL = URL(string: urlString),
+//               UIApplication.shared.canOpenURL(whatsappURL) {
+//                UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
+//            } else {
+//                self.showUpdateWith(msg: "Install whatsapp on this device to continue")
+//            }
             
         }
 

@@ -181,6 +181,18 @@ extension SubFixturesVC: SubFixturesDelegate {
 
 // MARK: SubFixtureCellDelegate
 extension SubFixturesVC: SubFixtureCellDelegate {
+    func leftUserChatTapped(for cell: SubFixtureCell) {
+        if let index = self.listTableView.indexPath(for: cell)?.row {
+            self.fixtureVM.openWhatsappForHomeUser(at: index)
+        }
+    }
+    
+    func rightUserChatTapped(for cell: SubFixtureCell) {
+        if let index = self.listTableView.indexPath(for: cell)?.row {
+            self.fixtureVM.openWhatsappForAwayUser(at: index)
+        }
+    }
+    
     func updateFixture(for cell: SubFixtureCell, homeScore: String?, awayScore: String?) {
          
         debugPrint(#function)

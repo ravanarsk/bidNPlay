@@ -9,6 +9,8 @@ import UIKit
 
 protocol SubFixtureCellDelegate {
     func updateFixture(for cell: SubFixtureCell,homeScore: String?,awayScore: String?)
+    func leftUserChatTapped(for cell: SubFixtureCell)
+    func rightUserChatTapped(for cell: SubFixtureCell)
 }
 
 class SubFixtureCell: UITableViewCell {
@@ -66,6 +68,13 @@ extension SubFixtureCell {
     
     @IBAction func updateAction(_ sender: UIButton) {
         self.delegate?.updateFixture(for: self, homeScore: txtLeftScore.text, awayScore: txtRightScore.text)
+    }
+    
+    @IBAction func leftUserChatAction(_ sender: UIButton) {
+        self.delegate?.leftUserChatTapped(for: self)
+    }
+    @IBAction func rightUserChatAction(_ sender: UIButton) {
+        self.delegate?.rightUserChatTapped(for: self)
     }
     
 }

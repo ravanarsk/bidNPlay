@@ -155,8 +155,13 @@ extension ListingVC: UITableViewDelegate, UITableViewDataSource{
             let model = self.listingVM.getPotModel(index: indexPath.row)
             vc.potID = model.potID
             self.navigationController?.pushViewController(vc, animated: true)
+        } else if self.listingView == .Players {
+            self.listingVM.openWhatsappForPlayer(at: indexPath.row)
+        } else if   self.listingView == .PotPlayer {
+            self.listingVM.openWhatsappForPotPlayer(at: indexPath.row)
+        } else if self.listingView == .TeamPlayers {
+            self.listingVM.openWhatsappForTeamPlayer(at: indexPath.row)
         }
-        
     }
     
 }
