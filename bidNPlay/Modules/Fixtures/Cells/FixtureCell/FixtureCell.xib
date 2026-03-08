@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,6 +47,13 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihg-R3-8yK">
+                                <rect key="frame" x="15" y="15" width="164.33333333333334" height="70"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="leftTeamAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="43B-yt-KhE"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="V1H-Td-7QN">
                                 <rect key="frame" x="222" y="15" width="164" height="70"/>
                                 <subviews>
@@ -63,16 +71,31 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwx-9e-rQj">
+                                <rect key="frame" x="222" y="15" width="164" height="70"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="rightTeamAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fXh-4o-Hya"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="bgColor2"/>
                         <constraints>
                             <constraint firstItem="c8x-Ky-rJd" firstAttribute="centerX" secondItem="UvZ-yf-OPl" secondAttribute="centerX" id="55v-jC-2zu"/>
+                            <constraint firstAttribute="trailing" secondItem="kwx-9e-rQj" secondAttribute="trailing" constant="15" id="86u-RV-t9D"/>
+                            <constraint firstAttribute="bottom" secondItem="ihg-R3-8yK" secondAttribute="bottom" constant="15" id="AZ4-5L-mU9"/>
                             <constraint firstAttribute="bottom" secondItem="V1H-Td-7QN" secondAttribute="bottom" constant="15" id="Cae-x2-2ja"/>
                             <constraint firstItem="c8x-Ky-rJd" firstAttribute="centerY" secondItem="UvZ-yf-OPl" secondAttribute="centerY" id="En7-lG-Zpx"/>
+                            <constraint firstItem="kwx-9e-rQj" firstAttribute="top" secondItem="UvZ-yf-OPl" secondAttribute="top" constant="15" id="Mqb-Lf-vWn"/>
+                            <constraint firstItem="kwx-9e-rQj" firstAttribute="leading" secondItem="c8x-Ky-rJd" secondAttribute="trailing" constant="10" id="PBY-g3-lBL"/>
                             <constraint firstItem="V1H-Td-7QN" firstAttribute="leading" secondItem="c8x-Ky-rJd" secondAttribute="trailing" constant="10" id="S3s-s4-ZUs"/>
+                            <constraint firstAttribute="bottom" secondItem="kwx-9e-rQj" secondAttribute="bottom" constant="15" id="YfU-Is-B7l"/>
                             <constraint firstAttribute="bottom" secondItem="TWA-Ze-3EO" secondAttribute="bottom" constant="15" id="Z9I-9t-CS9"/>
                             <constraint firstItem="V1H-Td-7QN" firstAttribute="top" secondItem="UvZ-yf-OPl" secondAttribute="top" constant="15" id="ZGS-ec-A0I"/>
+                            <constraint firstItem="ihg-R3-8yK" firstAttribute="top" secondItem="UvZ-yf-OPl" secondAttribute="top" constant="15" id="aar-Tk-uSO"/>
                             <constraint firstAttribute="trailing" secondItem="V1H-Td-7QN" secondAttribute="trailing" constant="15" id="bFe-Z2-uHg"/>
+                            <constraint firstItem="c8x-Ky-rJd" firstAttribute="leading" secondItem="ihg-R3-8yK" secondAttribute="trailing" constant="10" id="lRH-dI-zfd"/>
+                            <constraint firstItem="ihg-R3-8yK" firstAttribute="leading" secondItem="UvZ-yf-OPl" secondAttribute="leading" constant="15" id="miF-Z6-D5c"/>
                             <constraint firstItem="TWA-Ze-3EO" firstAttribute="top" secondItem="UvZ-yf-OPl" secondAttribute="top" constant="15" id="sXV-Qq-UFb"/>
                             <constraint firstItem="TWA-Ze-3EO" firstAttribute="leading" secondItem="UvZ-yf-OPl" secondAttribute="leading" constant="15" id="uVI-vh-I7N"/>
                             <constraint firstItem="c8x-Ky-rJd" firstAttribute="leading" secondItem="TWA-Ze-3EO" secondAttribute="trailing" constant="10" id="wvE-Qr-hJS"/>

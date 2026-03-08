@@ -237,7 +237,7 @@ extension ListingVM {
         let model = getPlayerModel(index: index)
         
         let phone = "\(model.playerCountryCode)\(model.playerPhone)"
-        if let url = URL(string: "https://wa.me/\(phone)") {
+        if !phone.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let url = URL(string: "https://wa.me/\(phone)") {
             UIApplication.shared.open(url)
         }
     }
@@ -245,7 +245,7 @@ extension ListingVM {
         let model = getTeamPlayerModel(index: index)
         
         let phone = "\(model.playerCountryCode)\(model.playerPhone)"
-        if let url = URL(string: "https://wa.me/\(phone)") {
+        if !phone.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let url = URL(string: "https://wa.me/\(phone)") {
             UIApplication.shared.open(url)
         }
     }
@@ -253,7 +253,7 @@ extension ListingVM {
         let model = getPotPlayerModel(index: index)
         
         let phone = "\(model.playerCountryCode)\(model.playerPhone)"
-        if let url = URL(string: "https://wa.me/\(phone)") {
+        if !phone.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let url = URL(string: "https://wa.me/\(phone)") {
             UIApplication.shared.open(url)
         }
     }

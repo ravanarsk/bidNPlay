@@ -119,6 +119,7 @@ extension FixtureVC: UITableViewDelegate , UITableViewDataSource{
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "FixtureCell", for: indexPath) as! FixtureCell
+            cell.delegate = self
             if self.isIndividual{
                 let model = self.fixtureVM.getIndividualModel(
                     index: indexPath.row
@@ -163,6 +164,43 @@ extension FixtureVC: FixtureDelegate{
         DispatchQueue.main.async {
             ActivityHUD().dismissProgressHUD()
             self.listTableView.reloadData()
+        }
+    }
+}
+
+
+
+//MARK: FixtureCellDelegate
+extension FixtureVC: FixtureCellDelegate {
+    func leftTeamTapped(for cell: FixtureCell) {
+        if self.isIndividual{
+            if let index = self.listTableView.indexPath(for: cell)?.row {
+                self.fixtureVM.openWhatsappForLeftIndividual(at: index)
+            }
+        } else {
+            if !self.fixtureVM.isEmpty(), let index = self.listTableView.indexPath(for: cell)?.row {
+                let teamFixture = fixtureVM.getTeamModel(index: index)
+                let vc = SubFixturesVC.loadFromNib()
+                vc.fixtureID = teamFixture.fixtureId
+                vc.teamFixture = teamFixture
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
+    func rightTeamTapped(for cell: FixtureCell) {
+        if self.isIndividual{
+            if let index = self.listTableView.indexPath(for: cell)?.row {
+                self.fixtureVM.openWhatsappForRightIndividual(at: index)
+            }
+        } else {
+            if !self.fixtureVM.isEmpty(), let index = self.listTableView.indexPath(for: cell)?.row {
+                let teamFixture = fixtureVM.getTeamModel(index: index)
+                let vc = SubFixturesVC.loadFromNib()
+                vc.fixtureID = teamFixture.fixtureId
+                vc.teamFixture = teamFixture
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
 }

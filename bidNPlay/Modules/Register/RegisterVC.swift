@@ -47,8 +47,8 @@ extension RegisterVC{
         self.nameTF.aboveOverlayTheme(placeHolder: "Name")
         self.emailTF.aboveOverlayTheme(placeHolder: "Email ID")
         self.passwordTF.aboveOverlayTheme(placeHolder: "Password")
-        self.countryCodeTF.aboveOverlayTheme(placeHolder: "Select a country code")
-        self.phoneNumberTF.aboveOverlayTheme(placeHolder: "Phone Number")
+        self.countryCodeTF.aboveOverlayTheme(placeHolder: "Country code (Optional)")
+        self.phoneNumberTF.aboveOverlayTheme(placeHolder: "Phone Number (Optional)")
         self.registerButton.setDefaultTheme(name: "Register")
         
         self.phoneNumberTF.keyboardType = .numberPad

@@ -15,6 +15,7 @@ class ListingVC: BaseVC {
     internal var tournamentID : Int?
     internal var teamID : Int?
     internal var potID : Int?
+    internal var isAdmin : Bool?
     fileprivate var listingVM = ListingVM()
     
     override func viewDidLoad() {
@@ -86,8 +87,27 @@ extension ListingVC{
             self.navigationItem.title = "Team Player List"
         }else if self.listingView == .PotPlayer{
             self.navigationItem.title = "Pot Player List"
+            
+            if self.listingView == .PotPlayer && (self.isAdmin ?? false) {
+                
+                let barButtonItem = UIBarButtonItem(
+                    image: UIImage(systemName: "plus.circle"),
+                    style: .done,
+                    target: self,
+                    action: #selector(addPotPlayersAction)
+                )
+                barButtonItem.tintColor = .white
+                self.navigationItem.rightBarButtonItem = barButtonItem
+            }
         }
-        
+    }
+    
+    @objc func addPotPlayersAction() {
+        if let vc = AddPotPlayersVC.loadFromSB() {
+            vc.tournamentID = tournamentID
+            vc.potID = potID
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }
@@ -154,6 +174,8 @@ extension ListingVC: UITableViewDelegate, UITableViewDataSource{
             vc.listingView = .PotPlayer
             let model = self.listingVM.getPotModel(index: indexPath.row)
             vc.potID = model.potID
+            vc.tournamentID = self.tournamentID
+            vc.isAdmin = self.isAdmin
             self.navigationController?.pushViewController(vc, animated: true)
         } else if self.listingView == .Players {
             self.listingVM.openWhatsappForPlayer(at: indexPath.row)

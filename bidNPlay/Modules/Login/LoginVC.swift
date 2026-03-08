@@ -25,6 +25,8 @@ class LoginVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
+        
+        self.loginVM.delegate = self
     }
 
 }
@@ -56,7 +58,7 @@ extension LoginVC{
     
     @objc fileprivate func loginAction(){
         
-        self.loginVM.delegate = self
+        
         self.loginVM.preludeCheckToLoginAPI(
             email: self.emailTF.text ?? "",
             password: self.passwordTF.text ?? ""
@@ -72,13 +74,33 @@ extension LoginVC{
     }
     
     @objc fileprivate func forgotPasswordAction(){
-        
+        let email = self.emailTF.text ?? ""
+        if ValidationMethods().isValidEmail(email: email) {
+            loginVM.forgotPassword(email: email)
+//            if let vc = ForgotPasswordVC.loadFromSB() {
+//                self.navigationController?.pushViewController(vc, animated: true)
+//            }
+        } else {
+            self.showAlertWith(msg: "Enter valid email")
+        }
     }
     
 }
 
 //MARK: View Model Delegates
 extension LoginVC : LoginDelegate{
+    func forgotPasswordSuccess() {
+        
+        DispatchQueue.main.sync {
+            ActivityHUD().dismissProgressHUD()
+            if let vc = ForgotPasswordVC.loadFromSB() {
+                let email = self.emailTF.text ?? ""
+                vc.email = email
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
     
     func loginSuccess() {
         

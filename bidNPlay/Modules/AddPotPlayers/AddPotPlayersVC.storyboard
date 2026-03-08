@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Pot Players-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddPotPlayersVC" id="Y6W-OH-hqX" customClass="AddPotPlayersVC" customModule="bidNPlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMw-k3-hcY">
+                                <rect key="frame" x="0.0" y="172" width="393" height="612"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZEM-Qd-WGQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Y6W-OH-hqX" id="hdV-7r-AvP"/>
+                                        </connections>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UWz-9v-Dwl">
+                                        <rect key="frame" x="0.0" y="64" width="393" height="498"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerCell" id="0Bb-5a-Rmw">
+                                                <rect key="frame" x="0.0" y="50" width="393" height="51"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Bb-5a-Rmw" id="OdE-Dr-qsR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Y6W-OH-hqX" id="RdL-VD-zxE"/>
+                                            <outlet property="delegate" destination="Y6W-OH-hqX" id="VgQ-Pn-fz6"/>
+                                        </connections>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4t1-Hy-n8w">
+                                        <rect key="frame" x="0.0" y="562" width="393" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Tm7-p1-u9r"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Add Players"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Add Players"/>
+                                        <connections>
+                                            <action selector="addPlayersAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fnn-oa-mr6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="UWz-9v-Dwl" firstAttribute="leading" secondItem="sMw-k3-hcY" secondAttribute="leading" id="1IZ-jA-IOb"/>
+                                    <constraint firstItem="4t1-Hy-n8w" firstAttribute="top" secondItem="UWz-9v-Dwl" secondAttribute="bottom" id="3YO-30-NNO"/>
+                                    <constraint firstItem="UWz-9v-Dwl" firstAttribute="top" secondItem="ZEM-Qd-WGQ" secondAttribute="bottom" id="Qgd-eb-8DG"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZEM-Qd-WGQ" secondAttribute="trailing" id="Sh1-N5-MfV"/>
+                                    <constraint firstAttribute="bottom" secondItem="4t1-Hy-n8w" secondAttribute="bottom" id="XNG-Ge-0Sm"/>
+                                    <constraint firstItem="ZEM-Qd-WGQ" firstAttribute="leading" secondItem="sMw-k3-hcY" secondAttribute="leading" id="cRe-7F-p8c"/>
+                                    <constraint firstAttribute="trailing" secondItem="4t1-Hy-n8w" secondAttribute="trailing" id="iyD-dX-0W7"/>
+                                    <constraint firstItem="ZEM-Qd-WGQ" firstAttribute="top" secondItem="sMw-k3-hcY" secondAttribute="top" id="jlb-jB-Qnh"/>
+                                    <constraint firstAttribute="trailing" secondItem="UWz-9v-Dwl" secondAttribute="trailing" id="rgJ-Q6-fCo"/>
+                                    <constraint firstItem="4t1-Hy-n8w" firstAttribute="leading" secondItem="sMw-k3-hcY" secondAttribute="leading" id="xAC-qn-dy4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sMw-k3-hcY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Xka-TM-2Wb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="sMw-k3-hcY" secondAttribute="bottom" id="aXy-hQ-Q17"/>
+                            <constraint firstItem="sMw-k3-hcY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ho0-DI-Cfa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sMw-k3-hcY" secondAttribute="trailing" id="nt2-Po-AAE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Pot Players" id="37H-ca-ZVZ"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="searchBar" destination="ZEM-Qd-WGQ" id="x0O-9Y-oBH"/>
+                        <outlet property="tableView" destination="UWz-9v-Dwl" id="raI-rD-lqs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.1679389312977" y="130.98591549295776"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

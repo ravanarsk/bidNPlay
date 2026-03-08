@@ -39,5 +39,14 @@ struct TournamentDetails: Decodable{
     var tournament_max_players : Int?
     var tournament_no_of_teams : Int?
     var players_count : Int?
+    var user_id: Int?
+    
+    var isAdmin: Bool {
+        if let user_id {
+            let loggedInUserID = DefaultWrapper().getIntFrom(Key: Keys.userID)
+            return loggedInUserID == user_id
+        }
+        return false
+    }
     
 }

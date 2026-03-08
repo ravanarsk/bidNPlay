@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol FixtureCellDelegate {
+    func leftTeamTapped(for cell: FixtureCell)
+    func rightTeamTapped(for cell: FixtureCell)
+}
+
 class FixtureCell: UITableViewCell {
 
     @IBOutlet weak var holderView: UIView!
@@ -17,6 +22,8 @@ class FixtureCell: UITableViewCell {
     @IBOutlet weak var rightStack: UIStackView!
     @IBOutlet weak var rightTeamName: UILabel!
     @IBOutlet weak var rightScore: UILabel!
+    
+    var delegate: FixtureCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -80,4 +87,14 @@ extension FixtureCell{
         self.rightScore.text = "\(model.awayUserGoals ?? 0)"
     }
     
+}
+
+//MARK: IBActions UIButton
+extension FixtureCell {
+    @IBAction func leftTeamAction(_ sender: Any) {
+        delegate?.leftTeamTapped(for: self)
+    }
+    @IBAction func rightTeamAction(_ sender: Any) {
+        delegate?.rightTeamTapped(for: self)
+    }
 }

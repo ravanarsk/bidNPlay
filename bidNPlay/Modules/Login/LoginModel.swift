@@ -11,7 +11,7 @@ protocol LoginDelegate: ErrorDelegate{
     
     func loginSuccess()
     func resendOTPSuccess() // Using Register API
-    
+    func forgotPasswordSuccess()
 }
 
 struct LoginModel: Decodable{
@@ -19,6 +19,12 @@ struct LoginModel: Decodable{
     var status : Bool?
     var message : String?
     var user_details : UserDetailsModel?
+    
+}
+
+struct ForgotPasswordModel: Decodable{
+    var status : Bool?
+    var message : String?
     
 }
 

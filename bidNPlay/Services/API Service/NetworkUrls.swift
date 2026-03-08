@@ -14,6 +14,8 @@ struct APIURLs{
     static let login = "/user_login"
     static let otp = "/verify_otp"
     static let deleteUser = "/delete_user"
+    static let forgotPassword = "/forgot_password" //POST
+    static let updateNewPassword = "/update_new_password" //POST
     static let tournamentList = "/tournament_list"
     static let tournamentDetail = "/tournament_details"
     static let indvidualTournamentDetail = "/individual_tournament_details"
@@ -23,6 +25,9 @@ struct APIURLs{
     static let teamPlayerList = "/team_players"
     static let potList = "/tournament_pots_list"
     static let potPlayerList = "/tournament_pot_players"
+    static let nonPotPlayerList = "/tournament_no_pot_players"
+    static let addPlayersToPot = "/add_players_to_pot"
+    static let createPot = "/add_tournament_player_pot"
     static let individualFixtureList = "/individual_fixtures_by_round"
     static let individualFixtureRoundsList = "/individual_tournament_fixture_rounds"
     

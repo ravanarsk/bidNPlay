@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class FixtureVM{
     
@@ -13,6 +14,28 @@ class FixtureVM{
     var teamFixtureModel = [TeamFixture]()
     var delegate: FixtureDelegate?
     var isIndividual : Bool = false
+    
+}
+
+extension FixtureVM {
+    internal func openWhatsappForLeftIndividual(at index: Int) {
+        let model = getIndividualModel(index: index)
+        let phone = "\(model.homeUserCountryCode)\(model.homeUserPhone)"
+        
+        if !phone.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let url = URL(string: "https://wa.me/\(phone)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    internal func openWhatsappForRightIndividual(at index: Int) {
+        let model = getIndividualModel(index: index)
+        let phone = "\(model.awayUserCountryCode)\(model.awayUserPhone)"
+        
+        if !phone.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let url = URL(string: "https://wa.me/\(phone)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
     
 }
 

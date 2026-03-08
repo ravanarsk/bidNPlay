@@ -11,6 +11,7 @@ protocol TeamInfoDelegate {
     
     func teamClicked()
     func potClicked()
+    func addPotClicked()
     
 }
 
@@ -30,6 +31,7 @@ class TeamInfoCell: UITableViewCell {
     @IBOutlet weak var potSubTitle: UILabel!
     @IBOutlet weak var potButton: UIButton!
     @IBOutlet weak var potArrow: UIImageView!
+    @IBOutlet var btnAddPot: UIButton!
     
     internal var delegate : TeamInfoDelegate?
     
@@ -48,6 +50,8 @@ class TeamInfoCell: UITableViewCell {
 extension TeamInfoCell{
     
     private func configureCell(){
+        
+        self.btnAddPot.setDefaultTheme(name: "Add Pot")
         
         self.teamTitle.text = "Teams"
         self.teamTitle.textColor = .black
@@ -102,6 +106,7 @@ extension TeamInfoCell{
         
         self.teamButton.addTarget(self, action: #selector(teamAction), for: .touchUpInside)
         self.potButton.addTarget(self, action: #selector(potAction), for: .touchUpInside)
+        self.btnAddPot.addTarget(self, action: #selector(addPotAction), for: .touchUpInside)
         
     }
     
@@ -115,11 +120,16 @@ extension TeamInfoCell{
         if model.tournament_details.tournament_type == "Team_woa"{
             self.potHolderView.isHidden = true
             self.potVisualEffect.isHidden = true
-        }else{
+            self.btnAddPot.isHidden = true
+        } else if model.tournament_details.tournament_type == "Team" {
             self.potHolderView.isHidden = false
             self.potVisualEffect.isHidden = false
+            self.btnAddPot.isHidden = !model.tournament_details.isAdmin
+        } else{
+            self.potHolderView.isHidden = false
+            self.potVisualEffect.isHidden = false
+            self.btnAddPot.isHidden = true
         }
-        
     }
     
 }
@@ -133,6 +143,10 @@ extension TeamInfoCell{
     
     @objc fileprivate func potAction(){
         self.delegate?.potClicked()
+    }
+    
+    @objc fileprivate func addPotAction(){
+        self.delegate?.addPotClicked()
     }
     
 }

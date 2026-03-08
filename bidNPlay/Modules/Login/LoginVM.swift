@@ -77,4 +77,34 @@ extension LoginVM{
         
     }
     
+    internal func forgotPassword(email: String){
+        
+        ActivityHUD().showProgressHUD()
+        let params = [
+            "email":email,
+        ] as [String : Any]
+        let listUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.forgotPassword
+        debugPrint(params)
+        debugPrint(listUrl)
+        NetworkManager.shared.post(urlString: listUrl, params: params, responseType: ForgotPasswordModel.self) { result in
+            
+            switch result{
+            case .success(let responseObj):
+                print(responseObj)
+                
+                if (responseObj.status ?? false) == true  {
+                    self.delegate?.forgotPasswordSuccess()
+                } else {
+                    self.delegate?.showAlertWith(msg: responseObj.message ?? "")
+                }
+                
+//                self.response = responseObj
+//                self.searchResults = self.response?.players ?? []
+//                self.delegate?.refreshList()
+            case .failure(let errorObj):
+                print(errorObj)
+                self.delegate?.showAlertWith(error: errorObj)
+            }
+        }
+    }
 }

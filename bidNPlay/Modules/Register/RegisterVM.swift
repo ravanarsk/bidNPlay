@@ -24,11 +24,13 @@ extension RegisterVM{
             self.delegate?.showAlertWith(msg: "Enter valid email")
         }else if password.replacingOccurrences(of: " ", with: "") == ""{
             self.delegate?.showAlertWith(msg: "Enter valid password")
-        }else if countryCode.replacingOccurrences(of: " ", with: "") == ""{
-            self.delegate?.showAlertWith(msg: "Enter country code")
-        }else if phone.replacingOccurrences(of: " ", with: "") == ""{
-            self.delegate?.showAlertWith(msg: "Enter phone")
-        }else{
+        }
+//        else if countryCode.replacingOccurrences(of: " ", with: "") == ""{
+//            self.delegate?.showAlertWith(msg: "Enter country code")
+//        }else if phone.replacingOccurrences(of: " ", with: "") == ""{
+//            self.delegate?.showAlertWith(msg: "Enter phone")
+//        }
+        else{
             
             let code = countryCode.replacingOccurrences(of: "+", with: "")
             let params : [String: Any] = [

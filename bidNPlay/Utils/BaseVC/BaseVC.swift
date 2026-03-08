@@ -228,8 +228,9 @@ extension BaseVC : ErrorDelegate{
             self.navigationController?.popViewController(animated: true)
         }
         alertVC.addAction(doneAction)
-        self.present(alertVC, animated: true)
-        
+        DispatchQueue.main.async {
+            self.present(alertVC, animated: true)
+        }
     }
     
     func invalidToken() {

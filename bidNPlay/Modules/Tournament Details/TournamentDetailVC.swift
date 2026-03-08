@@ -170,7 +170,7 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
             if model.tournament_details.tournament_type == "Individual"{
                 return 0
             }
-            return 200
+            return  model.tournament_details.isAdmin ? 250 : 200
         }else{
             return 340
         }
@@ -190,6 +190,13 @@ extension TournamentDetailVC: UITableViewDelegate, UITableViewDataSource{
 //MARK: Team Info Cell and Basic Info Cell Delegates
 extension TournamentDetailVC: TeamInfoDelegate, BasicInfoDelegate, HeaderCellDelegate{
     
+    func addPotClicked() {
+        if let vc = CreatePotVC.loadFromSB() {
+            vc.tournamentID = detailVM.getSelectedModelWith().tournament_details.tournament_id
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     func teamClicked() {
         self.segueToListing(viewSelection: .Teams)
     }
@@ -204,7 +211,7 @@ extension TournamentDetailVC: TeamInfoDelegate, BasicInfoDelegate, HeaderCellDel
         if let countryCode = model.admin_country_code, let phoneNumber = model.admin_phone {
             
             let phone = "\(countryCode)\(phoneNumber)"
-            if let url = URL(string: "https://wa.me/\(phone)") {
+            if !phone.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let url = URL(string: "https://wa.me/\(phone)") {
                 UIApplication.shared.open(url)
             }
             
@@ -298,6 +305,7 @@ extension TournamentDetailVC{
         let vc = ListingVC.loadFromNib()
         vc.tournamentID = model.tournament_details.tournament_id
         vc.listingView = viewSelection
+        vc.isAdmin = model.tournament_details.isAdmin
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

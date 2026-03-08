@@ -109,6 +109,10 @@ extension OTPVC{
 
 //MARK: View Model Delegates
 extension OTPVC: LoginDelegate{
+    func forgotPasswordSuccess() {
+        
+    }
+    
     
     func loginSuccess() {
         

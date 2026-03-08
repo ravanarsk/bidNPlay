@@ -24,6 +24,7 @@ enum CommonConstants{
     static let wakeUp = "Please wake up your device to proceed further"
     static let continueTxt = "Continue"
     static let errorTitle = "Error"
+    static let successTitle = "Success"
     static let optionSelect = "Choose an option to proceed"
     static let emptyComany = "No Companies Found "
     static let refresh = "Refresh"

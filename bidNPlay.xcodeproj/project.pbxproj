@@ -31,8 +31,21 @@
 		CE9EC6EB2D6CB8BF00AE463F /* SubFixturesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9EC6EA2D6CB8BF00AE463F /* SubFixturesVC.xib */; };
 		CEC3B3F62D8D2EFB00A3F777 /* TeamStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3B3F42D8D2EFB00A3F777 /* TeamStatsCell.swift */; };
 		CEC3B3F72D8D2EFB00A3F777 /* TeamStatsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC3B3F52D8D2EFB00A3F777 /* TeamStatsCell.xib */; };
+		D1041E1E2F5D4BDA00E46BBB /* CreatePotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1041E1D2F5D4BDA00E46BBB /* CreatePotVC.swift */; };
+		D1041E202F5D4BEA00E46BBB /* CreatePotVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1041E1F2F5D4BEA00E46BBB /* CreatePotVC.storyboard */; };
+		D1041E222F5D4BF600E46BBB /* CreatePotVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1041E212F5D4BF600E46BBB /* CreatePotVM.swift */; };
+		D1041E242F5D4BFD00E46BBB /* CreatePotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1041E232F5D4BFD00E46BBB /* CreatePotModel.swift */; };
+		D109D5612F59A0A400C7F70B /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D109D5602F59A0A400C7F70B /* ForgotPasswordVC.swift */; };
+		D109D5632F59A0AC00C7F70B /* ForgotPasswordVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D109D5622F59A0AC00C7F70B /* ForgotPasswordVC.storyboard */; };
+		D109D5652F59A0BA00C7F70B /* ForgotPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D109D5642F59A0BA00C7F70B /* ForgotPasswordVM.swift */; };
+		D109D5672F59A0C100C7F70B /* ForgotPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D109D5662F59A0C100C7F70B /* ForgotPasswordModel.swift */; };
+		D109D5692F5AECC700C7F70B /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D109D5682F5AECC700C7F70B /* StringExt.swift */; };
 		D12F5E6B2E7EAF0B00DB7C16 /* CreateTournamentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12F5E6A2E7EAF0B00DB7C16 /* CreateTournamentVC.xib */; };
 		D12F5E6C2E7EAF0B00DB7C16 /* CreateTournamentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12F5E692E7EAF0B00DB7C16 /* CreateTournamentVC.swift */; };
+		D172AEC32F4ED01D00CC8A2E /* AddPotPlayersVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D172AEC22F4ED01D00CC8A2E /* AddPotPlayersVC.storyboard */; };
+		D172AEC52F4ED03700CC8A2E /* AddPotPlayersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D172AEC42F4ED03700CC8A2E /* AddPotPlayersVC.swift */; };
+		D172AEC72F4ED12200CC8A2E /* AddPotPlayersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D172AEC62F4ED12200CC8A2E /* AddPotPlayersVM.swift */; };
+		D172AEC92F4F0D1100CC8A2E /* AddPotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D172AEC82F4F0D1100CC8A2E /* AddPotModel.swift */; };
 		D1D64F952E8D4F7500726860 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D64F942E8D4F7500726860 /* NetworkModel.swift */; };
 		D1ECE24B2E83D2AA009C31D7 /* CreateTournamentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECE24A2E83D2AA009C31D7 /* CreateTournamentVM.swift */; };
 		D1ECE24D2E83D2B9009C31D7 /* CreateTournamentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECE24C2E83D2B9009C31D7 /* CreateTournamentModel.swift */; };
@@ -164,8 +177,21 @@
 		CE9EC6EA2D6CB8BF00AE463F /* SubFixturesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubFixturesVC.xib; sourceTree = "<group>"; };
 		CEC3B3F42D8D2EFB00A3F777 /* TeamStatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStatsCell.swift; sourceTree = "<group>"; };
 		CEC3B3F52D8D2EFB00A3F777 /* TeamStatsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamStatsCell.xib; sourceTree = "<group>"; };
+		D1041E1D2F5D4BDA00E46BBB /* CreatePotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePotVC.swift; sourceTree = "<group>"; };
+		D1041E1F2F5D4BEA00E46BBB /* CreatePotVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatePotVC.storyboard; sourceTree = "<group>"; };
+		D1041E212F5D4BF600E46BBB /* CreatePotVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePotVM.swift; sourceTree = "<group>"; };
+		D1041E232F5D4BFD00E46BBB /* CreatePotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePotModel.swift; sourceTree = "<group>"; };
+		D109D5602F59A0A400C7F70B /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		D109D5622F59A0AC00C7F70B /* ForgotPasswordVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordVC.storyboard; sourceTree = "<group>"; };
+		D109D5642F59A0BA00C7F70B /* ForgotPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVM.swift; sourceTree = "<group>"; };
+		D109D5662F59A0C100C7F70B /* ForgotPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModel.swift; sourceTree = "<group>"; };
+		D109D5682F5AECC700C7F70B /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		D12F5E692E7EAF0B00DB7C16 /* CreateTournamentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTournamentVC.swift; sourceTree = "<group>"; };
 		D12F5E6A2E7EAF0B00DB7C16 /* CreateTournamentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTournamentVC.xib; sourceTree = "<group>"; };
+		D172AEC22F4ED01D00CC8A2E /* AddPotPlayersVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPotPlayersVC.storyboard; sourceTree = "<group>"; };
+		D172AEC42F4ED03700CC8A2E /* AddPotPlayersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPotPlayersVC.swift; sourceTree = "<group>"; };
+		D172AEC62F4ED12200CC8A2E /* AddPotPlayersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPotPlayersVM.swift; sourceTree = "<group>"; };
+		D172AEC82F4F0D1100CC8A2E /* AddPotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPotModel.swift; sourceTree = "<group>"; };
 		D1D64F942E8D4F7500726860 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		D1ECE24A2E83D2AA009C31D7 /* CreateTournamentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTournamentVM.swift; sourceTree = "<group>"; };
 		D1ECE24C2E83D2B9009C31D7 /* CreateTournamentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTournamentModel.swift; sourceTree = "<group>"; };
@@ -371,6 +397,28 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		D1041E1C2F5D466400E46BBB /* CreatePot */ = {
+			isa = PBXGroup;
+			children = (
+				D1041E1D2F5D4BDA00E46BBB /* CreatePotVC.swift */,
+				D1041E232F5D4BFD00E46BBB /* CreatePotModel.swift */,
+				D1041E212F5D4BF600E46BBB /* CreatePotVM.swift */,
+				D1041E1F2F5D4BEA00E46BBB /* CreatePotVC.storyboard */,
+			);
+			path = CreatePot;
+			sourceTree = "<group>";
+		};
+		D109D55F2F59A08500C7F70B /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D109D5602F59A0A400C7F70B /* ForgotPasswordVC.swift */,
+				D109D5642F59A0BA00C7F70B /* ForgotPasswordVM.swift */,
+				D109D5662F59A0C100C7F70B /* ForgotPasswordModel.swift */,
+				D109D5622F59A0AC00C7F70B /* ForgotPasswordVC.storyboard */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
 		D12F5E682E7EAEE300DB7C16 /* CreateTournament */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +428,17 @@
 				D12F5E6A2E7EAF0B00DB7C16 /* CreateTournamentVC.xib */,
 			);
 			path = CreateTournament;
+			sourceTree = "<group>";
+		};
+		D172AEC12F4ECE2D00CC8A2E /* AddPotPlayers */ = {
+			isa = PBXGroup;
+			children = (
+				D172AEC22F4ED01D00CC8A2E /* AddPotPlayersVC.storyboard */,
+				D172AEC42F4ED03700CC8A2E /* AddPotPlayersVC.swift */,
+				D172AEC62F4ED12200CC8A2E /* AddPotPlayersVM.swift */,
+				D172AEC82F4F0D1100CC8A2E /* AddPotModel.swift */,
+			);
+			path = AddPotPlayers;
 			sourceTree = "<group>";
 		};
 		D72FF43ED42E441D61B40741 /* Pods */ = {
@@ -714,6 +773,9 @@
 		F4AE35542CFDA62800766A02 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D1041E1C2F5D466400E46BBB /* CreatePot */,
+				D109D55F2F59A08500C7F70B /* ForgotPassword */,
+				D172AEC12F4ECE2D00CC8A2E /* AddPotPlayers */,
 				D12F5E682E7EAEE300DB7C16 /* CreateTournament */,
 				CE15858E2DD1C25900E4DC53 /* Picker */,
 				CE1585872DD1B74F00E4DC53 /* AddFixture */,
@@ -784,6 +846,7 @@
 				F47F64CF2CFEF2C4002F8930 /* TextFieldExt.swift */,
 				F47F64E42CFF3209002F8930 /* LabelExt.swift */,
 				F4EC46F22D007DC300EFC57F /* TableViewExt.swift */,
+				D109D5682F5AECC700C7F70B /* StringExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -949,6 +1012,7 @@
 				F4AE354B2CFDA34900766A02 /* Poppins-Light.ttf in Resources */,
 				F43066532D01C62E003D0EC6 /* DataCell.xib in Resources */,
 				F4A946002D1010BF0008E6D0 /* ListingVC.xib in Resources */,
+				D172AEC32F4ED01D00CC8A2E /* AddPotPlayersVC.storyboard in Resources */,
 				F484A5C22D118F980054D7DB /* RoundCell.xib in Resources */,
 				F4A9460F2D1064020008E6D0 /* FixtureVC.xib in Resources */,
 				CE7DA5902D7F6EBC00EBE0F5 /* TeamTableVC.xib in Resources */,
@@ -961,6 +1025,7 @@
 				F4AE353B2CFD9A3200766A02 /* Base in Resources */,
 				F4E926892D047D6300D98217 /* EmptyListCell.xib in Resources */,
 				F4AE354C2CFDA34900766A02 /* Poppins-Medium.ttf in Resources */,
+				D109D5632F59A0AC00C7F70B /* ForgotPasswordVC.storyboard in Resources */,
 				F439CF822D0959FA00DAF68A /* CustomTFAlertVC.xib in Resources */,
 				F4AE354E2CFDA34900766A02 /* Poppins-SemiBold.ttf in Resources */,
 				F412634F2D0812B200D8DDDB /* TeamInfoCell.xib in Resources */,
@@ -978,6 +1043,7 @@
 				CE1585922DD1C27600E4DC53 /* PickerVC.xib in Resources */,
 				F4A9460A2D10153F0008E6D0 /* ListingCell.xib in Resources */,
 				F47F64DD2CFF0E62002F8930 /* assets.bundle in Resources */,
+				D1041E202F5D4BEA00E46BBB /* CreatePotVC.storyboard in Resources */,
 				F47F64E22CFF2B04002F8930 /* OTPVC.xib in Resources */,
 				CE15858B2DD1B77A00E4DC53 /* AddFixtureVC.xib in Resources */,
 				CE7DA58C2D7E322000EBE0F5 /* PlayerStatsCell.xib in Resources */,
@@ -1049,13 +1115,16 @@
 				CE9EC6E52D6CB86200AE463F /* SubFixturesVC.swift in Sources */,
 				F4E926762D04455800D98217 /* CommonDelegates.swift in Sources */,
 				F41263492D07FFB100D8DDDB /* PlayerInfoCell.swift in Sources */,
+				D1041E1E2F5D4BDA00E46BBB /* CreatePotVC.swift in Sources */,
 				F47F64CE2CFEF079002F8930 /* ButtonExt.swift in Sources */,
 				F4AE352F2CFD9A3200766A02 /* AppDelegate.swift in Sources */,
 				CE9EC6E72D6CB88A00AE463F /* SubFixturesVM.swift in Sources */,
 				F43647E72D1305D2003B71F8 /* RegisterModel.swift in Sources */,
 				D1D64F952E8D4F7500726860 /* NetworkModel.swift in Sources */,
 				F484A5B72D1189C50054D7DB /* FixtureRoundVC.swift in Sources */,
+				D109D5612F59A0A400C7F70B /* ForgotPasswordVC.swift in Sources */,
 				F4FAD9C22D06DF7900B48452 /* TournamentDetailVM.swift in Sources */,
+				D172AEC52F4ED03700CC8A2E /* AddPotPlayersVC.swift in Sources */,
 				F484A5B32D11604B0054D7DB /* FixtureModel.swift in Sources */,
 				F47F64E32CFF2B04002F8930 /* OTPVC.swift in Sources */,
 				F4AE35502CFDA37F00766A02 /* FontExtension.swift in Sources */,
@@ -1083,10 +1152,13 @@
 				F43647E32D12CEFD003B71F8 /* ProfileVM.swift in Sources */,
 				F4AE35532CFDA47100766A02 /* CustomColor.swift in Sources */,
 				F4AE35632CFDA7A700766A02 /* LoginVC.swift in Sources */,
+				D172AEC72F4ED12200CC8A2E /* AddPotPlayersVM.swift in Sources */,
+				D172AEC92F4F0D1100CC8A2E /* AddPotModel.swift in Sources */,
 				F43A8B9A2D003CB40098F83B /* DashboardTab.swift in Sources */,
 				F4E9266C2D0435C700D98217 /* NetworkUrls.swift in Sources */,
 				F4AE35312CFD9A3200766A02 /* SceneDelegate.swift in Sources */,
 				F484A5BC2D118A770054D7DB /* FixtureRoundModel.swift in Sources */,
+				D109D5652F59A0BA00C7F70B /* ForgotPasswordVM.swift in Sources */,
 				F4E926792D046D7B00D98217 /* NetworkError.swift in Sources */,
 				F4FAD9CE2D07218700B48452 /* BasicInfoCell.swift in Sources */,
 				F47F64E52CFF3209002F8930 /* LabelExt.swift in Sources */,
@@ -1102,10 +1174,12 @@
 				F412634E2D0812B200D8DDDB /* TeamInfoCell.swift in Sources */,
 				F43A8BA42D00550A0098F83B /* RankingVC.swift in Sources */,
 				CEC3B3F62D8D2EFB00A3F777 /* TeamStatsCell.swift in Sources */,
+				D109D5692F5AECC700C7F70B /* StringExt.swift in Sources */,
 				F4E926742D043CD300D98217 /* LoginModel.swift in Sources */,
 				F47F64DB2CFF0E62002F8930 /* ADCountry.swift in Sources */,
 				F43A8B9F2D0054D00098F83B /* TournamentsVC.swift in Sources */,
 				F43066542D01C62E003D0EC6 /* DataCell.swift in Sources */,
+				D1041E222F5D4BF600E46BBB /* CreatePotVM.swift in Sources */,
 				F4AE35582CFDA67400766A02 /* BaseVC.swift in Sources */,
 				F4AE35672CFDA83600766A02 /* NibExt.swift in Sources */,
 				F4FAD9C92D0713EC00B48452 /* HeaderCell.swift in Sources */,
@@ -1115,6 +1189,7 @@
 				F484A5BA2D118A640054D7DB /* FixtureRoundVM.swift in Sources */,
 				F43647E52D130590003B71F8 /* RegisterVM.swift in Sources */,
 				F4E9266E2D0435C700D98217 /* DefaultWrapper.swift in Sources */,
+				D109D5672F59A0C100C7F70B /* ForgotPasswordModel.swift in Sources */,
 				F430664F2D01C42B003D0EC6 /* TournamentDetailVC.swift in Sources */,
 				D1ECE24D2E83D2B9009C31D7 /* CreateTournamentModel.swift in Sources */,
 				F47F64D02CFEF2C4002F8930 /* TextFieldExt.swift in Sources */,
@@ -1123,6 +1198,7 @@
 				F43647E92D130E14003B71F8 /* OTPVM.swift in Sources */,
 				F4A945FF2D1010BF0008E6D0 /* ListingVC.swift in Sources */,
 				F4E926812D04713000D98217 /* TournamentsModel.swift in Sources */,
+				D1041E242F5D4BFD00E46BBB /* CreatePotModel.swift in Sources */,
 				F43A8BA92D0055CD0098F83B /* SettingsVC.swift in Sources */,
 				CE1585912DD1C27600E4DC53 /* PickerVC.swift in Sources */,
 			);
@@ -1269,7 +1345,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZXSX587GRY;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1288,7 +1364,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bidnplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1311,7 +1387,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZXSX587GRY;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1330,7 +1406,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bidnplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

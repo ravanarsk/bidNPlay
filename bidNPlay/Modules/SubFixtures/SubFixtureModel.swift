@@ -18,10 +18,10 @@ struct TeamSubFixtureModel: Decodable {
     let subFixtureUpdatedAt: String
     let homeUserName: String
     let awayUserName: String
-    let homeUserPhone: String
-    let awayUserPhone: String
-    let homeUserCountryCode: String
-    let awayUserCountryCode: String
+    let homeUserPhone: String?
+    let awayUserPhone: String?
+    let homeUserCountryCode: String?
+    let awayUserCountryCode: String?
     
     enum CodingKeys: String, CodingKey {
         case subFixtureID = "sub_fixture_id"

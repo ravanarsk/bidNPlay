@@ -21,4 +21,12 @@ extension UIViewController {
         
     }
     
+    static func loadFromSB() -> Self? {
+        let vcDesc = String(describing: Self.self)
+        let sb = UIStoryboard(name: String(describing: vcDesc), bundle: .main)
+        let vc = sb.instantiateViewController(identifier: vcDesc) as? Self
+        return vc
+//        let vc1 = vc as? Self
+//        return vc1
+    }
 }

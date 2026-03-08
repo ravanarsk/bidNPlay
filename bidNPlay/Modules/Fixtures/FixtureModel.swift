@@ -29,10 +29,10 @@ struct IndividualFixture: Decodable {
     let awayUserGoals: Int?
     let homeUserName: String
     let awayUserName: String
-    let homeUserPhone: String
-    let awayUserPhone: String
-    let homeUserCountryCode: String
-    let awayUserCountryCode: String
+    let homeUserPhone: String?
+    let awayUserPhone: String?
+    let homeUserCountryCode: String?
+    let awayUserCountryCode: String?
     
     enum CodingKeys: String, CodingKey {
         
