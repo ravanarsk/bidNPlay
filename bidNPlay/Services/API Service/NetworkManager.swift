@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class NetworkManager{
     
@@ -313,6 +314,23 @@ extension NetworkManager{
         debugPrint("HTTP Status Code : \(statusCode)")
         if statusCode == 200{
             return nil
+        } else if statusCode == 401 {
+            // User Session expired.
+            DispatchQueue.main.async {
+                let rootViewController = LoginVC.loadFromNib()
+                if let window = UIApplication.shared.windows.first{
+                    let navigationController = UINavigationController(
+                        rootViewController: rootViewController
+                    )
+                    window.rootViewController = navigationController
+                    DefaultWrapper().removeAll()
+                    window.makeKeyAndVisible()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(1)) {
+                        rootViewController.showAlertWith(msg: "Your session has expired. Please login again.")
+                    }
+                }
+            }
         }
         
         do{

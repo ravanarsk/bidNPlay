@@ -52,4 +52,14 @@ struct APIURLs{
     static let leaveTournament = "/leave_tournament"
     static let tournamentAddTeam = "/add_tournament_team"
     static let removeAsCaptain = "/remove_as_captain"
+    
+    // Auction Related
+    static let auctionDetails = "/auction_details" // GET
+    static let teamsBidBalance = "/teams_bid_balance" // GET
+    static let startAuction = "/start_auction" // POST
+    static let submitBid = "/submit_bid" // POST
+    static let soldPlayer = "/sold_player" // POST
+    static let auctionSoldPlayers = "/auction_sold_players" // GET
+    static let skipPlayer = "/skip_player" // POST
+    static let addAuctionViewer = "/add_auction_viewer" // POST
 }

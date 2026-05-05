@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuctionVC" customModule="bidNPlay" customModuleProvider="target">
+            <connections>
+                <outlet property="btnSkip" destination="JBX-9w-BHh" id="KNB-eF-UkT"/>
+                <outlet property="btnSold" destination="3cF-9t-kPA" id="xHt-Jy-bRl"/>
+                <outlet property="btnStart" destination="huL-6k-zta" id="baM-Pn-hk9"/>
+                <outlet property="btnSubmit" destination="E8n-A8-fXi" id="yKO-l0-5wK"/>
+                <outlet property="btnTeamBalance" destination="Bfm-lG-HQQ" id="dk2-WZ-N3u"/>
+                <outlet property="lblBasePrice" destination="u7H-GN-lBe" id="uBL-sC-FIS"/>
+                <outlet property="lblCurrentBid" destination="NUU-l3-iaY" id="Fyi-ah-7Gt"/>
+                <outlet property="lblPlayerName" destination="JB0-1z-Rbm" id="Zi2-KB-dkS"/>
+                <outlet property="lblPlayerStats" destination="YuQ-uF-uHd" id="TZg-AH-bBd"/>
+                <outlet property="lblPotName" destination="CHD-uU-eie" id="d8O-aF-DRa"/>
+                <outlet property="lblStatus" destination="n24-UE-o8e" id="2Ii-Rb-yp0"/>
+                <outlet property="lblTotalBidAmt" destination="gy5-7j-SxD" id="J7y-2s-pmT"/>
+                <outlet property="stackSkipSold" destination="N2O-T7-Zhw" id="5iU-Yf-IEN"/>
+                <outlet property="txtBidPrice" destination="R30-7b-EME" id="Oai-nt-Fbm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Inu-vN-UgU">
+                    <rect key="frame" x="10" y="128" width="373" height="637.66666666666663"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Bid Amount will be 100 Cr." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy5-7j-SxD">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="36"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name: test 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JB0-1z-Rbm">
+                            <rect key="frame" x="0.0" y="46" width="373" height="30.666666666666671"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M-3, W-1, L-2, D-0, W% - 33.300000%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuQ-uF-uHd">
+                            <rect key="frame" x="0.0" y="86.666666666666657" width="373" height="30.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pot Name: Pot 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHD-uU-eie">
+                            <rect key="frame" x="0.0" y="127.00000000000001" width="373" height="30.666666666666671"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base Price : 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7H-GN-lBe">
+                            <rect key="frame" x="0.0" y="167.66666666666669" width="373" height="30.333333333333343"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Bid : 5 - ashwin s ( kbfc )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUU-l3-iaY">
+                            <rect key="frame" x="0.0" y="208" width="373" height="30.666666666666657"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfm-lG-HQQ">
+                            <rect key="frame" x="0.0" y="248.66666666666669" width="373" height="45"/>
+                            <color key="backgroundColor" name="buttonColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="RSo-6T-yCp"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="CHECK TEAM BALANCE"/>
+                            <connections>
+                                <action selector="checkTeamBalanceAction:" destination="-1" eventType="touchUpInside" id="sa9-wp-zGT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huL-6k-zta">
+                            <rect key="frame" x="0.0" y="303.66666666666669" width="373" height="45"/>
+                            <color key="backgroundColor" name="buttonColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="bYZ-gi-3d3"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="START"/>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N2O-T7-Zhw">
+                            <rect key="frame" x="0.0" y="358.66666666666669" width="373" height="45"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBX-9w-BHh">
+                                    <rect key="frame" x="0.0" y="0.0" width="181.66666666666666" height="45"/>
+                                    <color key="backgroundColor" name="buttonColor"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="SKIP"/>
+                                    <connections>
+                                        <action selector="skipAction:" destination="-1" eventType="touchUpInside" id="EiF-eN-YDu"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cF-9t-kPA">
+                                    <rect key="frame" x="191.66666666666663" y="0.0" width="181.33333333333337" height="45"/>
+                                    <color key="backgroundColor" name="buttonColor"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="SOLD"/>
+                                    <connections>
+                                        <action selector="soldAction:" destination="-1" eventType="touchUpInside" id="kMg-jY-e7t"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="NrR-ji-ZFe"/>
+                            </constraints>
+                        </stackView>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R30-7b-EME">
+                            <rect key="frame" x="0.0" y="413.66666666666663" width="373" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="YFA-Sz-WDG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8n-A8-fXi">
+                            <rect key="frame" x="0.0" y="468.66666666666663" width="373" height="45"/>
+                            <color key="backgroundColor" name="buttonColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="vuu-Ic-uNK"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="SUBMIT"/>
+                            <connections>
+                                <action selector="submitAction:" destination="-1" eventType="touchUpInside" id="g6a-By-P6m"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n24-UE-o8e">
+                            <rect key="frame" x="0.0" y="523.66666666666663" width="373" height="114"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Inu-vN-UgU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="MpI-VY-0mJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Inu-vN-UgU" secondAttribute="trailing" constant="10" id="fZq-BP-ISA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Inu-vN-UgU" secondAttribute="bottom" id="w1U-a3-SYf"/>
+                <constraint firstItem="Inu-vN-UgU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="yGT-rQ-jRW"/>
+            </constraints>
+            <point key="canvasLocation" x="-126" y="104"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="buttonColor">
+            <color red="0.46274509803921571" green="0.50196078431372548" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

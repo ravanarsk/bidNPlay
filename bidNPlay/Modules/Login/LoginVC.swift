@@ -57,8 +57,6 @@ extension LoginVC{
 extension LoginVC{
     
     @objc fileprivate func loginAction(){
-        
-        
         self.loginVM.preludeCheckToLoginAPI(
             email: self.emailTF.text ?? "",
             password: self.passwordTF.text ?? ""
@@ -108,8 +106,19 @@ extension LoginVC : LoginDelegate{
             
             ActivityHUD().dismissProgressHUD()
             let vc = DashboardTab.loadFromNib()
-            self.navigationController?.pushViewController(vc, animated: true)
+//            self.navigationController?.pushViewController(vc, animated: true)
+//            self.navigationController?.setViewControllers([vc], animated: true)
             
+//            window.rootViewController = rootViewController
+            
+            if let window = UIApplication.shared.windows.first{
+//                let navigationController = UINavigationController(
+//                    rootViewController: rootViewController
+//                )
+                window.rootViewController = vc
+//                DefaultWrapper().removeAll()
+                window.makeKeyAndVisible()
+            }
         }
         
     }

@@ -172,6 +172,30 @@ extension BaseVC : ErrorDelegate{
     
     func showAlertWith(error: Error){
         
+        DispatchQueue.main.sync {
+            ActivityHUD().dismissProgressHUD()
+            var msg = ""
+            if let errorCode = (error as NSError).code as? Int {
+                msg = error.localizedDescription + " (\(errorCode))"
+            }else{
+                msg = error.localizedDescription
+            }
+            let alertVC = UIAlertController(
+                title: CommonConstants.errorTitle,
+                message: msg,
+                preferredStyle: .alert
+            )
+            let doneAction = UIAlertAction(
+                title: CommonConstants.done, style: .default
+            )
+            alertVC.addAction(doneAction)
+            self.present(alertVC, animated: true)
+        }
+        
+    }
+    
+    func showAlertWith_OLD(error: Error){
+        
         ActivityHUD().dismissProgressHUD()
         var msg = ""
         if let errorCode = (error as NSError).code as? Int {

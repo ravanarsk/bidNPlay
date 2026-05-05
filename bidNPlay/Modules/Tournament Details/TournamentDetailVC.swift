@@ -50,6 +50,12 @@ extension TournamentDetailVC{
         button1.tintColor = .white
         
         let menuItems = UIMenu(title: "",options: [.displayInline],children: [
+            UIAction(title: "Auction", handler: { [weak self] _ in
+                self?.segueToAuction()
+            }),
+            UIAction(title: "Sold Players", handler: { [weak self] _ in
+                self?.segueToSoldPlayers()
+            }),
             UIAction(title: "Table", handler: { [weak self] _ in
                 self?.segueToTableStats()
             }),
@@ -306,6 +312,28 @@ extension TournamentDetailVC{
         vc.tournamentID = model.tournament_details.tournament_id
         vc.listingView = viewSelection
         vc.isAdmin = model.tournament_details.isAdmin
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    fileprivate func segueToAuction(){
+        
+        let vc = AuctionVC.loadFromNib()
+        vc.tournamentID = self.tournamentID
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    fileprivate func segueToSoldPlayers(){
+        
+//        let model = self.detailVM.getSelectedModelWith()
+        let vc = SoldPlayersVC.loadFromNib()
+        vc.tournamentID = self.tournamentID
+        vc.modalPresentationStyle = .pageSheet
+//        self.present(vc, animated: true)
+//        vc.tournamentID = self.tournamentID
+//        vc.isIndividual = self.isIndividual
+        
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
