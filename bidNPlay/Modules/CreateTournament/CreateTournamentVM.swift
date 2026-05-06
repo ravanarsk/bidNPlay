@@ -33,7 +33,7 @@ extension CreateTournamentVM {
             "tournament_type": tournamentType,
             "tournament_max_players":playerCount,
             "tournament_no_of_teams":teamCount,
-            "is_private": isPrivate,
+            "is_private": isPrivate ? 1 : 0,
             "fixture_type":fixtureType
             
         ] as [String : Any]

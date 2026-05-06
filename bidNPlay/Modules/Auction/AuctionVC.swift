@@ -69,6 +69,11 @@ extension AuctionVC {
 
 // MARK: IBAction UIButton
 extension AuctionVC {
+    
+    @IBAction func startAuctionAction(_ sender: UIButton) {
+        startAuctionTapped()
+    }
+    
     @IBAction func submitAction(_ sender: UIButton) {
         if let strBid = txtBidPrice.text, let bid = Int(strBid) {
             submitBid(with: bid)

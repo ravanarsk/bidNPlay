@@ -187,7 +187,7 @@ struct PotPlayersResponse: Decodable {
     let message: String
     let isAdmin: Int
     let players: [PotPlayer]
-    let currentRoundNo: Int
+    let currentRoundNo: Int?
 
     enum CodingKeys: String, CodingKey {
         

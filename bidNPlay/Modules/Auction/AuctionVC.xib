@@ -93,6 +93,9 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="START"/>
+                            <connections>
+                                <action selector="startAuctionAction:" destination="-1" eventType="touchUpInside" id="fW7-69-rV7"/>
+                            </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N2O-T7-Zhw">
                             <rect key="frame" x="0.0" y="358.66666666666669" width="373" height="45"/>
