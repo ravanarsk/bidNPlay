@@ -7,6 +7,8 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import FirebaseCore
+import FirebaseMessaging
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.initAppDelegate(application: application)
+        self.setupFirebase(application: application)
         return true
     }
 
@@ -40,7 +43,8 @@ extension AppDelegate{
     
     fileprivate func initAppDelegate(application : UIApplication){
         
-        IQKeyboardManager.shared.enable = true
+//        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.isEnabled = true
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = CustomColor.bg
@@ -58,4 +62,37 @@ extension AppDelegate{
         
     }
     
+    fileprivate func setupFirebase(application : UIApplication) {
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+          options: authOptions,
+          completionHandler: { _, _ in }
+        )
+
+        application.registerForRemoteNotifications()
+        
+
+    }
+    
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        debugPrint("didReceiveRemoteNotification : \(userInfo)")
+        completionHandler(.newData)
+    }
+}
+
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        if let fcmToken {
+            debugPrint("fcmToken : \(fcmToken)")
+            
+            
+        }
+    }
 }

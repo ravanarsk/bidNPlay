@@ -9,5 +9,7 @@ target 'bidNPlay' do
     pod 'IQKeyboardManagerSwift'
     pod 'ProgressHUD'
     pod 'AEOTPTextField'
+    pod 'FirebaseMessaging'
+#    pod 'Google-Mobile-Ads-SDK'
 
 end

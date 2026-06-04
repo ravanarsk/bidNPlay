@@ -40,12 +40,21 @@ class AuctionVC: BaseVC {
         self.callAuctionDetailAPI()
     }
     
+    override func viewIsAppearing(_ animated: Bool) {
+        if let _ = auctionVM.auctionDetails {
+            auctionVM.subscribeNotifications()
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.refreshTimer?.invalidate()
         self.refreshTimer = nil
+        
+        if let _ = auctionVM.auctionDetails {
+            auctionVM.unsubscribeNotifications()
+        }
     }
-    
 }
 
 //MARK: View Setup

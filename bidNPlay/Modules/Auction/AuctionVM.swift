@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseMessaging
 
 class AuctionVM {
-    fileprivate var auctionDetails: AuctionDetails?
+    var auctionDetails: AuctionDetails?
     fileprivate var teamsBidBalanceResponse: TeamBidBalanceResponse?
     internal var delegate: AuctionDelegate?
     
@@ -80,8 +81,53 @@ extension AuctionVM {
         auctionDetails?.potPlayer?.bidPriceInCR ?? 0
     }
     
+    private var newBidTopic: String? {
+        guard let id = auctionDetails?.tournamentDetails?.tournamentID, let code = auctionDetails?.tournamentDetails?.tournamentCode else { return nil }
+        return "new_bid_\(id).\(code)"
+    }
     
+    private var skipTopic: String? {
+        guard let id = auctionDetails?.tournamentDetails?.tournamentID, let code = auctionDetails?.tournamentDetails?.tournamentCode else { return nil }
+        return "skip_\(id).\(code)"
+    }
     
+    private var soldTopic: String? {
+        guard let id = auctionDetails?.tournamentDetails?.tournamentID, let code = auctionDetails?.tournamentDetails?.tournamentCode else { return nil }
+        return "sold_\(id).\(code)"
+    }
+}
+
+extension AuctionVM {
+    func subscribeNotifications() {
+        guard let newBidTopic, let skipTopic, let soldTopic else { return }
+
+        Messaging.messaging().subscribe(toTopic: newBidTopic) { error in
+          debugPrint("Subscribed to -->> \(newBidTopic)")
+        }
+        
+        Messaging.messaging().subscribe(toTopic: skipTopic) { error in
+          debugPrint("Subscribed to -->> \(skipTopic)")
+        }
+        
+        Messaging.messaging().subscribe(toTopic: soldTopic) { error in
+          debugPrint("Subscribed to -->> \(soldTopic)")
+        }
+    }
+    func unsubscribeNotifications() {
+        guard let newBidTopic, let skipTopic, let soldTopic else { return }
+        
+        Messaging.messaging().unsubscribe(fromTopic: newBidTopic) { error in
+            debugPrint("Subscribed to -->> \(newBidTopic)")
+        }
+        
+        Messaging.messaging().unsubscribe(fromTopic: skipTopic) { error in
+            debugPrint("Subscribed to -->> \(skipTopic)")
+        }
+        
+        Messaging.messaging().unsubscribe(fromTopic: soldTopic) { error in
+            debugPrint("Subscribed to -->> \(soldTopic)")
+        }
+    }
 }
 
 //MARK: API Call
@@ -100,16 +146,17 @@ extension AuctionVM {
         let detailUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.auctionDetails
         debugPrint(params)
         debugPrint(detailUrl)
-        NetworkManager.shared.get(urlString: detailUrl, params: params, responseType: AuctionDetails.self) { result in
+        NetworkManager.shared.get(urlString: detailUrl, params: params, responseType: AuctionDetails.self) { [weak self] result in
             
             switch result {
             case .success(let responseObj):
                 print(responseObj)
-                self.auctionDetails = responseObj
-                self.delegate?.showAuctionDetails()
+                self?.auctionDetails = responseObj
+                self?.delegate?.showAuctionDetails()
+                self?.subscribeNotifications()
             case .failure(let errorObj):
                 print(errorObj)
-                self.delegate?.showAlertWith(error: errorObj)
+                self?.delegate?.showAlertWith(error: errorObj)
             }
             
         }
@@ -152,7 +199,7 @@ extension AuctionVM {
         let startAuctionUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.startAuction
         debugPrint(params)
         debugPrint(startAuctionUrl)
-        NetworkManager.shared.post(urlString: startAuctionUrl, params: params, responseType: BasicNetworkModel.self) { result in
+        NetworkManager.shared.post(urlString: startAuctionUrl, params: params, responseType: BasicNetworkModel.self) { [weak self] result in
             
             switch result {
             case .success(let responseObj):
@@ -160,10 +207,10 @@ extension AuctionVM {
 //                self.currentAction = .startAuction
 //                self.actionResponse = responseObj
 //                self.delegate?.auctionActionSuccess()
-                self.delegate?.startAuctionSuccess()
+                self?.delegate?.startAuctionSuccess()
             case .failure(let errorObj):
                 print(errorObj)
-                self.delegate?.showAlertWith(error: errorObj)
+                self?.delegate?.showAlertWith(error: errorObj)
             }
             
         }
@@ -182,7 +229,7 @@ extension AuctionVM {
         let submitBidUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.submitBid
         debugPrint(params)
         debugPrint(submitBidUrl)
-        NetworkManager.shared.post(urlString: submitBidUrl, params: params, responseType: BasicNetworkModel.self) { result in
+        NetworkManager.shared.post(urlString: submitBidUrl, params: params, responseType: BasicNetworkModel.self) { [weak self] result in
             
             switch result {
             case .success(let responseObj):
@@ -190,10 +237,10 @@ extension AuctionVM {
 //                self.currentAction = .submitBid
 //                self.actionResponse = responseObj
 //                self.delegate?.auctionActionSuccess()
-                self.delegate?.submitBidSuccess()
+                self?.delegate?.submitBidSuccess()
             case .failure(let errorObj):
                 print(errorObj)
-                self.delegate?.showAlertWith(error: errorObj)
+                self?.delegate?.showAlertWith(error: errorObj)
             }
             
         }
@@ -212,7 +259,7 @@ extension AuctionVM {
         let soldPlayerUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.soldPlayer
         debugPrint(params)
         debugPrint(soldPlayerUrl)
-        NetworkManager.shared.post(urlString: soldPlayerUrl, params: params, responseType: BasicNetworkModel.self) { result in
+        NetworkManager.shared.post(urlString: soldPlayerUrl, params: params, responseType: BasicNetworkModel.self) { [weak self] result in
             
             switch result {
             case .success(let responseObj):
@@ -220,10 +267,10 @@ extension AuctionVM {
 //                self.currentAction = .soldPlayer
 //                self.actionResponse = responseObj
 //                self.delegate?.auctionActionSuccess()
-                self.delegate?.soldPlayerSuccess(responseObj)
+                self?.delegate?.soldPlayerSuccess(responseObj)
             case .failure(let errorObj):
                 print(errorObj)
-                self.delegate?.showAlertWith(error: errorObj)
+                self?.delegate?.showAlertWith(error: errorObj)
             }
             
         }
@@ -242,7 +289,7 @@ extension AuctionVM {
         let skipPlayerUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.skipPlayer
         debugPrint(params)
         debugPrint(skipPlayerUrl)
-        NetworkManager.shared.post(urlString: skipPlayerUrl, params: params, responseType: BasicNetworkModel.self) { result in
+        NetworkManager.shared.post(urlString: skipPlayerUrl, params: params, responseType: BasicNetworkModel.self) { [weak self] result in
             
             switch result {
             case .success(let responseObj):
@@ -250,10 +297,10 @@ extension AuctionVM {
 //                self.currentAction = .skipPlayer
 //                self.actionResponse = responseObj
 //                self.delegate?.auctionActionSuccess()
-                self.delegate?.skipPlayerSuccess()
+                self?.delegate?.skipPlayerSuccess()
             case .failure(let errorObj):
                 print(errorObj)
-                self.delegate?.showAlertWith(error: errorObj)
+                self?.delegate?.showAlertWith(error: errorObj)
             }
             
         }
@@ -269,7 +316,7 @@ extension AuctionVM {
         let viewerUrl = APIURLs.baseUrl + APIURLs.api + APIURLs.addAuctionViewer
         debugPrint(params)
         debugPrint(viewerUrl)
-        NetworkManager.shared.post(urlString: viewerUrl, params: params, responseType: BasicNetworkModel.self) { result in
+        NetworkManager.shared.post(urlString: viewerUrl, params: params, responseType: BasicNetworkModel.self) { [weak self] result in
             
             switch result {
             case .success(let responseObj):

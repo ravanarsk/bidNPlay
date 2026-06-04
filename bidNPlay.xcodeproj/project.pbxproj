@@ -46,6 +46,7 @@
 		D172AEC52F4ED03700CC8A2E /* AddPotPlayersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D172AEC42F4ED03700CC8A2E /* AddPotPlayersVC.swift */; };
 		D172AEC72F4ED12200CC8A2E /* AddPotPlayersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D172AEC62F4ED12200CC8A2E /* AddPotPlayersVM.swift */; };
 		D172AEC92F4F0D1100CC8A2E /* AddPotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D172AEC82F4F0D1100CC8A2E /* AddPotModel.swift */; };
+		D1847EF32FAC6F8C00D773E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1847EF22FAC6F8C00D773E6 /* GoogleService-Info.plist */; };
 		D1C143892F98A9C90081AAEC /* AuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C143872F98A9C90081AAEC /* AuctionVC.swift */; };
 		D1C1438A2F98A9C90081AAEC /* AuctionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C143882F98A9C90081AAEC /* AuctionVC.xib */; };
 		D1C1438E2F98A9EC0081AAEC /* SoldPlayersVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C1438D2F98A9EC0081AAEC /* SoldPlayersVC.xib */; };
@@ -202,6 +203,8 @@
 		D172AEC42F4ED03700CC8A2E /* AddPotPlayersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPotPlayersVC.swift; sourceTree = "<group>"; };
 		D172AEC62F4ED12200CC8A2E /* AddPotPlayersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPotPlayersVM.swift; sourceTree = "<group>"; };
 		D172AEC82F4F0D1100CC8A2E /* AddPotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPotModel.swift; sourceTree = "<group>"; };
+		D1847EF22FAC6F8C00D773E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D1847EF62FAC9AFA00D773E6 /* bidNPlayDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bidNPlayDebug.entitlements; sourceTree = "<group>"; };
 		D1C143872F98A9C90081AAEC /* AuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionVC.swift; sourceTree = "<group>"; };
 		D1C143882F98A9C90081AAEC /* AuctionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionVC.xib; sourceTree = "<group>"; };
 		D1C1438C2F98A9EC0081AAEC /* SoldPlayersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldPlayersVC.swift; sourceTree = "<group>"; };
@@ -763,6 +766,8 @@
 		F4AE352D2CFD9A3200766A02 /* bidNPlay */ = {
 			isa = PBXGroup;
 			children = (
+				D1847EF62FAC9AFA00D773E6 /* bidNPlayDebug.entitlements */,
+				D1847EF22FAC6F8C00D773E6 /* GoogleService-Info.plist */,
 				F4E9266F2D04374600D98217 /* Configs */,
 				F4AE35542CFDA62800766A02 /* Modules */,
 				F4AE35432CFDA32800766A02 /* Utils */,
@@ -1108,6 +1113,7 @@
 				F4FAD9CD2D07218700B48452 /* BasicInfoCell.xib in Resources */,
 				CEC3B3F72D8D2EFB00A3F777 /* TeamStatsCell.xib in Resources */,
 				F47F64D42CFEF976002F8930 /* RegisterVC.xib in Resources */,
+				D1847EF32FAC6F8C00D773E6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1407,6 +1413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = bidNPlay/bidNPlayDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
